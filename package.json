@@ -16,7 +16,10 @@
   "repository": "https://github.com/ebates-edc/eslint-config",
   "peerDependencies": {
     "eslint": "^4.19.1",
-    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-import": "^2.13.0"
+  },
+  "optionalDependencies": {
+    "eslint-config-react-app": "^2.1.0",
     "eslint-plugin-flowtype": "^2.49.3"
   },
   "dependencies": {
