@@ -8,6 +8,8 @@ module.exports = {
     'eslint-config-airbnb-base',
   ].map(require.resolve),
 
+  parser: 'babel-eslint',
+
   rules: {
     'arrow-parens': [ERROR, 'always'],
 
