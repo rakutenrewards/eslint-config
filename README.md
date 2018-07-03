@@ -32,7 +32,7 @@ module.exports = {
 Other configurations require depedencies listed as optional. Run the
 following command to check the supported version to install.
 ```bash
-npm info "eslint-config-ebates-edc@latest" peerDependencies
+npm info "eslint-config-ebates-edc@latest" optionalDependencies
 ```
 
 ### Flowtype
@@ -61,4 +61,7 @@ module.exports = {
 - Requirements:
     + [eslint-config-react-app](https://github.com/facebook/create-react-app/tree/next/packages/eslint-config-react-app)
 
-Installation and usage is similar to Flowtype config.
+Run
+```bash
+npx install-peerdeps --dev eslint-config-react-app@<version>
+```
