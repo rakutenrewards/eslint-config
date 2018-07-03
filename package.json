@@ -1,0 +1,26 @@
+{
+  "name": "eslint-config-ebates-edc",
+  "version": "0.1.0",
+  "description": "Ebates's EDC base JS ESLint config for consistent coding style.",
+  "main": "index.js",
+  "keywords": [
+    "eslint",
+    "eslintconfig",
+    "config",
+    "ebates",
+    "styleguide"
+  ],
+  "author": "ebates-edc",
+  "license": "MIT",
+  "homepage": "https://github.com/ebates-edc/eslint-config",
+  "repository": "https://github.com/ebates-edc/eslint-config",
+  "peerDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-flowtype": "^2.49.3"
+  },
+  "dependencies": {
+    "babel-eslint": "^8.2.5",
+    "eslint-config-airbnb-base": "^13.0.0"
+  }
+}
