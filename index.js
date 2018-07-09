@@ -30,5 +30,16 @@ module.exports = {
 
     // Sometimes early exit of an iteration is more readable!
     'no-continue': OFF,
-  }
+
+    // Allow to use `_` in functions and variable names
+    'no-underscore-dangle': OFF,
+
+    // Set the max length of a line to 200 characters
+    'max-len': [
+      'error',
+      {
+        code: 200
+      },
+    ],
+  },
 }
