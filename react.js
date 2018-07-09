@@ -1,13 +1,15 @@
 /**
  * This file contains the rules for React.
  */
+const { OFF } = require('./constants');
+
 module.exports = {
   extends: [
     'react-app',
   ],
 
   rules: {
-    // Allow methods that do use `this`
-    'class-methods-use-this': 0
+    // Allow class methods that do not use `this`.
+    'class-methods-use-this': OFF,
   },
 };
