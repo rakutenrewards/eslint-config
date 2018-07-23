@@ -36,7 +36,7 @@ module.exports = {
 
     // Set the max length of a line to 200 characters
     'max-len': [
-      'error',
+      ERROR,
       {
         code: 200,
       },
