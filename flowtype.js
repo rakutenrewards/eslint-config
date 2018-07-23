@@ -29,4 +29,10 @@ module.exports = {
     }],
     'flowtype/semi': [ERROR, 'always'],
   },
+
+  settings: {
+    flowtype: {
+      onlyFilesWithFlowAnnotation: true,
+    },
+  },
 };
