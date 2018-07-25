@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-ebates-edc",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Ebates's EDC base JS ESLint config for consistent coding style.",
   "main": "index.js",
   "keywords": [
