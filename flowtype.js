@@ -24,8 +24,8 @@ module.exports = {
     'flowtype/require-return-type': [ERROR, 'always', {
       'excludeArrowFunctions': 'expressionsOnly',
     }],
-    'flowtype/require-valid-file-annotation': [ERROR, 'never', {
-      annotationStyle: 'line',
+    'flowtype/require-valid-file-annotation': [ERROR, 'always', {
+      annotationStyle: 'none',
     }],
     'flowtype/semi': [ERROR, 'always'],
   },
