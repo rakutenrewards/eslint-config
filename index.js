@@ -41,5 +41,15 @@ module.exports = {
         code: 200,
       },
     ],
+
+    // Prefer destructuring unless the object has already been declared
+    'prefer-destructuring': [
+      ERROR,
+      {
+        VariableDeclarator: {
+          object: true,
+        },
+      },
+    ],
   },
 }
