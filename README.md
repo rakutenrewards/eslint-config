@@ -1,14 +1,14 @@
-[![Build Status](https://travis-ci.org/ebates-edc/eslint-config.svg?branch=master)](https://travis-ci.org/ebates-edc/eslint-config)
+[![Build Status](https://travis-ci.org/ebates-inc/eslint-config.svg?branch=master)](https://travis-ci.org/ebates-inc/eslint-config)
 
-# eslint-config-ebates-edc
+# eslint-config-ebates
 
 This package provides ESLint [shareable configs](https://eslint.org/docs/developer-guide/shareable-configs) which allow us to
 maintain a consistent coding style across our Javascript repositories.
 
-Our base configuration, `ebates-edc` extends the [eslint-config-airbnb-base](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb-base).
+Our base configuration, `ebates`, extends the [eslint-config-airbnb-base](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb-base).
 We also provide configuration for other environments:
-- `ebates-edc/flowtype`
-- `ebates-edc/react`
+- `ebates/flowtype`
+- `ebates/react`
 
 ## Installation
 
@@ -16,7 +16,7 @@ To install both the dependencies and peer-dependencies, make sure you have npm 5
 and run
 
 ```bash
-npx install-peerdeps --dev eslint-config-ebates-edc
+npx install-peerdeps --dev eslint-config-ebates
 ```
 
 *Note:* `install-peerdeps` will automatically detect if you're using `yarn` or `npm`.
@@ -24,17 +24,17 @@ npx install-peerdeps --dev eslint-config-ebates-edc
 In `.eslintrc.js`, simply add
 ```js
 module.exports = {
-  extends: 'ebates-edc',
+  extends: 'ebates',
   // ...
 };
 ```
 
 ## Other configurations
 
-Other configurations require depedencies listed as optional. Run the
+Other configurations require dependencies listed as optional. Run the
 following command to check the supported version to install.
 ```bash
-npm info "eslint-config-ebates-edc@latest" optionalDependencies
+npm info "eslint-config-ebates@latest" optionalDependencies
 ```
 
 ### Flowtype
@@ -51,8 +51,8 @@ Then update the `.eslintrc.js`.
 ```js
 module.exports = {
   extends: [
-    'ebates-edc',
-    'ebates-edc/flowtype',
+    'ebates',
+    'ebates/flowtype',
   ],
   // ...
 };
@@ -66,4 +66,15 @@ module.exports = {
 Run
 ```bash
 npx install-peerdeps --dev eslint-config-react-app@<version>
+```
+
+Then update the `.eslintrc.js`.
+```js
+module.exports = {
+  extends: [
+    'ebates',
+    'ebates/react',
+  ],
+  // ...
+};
 ```

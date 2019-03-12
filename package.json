@@ -1,7 +1,7 @@
 {
-  "name": "eslint-config-ebates-edc",
+  "name": "eslint-config-ebates",
   "version": "0.2.0",
-  "description": "Ebates's EDC base JS ESLint config for consistent coding style.",
+  "description": "Ebates's base JS ESLint config for consistent coding style.",
   "main": "index.js",
   "keywords": [
     "eslint",
@@ -10,10 +10,10 @@
     "ebates",
     "styleguide"
   ],
-  "author": "ebates-edc",
+  "author": "ebates-inc",
   "license": "MIT",
-  "homepage": "https://github.com/ebates-edc/eslint-config",
-  "repository": "https://github.com/ebates-edc/eslint-config",
+  "homepage": "https://github.com/ebates-inc/eslint-config",
+  "repository": "https://github.com/ebates-inc/eslint-config",
   "scripts": {
     "lint": "eslint .",
     "test": "jest ."
