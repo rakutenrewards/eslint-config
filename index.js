@@ -6,6 +6,7 @@ const { OFF, ERROR } = require('./constants');
 module.exports = {
   extends: [
     'eslint-config-airbnb-base',
+    'eslint-config-airbnb-base/rules/strict',
   ].map(require.resolve),
 
   parser: 'babel-eslint',
@@ -34,11 +35,11 @@ module.exports = {
     // Allow to use `_` in functions and variable names
     'no-underscore-dangle': OFF,
 
-    // Set the max length of a line to 200 characters
+    // Set the max length of a line to 120 characters
     'max-len': [
       ERROR,
       {
-        code: 200,
+        code: 120,
       },
     ],
 
