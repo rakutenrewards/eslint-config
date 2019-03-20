@@ -24,7 +24,6 @@
   },
   "optionalDependencies": {
     "eslint-config-airbnb": "^17.1.0",
-    "eslint-config-react-app": "^3.0.8",
     "eslint-plugin-flowtype": "^2.49.3",
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-react": "^7.12.4"
@@ -35,6 +34,8 @@
   "devDependencies": {
     "babel-eslint": "^9.0.0",
     "eslint": "^5.15.1",
-    "jest": "^24.5.0"
+    "jest": "^24.5.0",
+    "jest-haste-map": "^24.5.0",
+    "jest-resolve": "^24.5.0"
   }
 }

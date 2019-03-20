@@ -5,7 +5,6 @@ const { OFF, WARNING, ERROR } = require('./constants');
 
 module.exports = {
   extends: [
-    'react-app',
     // So we can appropriately have our base rules override airbnb's, we'll need to extend the react rules the same way
     // eslint-config-airbnb does internally.
     // Reference: https://github.com/airbnb/javascript/blob/eslint-config-airbnb-v17.1.0/packages/eslint-config-airbnb/index.js
