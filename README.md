@@ -65,8 +65,15 @@ module.exports = {
 
 Run
 ```bash
-npx install-peerdeps --dev eslint-config-airbnb
+# Install peer dependencies. Skip `eslint` as we've already installed it as a peer dependency
+# for our config earlier (in the Installation step).
+yarn add -D eslint-plugin-import@^2.16.0 eslint-plugin-jsx-a11y@^6.2.1 eslint-plugin-react@^6.2.1
+
+yarn add -D eslint-config-airbnb@^17.1.0
 ```
+
+*NOTE*: We can run `npx install-peerdeps --dev eslint-config-airbnb` to install all peer dependencies
+in 1 commnad. However, we avoid it because it would install the `eslint@5.3.0` (exact version).
 
 Then update `.eslintrc.js`:
 ```js
