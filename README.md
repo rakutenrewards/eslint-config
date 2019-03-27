@@ -65,11 +65,11 @@ module.exports = {
 
 Run
 ```bash
-# Install peer dependencies. Skip `eslint` as we've already installed it as a peer dependency
-# for our config earlier (in the Installation step).
-yarn add -D eslint-plugin-import@^2.16.0 eslint-plugin-jsx-a11y@^6.2.1 eslint-plugin-react@^6.2.1
+# Install eslint-config-airbnb peer dependencies. Skip `eslint` as we've already installed it as
+# a peer dependency for our config earlier (in the Installation step).
+yarn add --dev eslint-config-ebates --optional eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react
 
-yarn add -D eslint-config-airbnb@^17.1.0
+yarn add --dev eslint-config-ebates --optional eslint-config-airbnb
 ```
 
 *NOTE*: We can run `npx install-peerdeps --dev eslint-config-airbnb` to install all peer dependencies
