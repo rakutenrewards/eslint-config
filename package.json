@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-ebates",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Ebates's base JS ESLint config for consistent coding style.",
   "main": "index.js",
   "keywords": [
@@ -29,10 +29,10 @@
     "eslint-plugin-react": "^7.12.4"
   },
   "dependencies": {
+    "babel-eslint": "^10.0.0",
     "eslint-config-airbnb-base": "^13.1.0"
   },
   "devDependencies": {
-    "babel-eslint": "^9.0.0",
     "eslint": "^5.15.1",
     "jest": "^24.5.0",
     "jest-haste-map": "^24.5.0",
