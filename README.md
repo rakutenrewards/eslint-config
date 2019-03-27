@@ -61,13 +61,11 @@ module.exports = {
 ### React
 
 - Requirements:
-    + [eslint-config-react-app](https://github.com/facebook/create-react-app/tree/next/packages/eslint-config-react-app)
     + [eslint-config-airbnb](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb)
 
 Run
 ```bash
-npx install-peerdeps --dev eslint-config-react-app@<version>
-yarn add -D eslint-config-airbnb eslint-plugin-jsx-a11y eslint-plugin-react
+npx install-peerdeps --dev eslint-config-airbnb
 ```
 
 Then update `.eslintrc.js`:
