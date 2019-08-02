@@ -22,6 +22,7 @@ npx install-peerdeps --dev eslint-config-ebates
 *Note:* `install-peerdeps` will automatically detect if you're using `yarn` or `npm`.
 
 In `.eslintrc.js`, simply add:
+
 ```js
 module.exports = {
   extends: 'ebates',
@@ -31,8 +32,9 @@ module.exports = {
 
 ## Other configurations
 
-Other configurations require dependencies listed as optional. Run the
-following command to check the supported version to install.
+Other configurations require dependencies listed as optional. First, install the main package as noted in the previous
+section. Then run the following command to check the supported version to install.
+
 ```bash
 npm info "eslint-config-ebates@latest" optionalDependencies
 ```
@@ -43,11 +45,13 @@ npm info "eslint-config-ebates@latest" optionalDependencies
     + [eslint-plugin-flowtype](https://github.com/gajus/eslint-plugin-flowtype)
 
 Run
+
 ```bash
 yarn add -D eslint-plugin-flowtype@<version>
 ```
 
 Then update `.eslintrc.js`:
+
 ```js
 module.exports = {
   extends: [
@@ -62,20 +66,21 @@ module.exports = {
 
 - Requirements:
     + [eslint-config-airbnb](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb)
+    + [eslint-plugin-jsx-a11y](https://github.com/evcohen/eslint-plugin-jsx-a11y)
+    + [eslint-plugin-react](https://github.com/yannickcr/eslint-plugin-react)
+    + [eslint-plugin-react-hooks](https://github.com/facebook/react/tree/master/packages/eslint-plugin-react-hooks)
+
 
 Run
+
 ```bash
 # Install eslint-config-airbnb peer dependencies. Skip `eslint` as we've already installed it as
 # a peer dependency for our config earlier (in the Installation step).
-yarn add --dev eslint-config-ebates --optional eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react
-
-yarn add --dev eslint-config-ebates --optional eslint-config-airbnb
+yarn add -D eslint-config-airbnb eslint-plugin-jsx-a11y eslint-plugin-react eslint-plugin-react-hooks
 ```
 
-*NOTE*: We can run `npx install-peerdeps --dev eslint-config-airbnb` to install all peer dependencies
-in 1 commnad. However, we avoid it because it would install the `eslint@5.3.0` (exact version).
-
 Then update `.eslintrc.js`:
+
 ```js
 module.exports = {
   extends: [

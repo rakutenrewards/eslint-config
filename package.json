@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-ebates",
-  "version": "1.2.0",
+  "version": "2.0.0",
   "description": "Ebates's base JS ESLint config for consistent coding style.",
   "main": "index.js",
   "keywords": [
@@ -19,25 +19,24 @@
     "test": "jest ."
   },
   "peerDependencies": {
-    "@babel/core": "^7.4.0",
-    "babel-eslint": "^10.0.0",
-    "eslint": "^5.15.1",
-    "eslint-plugin-import": "^2.16.0"
+    "@babel/core": "^7.5.5",
+    "babel-eslint": "^10.0.2",
+    "eslint": "^5.16.0",
+    "eslint-plugin-import": "^2.18.2"
   },
   "optionalDependencies": {
-    "eslint-config-airbnb": "^17.1.0",
-    "eslint-plugin-flowtype": "^2.49.3",
-    "eslint-plugin-jsx-a11y": "^6.2.1",
-    "eslint-plugin-react": "^7.12.4"
+    "eslint-config-airbnb": "^17.1.1",
+    "eslint-plugin-flowtype": "^3.12.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-react-hooks": "^1.6.1"
   },
   "dependencies": {
-    "eslint-config-airbnb-base": "^13.1.0"
+    "eslint-config-airbnb-base": "^13.2.0"
   },
   "devDependencies": {
-    "babel-eslint": "^10.0.0",
-    "eslint": "^5.15.1",
-    "jest": "^24.5.0",
-    "jest-haste-map": "^24.5.0",
-    "jest-resolve": "^24.5.0"
+    "babel-eslint": "^10.0.2",
+    "eslint": "^5.16.0",
+    "jest": "^24.8.0"
   }
 }
