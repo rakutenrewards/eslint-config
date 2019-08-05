@@ -45,7 +45,7 @@ module.exports = {
         // certain url could be pretty long
         'ignoreStrings': true,
         // similar to the strings above
-        'ignoreTemplateLiterals': true
+        'ignoreTemplateLiterals': true,
       },
     ],
 
