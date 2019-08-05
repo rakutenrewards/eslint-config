@@ -40,8 +40,38 @@ module.exports = {
       ERROR,
       {
         code: 120,
+        // sometimes response samples are documented in the comment which is too long
+        'ignoreComments': true,
+        // certain url could be pretty long
+        'ignoreStrings': true,
+        // similar to the strings above
+        'ignoreTemplateLiterals': true
       },
     ],
+
+    /**
+     * to allow helper functions to be defined below the core function to get an overview of the feature quickly
+     * @example
+     * export default function makeCake() {
+     *   prepareIngredients();
+     *   prepareOven();
+     *   bake();
+     *   pack();
+     * }
+     * 
+     * function  prepareIngredients() {
+     * }
+     * 
+     * function prepareOven() {
+     * }
+     * 
+     * function bake() {
+     * }
+     * 
+     * function pack() {
+     * }
+     */
+    'no-use-before-define': [ERROR, { 'functions': false }],
 
     // Prefer destructuring unless the object has already been declared
     'prefer-destructuring': [
