@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-ebates",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "Ebates's base JS ESLint config for consistent coding style.",
   "main": "index.js",
   "keywords": [
