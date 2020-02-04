@@ -14,6 +14,11 @@ it('Validate react config', () => {
   expect(isObject(config.rules)).toBe(true);
 });
 
+it('Validate typescript config', () => {
+  const config = require('../typescript');
+  expect(isObject(config.rules)).toBe(true);
+});
+
 function isObject (obj) {
   return typeof obj === 'object' && obj !== null
 }
