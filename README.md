@@ -95,7 +95,19 @@ module.exports = {
 ### TypeScript
 
 - Requirements:
-    + None so far
+  + [@typescript-eslint/parser](https://github.com/typescript-eslint/typescript-eslint)
+  + [@typescript-eslint/eslint-plugin](https://github.com/typescript-eslint/typescript-eslint)
+
+
+Run
+
+```bash
+# Install @typescript-eslint peer dependencies. Skip `eslint` as we've already installed it as
+# a peer dependency for our config earlier (in the Installation step).
+yarn add -D @typescript-eslint/parser @typescript-eslint/eslint-plugin
+```
+
+Then update `.eslintrc.js`:
 
 ```js
 module.exports = {
