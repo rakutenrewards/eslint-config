@@ -14,7 +14,7 @@ module.exports = {
         // disables a few of the recommended rules from the previous set that we know are already covered by TypeScript's typechecker
         'plugin:@typescript-eslint/eslint-recommended',
         // turns on rules from their TypeScript-specific plugin
-        'plugin:@typescript-eslint/recommended'
+        'plugin:@typescript-eslint/recommended',
     ],
     rules: {
         // Allow TypeScript files to have JSX
