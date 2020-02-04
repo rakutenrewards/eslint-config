@@ -9,6 +9,7 @@ Our base configuration, `ebates`, extends [eslint-config-airbnb-base](https://gi
 We also provide configuration for other environments:
 - `ebates/flowtype`
 - `ebates/react`
+- `ebates/typescript`
 
 ## Installation
 
@@ -86,6 +87,21 @@ module.exports = {
   extends: [
     'ebates',
     'ebates/react',
+  ],
+  // ...
+};
+```
+
+### TypeScript
+
+- Requirements:
+    + None so far
+
+```js
+module.exports = {
+  extends: [
+    'ebates',
+    'ebates/typescript',
   ],
   // ...
 };
