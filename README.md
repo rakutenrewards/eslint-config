@@ -9,6 +9,7 @@ Our base configuration, `ebates`, extends [eslint-config-airbnb-base](https://gi
 We also provide configuration for other environments:
 - `ebates/flowtype`
 - `ebates/react`
+- `ebates/typescript`
 
 ## Installation
 
@@ -86,6 +87,33 @@ module.exports = {
   extends: [
     'ebates',
     'ebates/react',
+  ],
+  // ...
+};
+```
+
+### TypeScript
+
+- Requirements:
+  + [@typescript-eslint/parser](https://github.com/typescript-eslint/typescript-eslint)
+  + [@typescript-eslint/eslint-plugin](https://github.com/typescript-eslint/typescript-eslint)
+
+
+Run
+
+```bash
+# Install @typescript-eslint peer dependencies. Skip `eslint` as we've already installed it as
+# a peer dependency for our config earlier (in the Installation step).
+yarn add -D @typescript-eslint/parser @typescript-eslint/eslint-plugin
+```
+
+Then update `.eslintrc.js`:
+
+```js
+module.exports = {
+  extends: [
+    'ebates',
+    'ebates/typescript',
   ],
   // ...
 };

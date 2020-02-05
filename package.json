@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-ebates",
-  "version": "2.1.1",
+  "version": "2.2.0",
   "description": "Ebates's base JS ESLint config for consistent coding style.",
   "main": "index.js",
   "keywords": [
@@ -25,6 +25,8 @@
     "eslint-plugin-import": "^2.18.2"
   },
   "optionalDependencies": {
+    "@typescript-eslint/parser": "^2.19.0",
+    "@typescript-eslint/eslint-plugin": "^2.19.0",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-plugin-flowtype": "^4.3.0",
     "eslint-plugin-jsx-a11y": "^6.2.3",
