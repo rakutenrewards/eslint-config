@@ -15,9 +15,21 @@ module.exports = {
         'plugin:@typescript-eslint/eslint-recommended',
         // turns on rules from their TypeScript-specific plugin
         'plugin:@typescript-eslint/recommended',
+        // enables ts/tsx file usage when importing modules
+        'plugin:import/typescript',
     ],
     rules: {
         // Allow TypeScript files to have JSX
         'react/jsx-filename-extension': [WARNING, { 'extensions': ['.ts', '.tsx', '.js', '.jsx'] }],
+        'import/extensions': [
+            'error',
+            'ignorePackages',
+            {
+                'js': 'never',
+                'jsx': 'never',
+                'ts': 'never',
+                'tsx': 'never',
+            },
+        ],
     },
 };
