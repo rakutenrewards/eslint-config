@@ -41,11 +41,11 @@ module.exports = {
       {
         code: 120,
         // sometimes response samples are documented in the comment which is too long
-        'ignoreComments': true,
+        ignoreComments: true,
         // certain url could be pretty long
-        'ignoreStrings': true,
+        ignoreStrings: true,
         // similar to the strings above
-        'ignoreTemplateLiterals': true,
+        ignoreTemplateLiterals: true,
       },
     ],
 
@@ -58,20 +58,20 @@ module.exports = {
      *   bake();
      *   pack();
      * }
-     * 
+     *
      * function  prepareIngredients() {
      * }
-     * 
+     *
      * function prepareOven() {
      * }
-     * 
+     *
      * function bake() {
      * }
-     * 
+     *
      * function pack() {
      * }
      */
-    'no-use-before-define': [ERROR, { 'functions': false }],
+    'no-use-before-define': [ERROR, { functions: false }],
 
     // Prefer destructuring unless the object has already been declared
     'prefer-destructuring': [
@@ -83,4 +83,4 @@ module.exports = {
       },
     ],
   },
-}
+};
