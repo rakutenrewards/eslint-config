@@ -104,7 +104,7 @@ Run
 ```bash
 # Install @typescript-eslint peer dependencies. Skip `eslint` as we've already installed it as
 # a peer dependency for our config earlier (in the Installation step).
-yarn add -D @typescript-eslint/parser @typescript-eslint/eslint-plugin
+yarn add -D @typescript-eslint/parser @typescript-eslint/eslint-plugin typescript
 ```
 
 Then update `.eslintrc.js`:

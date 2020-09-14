@@ -23,7 +23,7 @@ module.exports = {
     // Warn when there's more than one expression per line in JSX.
     'react/jsx-one-expression-per-line': OFF,
     // Allow .js files to have JSX
-    'react/jsx-filename-extension': [WARNING, { 'extensions': ['.js'] }],
+    'react/jsx-filename-extension': [WARNING, { extensions: ['.js'] }],
 
     /* React Hooks rules */
     'react-hooks/rules-of-hooks': ERROR,
