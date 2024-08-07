@@ -30,6 +30,9 @@ jobs:
         with:
           node-version-file: '.nvmrc'
 
+      - name: Enable Corepack
+        run: corepack enable
+
       - name: Install Dependencies
         if: ${{ steps.release.outputs.release_created }}
         run: yarn install --immutable
