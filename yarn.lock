@@ -1940,7 +1940,7 @@ __metadata:
     eslint-plugin-import: "npm:^2.20.1"
     eslint-plugin-jsx-a11y: "npm:^6.2.3"
     eslint-plugin-react: "npm:^7.19.0"
-    eslint-plugin-react-hooks: "npm:^2.5.0"
+    eslint-plugin-react-hooks: "npm:^4.6.2"
     jest: "npm:^25.1.0"
     typescript: "npm:^4.0.2"
   peerDependencies:
@@ -2040,12 +2040,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-react-hooks@npm:^2.5.0":
-  version: 2.5.0
-  resolution: "eslint-plugin-react-hooks@npm:2.5.0"
+"eslint-plugin-react-hooks@npm:^4.6.2":
+  version: 4.6.2
+  resolution: "eslint-plugin-react-hooks@npm:4.6.2"
   peerDependencies:
-    eslint: ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0
-  checksum: 10c0/27d42f7fe947ba5d55877e1d08db645be876215de5bb397573d598b7d51be1ba7c88d4fb97939c5f7fb6bba77c0e36e1dc7f0e2b9eb8bdc948549ccf0c7b4088
+    eslint: ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0-0
+  checksum: 10c0/4844e58c929bc05157fb70ba1e462e34f1f4abcbc8dd5bbe5b04513d33e2699effb8bca668297976ceea8e7ebee4e8fc29b9af9d131bcef52886feaa2308b2cc
   languageName: node
   linkType: hard
 
