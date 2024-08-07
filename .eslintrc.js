@@ -4,6 +4,13 @@ const { ERROR } = require('./constants');
 module.exports = {
   extends: ['.'],
   parser: '@babel/eslint-parser',
+  parserOptions: {
+    requireConfigFile: false,
+    babelOptions: {
+      babelrc: false,
+      configFile: false,
+    },
+  },
   env: {
     node: true,
     jest: true,
