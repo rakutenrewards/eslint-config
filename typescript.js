@@ -3,6 +3,7 @@
  */
 const { WARNING } = require('./constants');
 
+/** @type {import('eslint').Linter.LegacyConfig} */
 module.exports = {
   // allows ESLint to read TS syntax
   parser: '@typescript-eslint/parser',

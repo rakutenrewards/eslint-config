@@ -3,6 +3,7 @@
  */
 const { OFF, WARNING, ERROR } = require('./constants');
 
+/** @type {import('eslint').Linter.LegacyConfig} */
 module.exports = {
   extends: [
     // So we can appropriately have our base rules override airbnb's, we'll need to extend the react rules the same way
