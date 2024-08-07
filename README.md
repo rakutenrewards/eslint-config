@@ -7,6 +7,7 @@ maintain a consistent coding style across our Javascript repositories.
 
 Our base configuration, `ebates`, extends [eslint-config-airbnb-base](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb-base), both `base` and `strict` set of rules.
 We also provide configuration for other environments:
+
 - `ebates/flowtype`
 - `ebates/react`
 - `ebates/typescript`
@@ -20,7 +21,7 @@ and run
 npx install-peerdeps --dev eslint-config-ebates
 ```
 
-*Note:* `install-peerdeps` will automatically detect if you're using `yarn` or `npm`.
+_Note:_ `install-peerdeps` will automatically detect if you're using `yarn` or `npm`.
 
 In `.eslintrc.js`, simply add:
 
@@ -43,7 +44,7 @@ npm info "eslint-config-ebates@latest" optionalDependencies
 ### Flowtype
 
 - Requirements:
-    + [eslint-plugin-flowtype](https://github.com/gajus/eslint-plugin-flowtype)
+  - [eslint-plugin-flowtype](https://github.com/gajus/eslint-plugin-flowtype)
 
 Run
 
@@ -55,10 +56,7 @@ Then update `.eslintrc.js`:
 
 ```js
 module.exports = {
-  extends: [
-    'ebates',
-    'ebates/flowtype',
-  ],
+  extends: ['ebates', 'ebates/flowtype'],
   // ...
 };
 ```
@@ -66,11 +64,10 @@ module.exports = {
 ### React
 
 - Requirements:
-    + [eslint-config-airbnb](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb)
-    + [eslint-plugin-jsx-a11y](https://github.com/evcohen/eslint-plugin-jsx-a11y)
-    + [eslint-plugin-react](https://github.com/yannickcr/eslint-plugin-react)
-    + [eslint-plugin-react-hooks](https://github.com/facebook/react/tree/master/packages/eslint-plugin-react-hooks)
-
+  - [eslint-config-airbnb](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb)
+  - [eslint-plugin-jsx-a11y](https://github.com/evcohen/eslint-plugin-jsx-a11y)
+  - [eslint-plugin-react](https://github.com/yannickcr/eslint-plugin-react)
+  - [eslint-plugin-react-hooks](https://github.com/facebook/react/tree/master/packages/eslint-plugin-react-hooks)
 
 Run
 
@@ -84,10 +81,7 @@ Then update `.eslintrc.js`:
 
 ```js
 module.exports = {
-  extends: [
-    'ebates',
-    'ebates/react',
-  ],
+  extends: ['ebates', 'ebates/react'],
   // ...
 };
 ```
@@ -95,9 +89,8 @@ module.exports = {
 ### TypeScript
 
 - Requirements:
-  + [@typescript-eslint/parser](https://github.com/typescript-eslint/typescript-eslint)
-  + [@typescript-eslint/eslint-plugin](https://github.com/typescript-eslint/typescript-eslint)
-
+  - [@typescript-eslint/parser](https://github.com/typescript-eslint/typescript-eslint)
+  - [@typescript-eslint/eslint-plugin](https://github.com/typescript-eslint/typescript-eslint)
 
 Run
 
@@ -111,10 +104,7 @@ Then update `.eslintrc.js`:
 
 ```js
 module.exports = {
-  extends: [
-    'ebates',
-    'ebates/typescript',
-  ],
+  extends: ['ebates', 'ebates/typescript'],
   // ...
 };
 ```

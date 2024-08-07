@@ -1,7 +1,7 @@
 const { ERROR } = require('./constants');
 
 module.exports = {
-  extends: [ '.' ],
+  extends: ['.'],
   parser: 'babel-eslint',
   env: {
     node: true,
@@ -11,5 +11,5 @@ module.exports = {
     'comma-dangle': [ERROR, 'always-multiline'],
     quotes: [ERROR, 'single'],
     strict: [ERROR, 'never'],
-  }
-}
+  },
+};
