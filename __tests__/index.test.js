@@ -1,5 +1,4 @@
 const baseConfig = require('../index');
-const flowtypeConfig = require('../flowtype');
 const reactConfig = require('../react');
 const typescriptConfig = require('../typescript');
 
@@ -9,10 +8,6 @@ function isObject(obj) {
 
 it('Validate base config', () => {
   expect(isObject(baseConfig.rules)).toBe(true);
-});
-
-it('Validate Flowtype config', () => {
-  expect(isObject(flowtypeConfig.rules)).toBe(true);
 });
 
 it('Validate react config', () => {
