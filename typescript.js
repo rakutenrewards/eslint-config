@@ -20,7 +20,10 @@ module.exports = {
   ],
   rules: {
     // Allow TypeScript files to have JSX
-    'react/jsx-filename-extension': [WARNING, { extensions: ['.ts', '.tsx', '.js', '.jsx'] }],
+    'react/jsx-filename-extension': [
+      WARNING,
+      { extensions: ['.ts', '.tsx', '.js', '.jsx'] },
+    ],
     'import/extensions': [
       'error',
       'ignorePackages',

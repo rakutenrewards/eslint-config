@@ -11,9 +11,7 @@ module.exports = {
     'airbnb/rules/react',
     'airbnb/rules/react-a11y',
   ],
-  plugins: [
-    'react-hooks',
-  ],
+  plugins: ['react-hooks'],
   rules: {
     /* Base React rules */
     // Allow class methods that do not use `this`.
