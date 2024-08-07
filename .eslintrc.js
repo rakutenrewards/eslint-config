@@ -2,7 +2,7 @@ const { ERROR } = require('./constants');
 
 /** @type {import('eslint').Linter.LegacyConfig} */
 module.exports = {
-  extends: [ '.' ],
+  extends: ['.'],
   parser: '@babel/eslint-parser',
   env: {
     node: true,
@@ -12,5 +12,5 @@ module.exports = {
     'comma-dangle': [ERROR, 'always-multiline'],
     quotes: [ERROR, 'single'],
     strict: [ERROR, 'never'],
-  }
-}
+  },
+};

@@ -16,11 +16,7 @@ module.exports = {
     'arrow-parens': [ERROR, 'always'],
 
     // To allow for-in and for-of.
-    'no-restricted-syntax': [
-      ERROR,
-      'LabeledStatement',
-      'WithStatement',
-    ],
+    'no-restricted-syntax': [ERROR, 'LabeledStatement', 'WithStatement'],
 
     // Allow to use `_` as unused variable e.g. when unpacking an array.
     'no-unused-vars': [
