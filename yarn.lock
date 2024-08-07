@@ -3921,13 +3921,11 @@ __metadata:
   linkType: hard
 
 "json5@npm:^2.1.0":
-  version: 2.1.1
-  resolution: "json5@npm:2.1.1"
-  dependencies:
-    minimist: "npm:^1.2.0"
+  version: 2.2.3
+  resolution: "json5@npm:2.2.3"
   bin:
     json5: lib/cli.js
-  checksum: 10c0/9f9b9ed9b52406274f7f217bc95379a77a408ebd05d09f68efdcdce7ea53622039abd2893ed53e300967a693b3e8650de87d21946c86cf88b0c8a60bd917c363
+  checksum: 10c0/5a04eed94810fa55c5ea138b2f7a5c12b97c3750bc63d11e511dcecbfef758003861522a070c2272764ee0f4e3e323862f386945aeb5b85b87ee43f084ba586c
   languageName: node
   linkType: hard
 
