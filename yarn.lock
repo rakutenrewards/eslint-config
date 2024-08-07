@@ -775,27 +775,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ajv@npm:^6.10.0, ajv@npm:^6.10.2":
-  version: 6.10.2
-  resolution: "ajv@npm:6.10.2"
-  dependencies:
-    fast-deep-equal: "npm:^2.0.1"
-    fast-json-stable-stringify: "npm:^2.0.0"
-    json-schema-traverse: "npm:^0.4.1"
-    uri-js: "npm:^4.2.2"
-  checksum: 10c0/4d8cabbdf424ce9b6980acbd3ae30b8ce0ac380682e0cd42a73d134d3ac70bd287b071458da5611a42cf5fd2775fd9eb94b8712a1c20e26f22cbfb0ff11508be
-  languageName: node
-  linkType: hard
-
-"ajv@npm:^6.5.5":
-  version: 6.12.0
-  resolution: "ajv@npm:6.12.0"
+"ajv@npm:^6.10.0, ajv@npm:^6.10.2, ajv@npm:^6.5.5":
+  version: 6.12.6
+  resolution: "ajv@npm:6.12.6"
   dependencies:
     fast-deep-equal: "npm:^3.1.1"
     fast-json-stable-stringify: "npm:^2.0.0"
     json-schema-traverse: "npm:^0.4.1"
     uri-js: "npm:^4.2.2"
-  checksum: 10c0/82ed0615d9f604f1170a9c17c534a6cf2fb2b6282bd5efbbf02a5ef691cf166f1385e5352bd769f29c2af112dc88554792dd1995d910ec38f03993fd3071dff6
+  checksum: 10c0/41e23642cbe545889245b9d2a45854ebba51cda6c778ebced9649420d9205f2efb39cb43dbc41e358409223b1ea43303ae4839db682c848b891e4811da1a5a71
   languageName: node
   linkType: hard
 
@@ -2360,13 +2348,6 @@ __metadata:
   version: 1.4.0
   resolution: "extsprintf@npm:1.4.0"
   checksum: 10c0/c2164f9143198650253e3bccc711cc634896e04af85c5bf3e71b2cc23b5ab7e9757a7f0dc7150f50d69871d03aef1eb9c5b8ea9d5dd2a6cf47e88fbe145fefef
-  languageName: node
-  linkType: hard
-
-"fast-deep-equal@npm:^2.0.1":
-  version: 2.0.1
-  resolution: "fast-deep-equal@npm:2.0.1"
-  checksum: 10c0/1602e0d6ed63493c865cc6b03f9070d6d3926e8cd086a123060b58f80a295f3f08b1ecfb479ae7c45b7fd45535202aea7cf5b49bc31bffb81c20b1502300be84
   languageName: node
   linkType: hard
 
