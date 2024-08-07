@@ -28,7 +28,7 @@
     "eslint-plugin-import": "^2.20.1"
   },
   "optionalDependencies": {
-    "@typescript-eslint/eslint-plugin": "^4.1.1",
+    "@typescript-eslint/eslint-plugin": "^8.0.1",
     "@typescript-eslint/parser": "^4.1.1",
     "eslint-config-airbnb": "^18.1.0",
     "eslint-plugin-flowtype": "^4.6.0",
