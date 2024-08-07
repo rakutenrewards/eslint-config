@@ -15,8 +15,8 @@
   },
   "author": "Rakuten Rewards OSS",
   "license": "MIT",
-  "homepage": "https://github.com/ebates-inc/eslint-config",
-  "repository": "https://github.com/ebates-inc/eslint-config",
+  "homepage": "https://github.com/rakutenrewards/eslint-config",
+  "repository": "https://github.com/rakutenrewards/eslint-config",
   "scripts": {
     "lint": "eslint .",
     "test": "jest ."
