@@ -9,7 +9,7 @@ module.exports = {
     'eslint-config-airbnb-base/rules/strict',
   ].map(require.resolve),
 
-  parser: 'babel-eslint',
+  parser: '@babel/eslint-parser',
 
   rules: {
     'arrow-parens': [ERROR, 'always'],
