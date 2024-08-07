@@ -10,6 +10,9 @@
     "ebates",
     "styleguide"
   ],
+  "engines": {
+    "node": "^20.15.0"
+  },
   "author": "Rakuten Rewards OSS",
   "license": "MIT",
   "homepage": "https://github.com/ebates-inc/eslint-config",
