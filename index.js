@@ -3,6 +3,7 @@
  */
 const { OFF, ERROR } = require('./constants');
 
+/** @type {import('eslint').Linter.LegacyConfig} */
 module.exports = {
   extends: [
     'eslint-config-airbnb-base',

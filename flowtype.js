@@ -3,6 +3,7 @@
  */
 const { ERROR } = require('./constants');
 
+/** @type {import('eslint').Linter.LegacyConfig} */
 module.exports = {
   extends: [
     'plugin:flowtype/recommended',
