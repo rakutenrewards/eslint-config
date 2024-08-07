@@ -10,10 +10,13 @@
     "ebates",
     "styleguide"
   ],
+  "engines": {
+    "node": "^20.15.0"
+  },
   "author": "Rakuten Rewards OSS",
   "license": "MIT",
-  "homepage": "https://github.com/ebates-inc/eslint-config",
-  "repository": "https://github.com/ebates-inc/eslint-config",
+  "homepage": "https://github.com/rakutenrewards/eslint-config",
+  "repository": "https://github.com/rakutenrewards/eslint-config",
   "scripts": {
     "lint": "eslint .",
     "test": "jest ."
@@ -43,5 +46,6 @@
     "eslint": "^6.8.0",
     "eslint-plugin-import": "^2.20.1",
     "jest": "^25.1.0"
-  }
+  },
+  "packageManager": "yarn@4.4.0"
 }
