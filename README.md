@@ -40,8 +40,6 @@ section. Then run the following command to check the supported version to instal
 npm info "eslint-config-ebates@latest" optionalDependencies
 ```
 
-````
-
 ### React
 
 - Requirements:
@@ -56,7 +54,7 @@ Run
 # Install eslint-config-airbnb peer dependencies. Skip `eslint` as we've already installed it as
 # a peer dependency for our config earlier (in the Installation step).
 yarn add -D eslint-config-airbnb eslint-plugin-jsx-a11y eslint-plugin-react eslint-plugin-react-hooks
-````
+```
 
 Then update `.eslintrc.js`:
 
