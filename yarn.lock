@@ -2321,7 +2321,6 @@ __metadata:
     eslint: "npm:^8.57.0"
     eslint-config-airbnb: "npm:^19.0.4"
     eslint-config-airbnb-base: "npm:^15.0.0"
-    eslint-plugin-flowtype: "npm:^4.6.0"
     eslint-plugin-import: "npm:^2.29.1"
     eslint-plugin-jsx-a11y: "npm:^6.9.0"
     eslint-plugin-react: "npm:^7.35.0"
@@ -2339,8 +2338,6 @@ __metadata:
     "@typescript-eslint/parser":
       optional: true
     eslint-config-airbnb:
-      optional: true
-    eslint-plugin-flowtype:
       optional: true
     eslint-plugin-jsx-a11y:
       optional: true
@@ -2373,17 +2370,6 @@ __metadata:
     eslint:
       optional: true
   checksum: 10c0/1aeeb97bf4b688d28de136ee57c824480c37691b40fa825c711a4caf85954e94b99c06ac639d7f1f6c1d69223bd21bcb991155b3e589488e958d5b83dfd0f882
-  languageName: node
-  linkType: hard
-
-"eslint-plugin-flowtype@npm:^4.6.0":
-  version: 4.6.0
-  resolution: "eslint-plugin-flowtype@npm:4.6.0"
-  dependencies:
-    lodash: "npm:^4.17.15"
-  peerDependencies:
-    eslint: ">=6.1.0"
-  checksum: 10c0/01562c0fefac4b4c8a15b38ddf554355ede204ea79aa71ca1943a1c4b92186e14a1c79d824d6f63cc21a24610aa656ab7132797f5d145b50bb19641e234de993
   languageName: node
   linkType: hard
 
@@ -4267,7 +4253,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lodash@npm:^4.17.13, lodash@npm:^4.17.15":
+"lodash@npm:^4.17.13":
   version: 4.17.21
   resolution: "lodash@npm:4.17.21"
   checksum: 10c0/d8cbea072bb08655bb4c989da418994b073a608dffa608b09ac04b43a791b12aeae7cd7ad919aa4c925f33b48490b5cfe6c1f71d827956071dae2e7bb3a6b74c
