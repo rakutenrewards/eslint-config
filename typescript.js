@@ -8,6 +8,10 @@ module.exports = {
   // allows ESLint to read TS syntax
   parser: '@typescript-eslint/parser',
   parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
+    },
+    ecmaVersion: 'latest',
     // allows TS syntax
     sourceType: 'module',
   },
