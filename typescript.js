@@ -37,6 +37,7 @@ module.exports = {
       WARNING,
       { extensions: ['.ts', '.tsx', '.js', '.jsx'] },
     ],
+    // controls whether function components need to be function declarations or arrow functions
     'react/function-component-definition': OFF,
   },
 };
