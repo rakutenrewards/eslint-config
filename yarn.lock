@@ -2339,6 +2339,8 @@ __metadata:
       optional: true
     eslint-config-airbnb:
       optional: true
+    eslint-plugin-import:
+      optional: true
     eslint-plugin-jsx-a11y:
       optional: true
     eslint-plugin-react:
