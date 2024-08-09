@@ -7,6 +7,10 @@ const { WARNING } = require('./constants');
 module.exports = {
   // allows ESLint to read TS syntax
   parser: '@typescript-eslint/parser',
+  parserOptions: {
+    // allows TS syntax
+    sourceType: 'module',
+  },
   plugins: [
     // allows TS rule usage
     '@typescript-eslint',
