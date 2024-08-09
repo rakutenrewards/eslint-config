@@ -1,7 +1,7 @@
 /**
  * This file contains the rules for TypeScript.
  */
-const { WARNING } = require('./constants');
+const { WARNING, OFF } = require('./constants');
 
 /** @type {import('eslint').Linter.LegacyConfig} */
 module.exports = {
@@ -22,11 +22,6 @@ module.exports = {
     'plugin:import/typescript',
   ],
   rules: {
-    // Allow TypeScript files to have JSX
-    'react/jsx-filename-extension': [
-      WARNING,
-      { extensions: ['.ts', '.tsx', '.js', '.jsx'] },
-    ],
     'import/extensions': [
       'error',
       'ignorePackages',
@@ -37,5 +32,11 @@ module.exports = {
         tsx: 'never',
       },
     ],
+    // Allow TypeScript files to have JSX
+    'react/jsx-filename-extension': [
+      WARNING,
+      { extensions: ['.ts', '.tsx', '.js', '.jsx'] },
+    ],
+    'react/function-component-definition': OFF,
   },
 };
