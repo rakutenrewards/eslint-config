@@ -78,6 +78,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@babel/eslint-plugin@npm:^7.13.10":
+  version: 7.25.1
+  resolution: "@babel/eslint-plugin@npm:7.25.1"
+  dependencies:
+    eslint-rule-composer: "npm:^0.3.0"
+  peerDependencies:
+    "@babel/eslint-parser": ^7.11.0
+    eslint: ^7.5.0 || ^8.0.0 || ^9.0.0
+  checksum: 10c0/c8ecd4d90db60e2eb001bef2ff67bfbdf0dee2b3cac57b41597957e3a1efadffc4415269ab8e21d1d0c8102a2e4ab1793723a8c4a909a0d06a6da0ad64bfb6ab
+  languageName: node
+  linkType: hard
+
 "@babel/generator@npm:^7.25.0, @babel/generator@npm:^7.7.2":
   version: 7.25.0
   resolution: "@babel/generator@npm:7.25.0"
@@ -2316,6 +2328,7 @@ __metadata:
   dependencies:
     "@babel/core": "npm:^7.25.2"
     "@babel/eslint-parser": "npm:^7.25.1"
+    "@babel/eslint-plugin": "npm:^7.13.10"
     "@typescript-eslint/eslint-plugin": "npm:^8.0.1"
     "@typescript-eslint/parser": "npm:^8.0.1"
     eslint: "npm:^8.57.0"
@@ -2329,7 +2342,6 @@ __metadata:
     typescript: "npm:^5.5.4"
   peerDependencies:
     "@babel/core": ^7.25.2
-    "@babel/eslint-parser": ^7.25.1
     eslint: ^8.57.0
     eslint-plugin-import: ^2.29.1
   dependenciesMeta:
@@ -2462,6 +2474,13 @@ __metadata:
   peerDependencies:
     eslint: ^3 || ^4 || ^5 || ^6 || ^7 || ^8 || ^9.7
   checksum: 10c0/eedcc33de4b2cda91d56ae517a4f771a0c76da9c1e26c95543969012871381e11d4d6cffdf6fa8423036585c289eb3500f3f93fb1d314fb2624e0aa1e463305e
+  languageName: node
+  linkType: hard
+
+"eslint-rule-composer@npm:^0.3.0":
+  version: 0.3.0
+  resolution: "eslint-rule-composer@npm:0.3.0"
+  checksum: 10c0/1f0c40d209e1503a955101a0dbba37e7fc67c8aaa47a5b9ae0b0fcbae7022c86e52b3df2b1b9ffd658e16cd80f31fff92e7222460a44d8251e61d49e0af79a07
   languageName: node
   linkType: hard
 
