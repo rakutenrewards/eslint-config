@@ -39,5 +39,6 @@ module.exports = {
     ],
     // controls whether function components need to be function declarations or arrow functions
     'react/function-component-definition': OFF,
+    '@typescript-eslint/no-empty-object-type': OFF,
   },
 };
