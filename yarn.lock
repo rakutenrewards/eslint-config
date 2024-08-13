@@ -78,7 +78,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/eslint-plugin@npm:^7.13.10":
+"@babel/eslint-plugin@npm:^7.25.1":
   version: 7.25.1
   resolution: "@babel/eslint-plugin@npm:7.25.1"
   dependencies:
@@ -2328,7 +2328,7 @@ __metadata:
   dependencies:
     "@babel/core": "npm:^7.25.2"
     "@babel/eslint-parser": "npm:^7.25.1"
-    "@babel/eslint-plugin": "npm:^7.13.10"
+    "@babel/eslint-plugin": "npm:^7.25.1"
     "@typescript-eslint/eslint-plugin": "npm:^8.0.1"
     "@typescript-eslint/parser": "npm:^8.0.1"
     eslint: "npm:^8.57.0"
