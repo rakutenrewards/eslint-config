@@ -10,6 +10,8 @@ module.exports = {
     'eslint-config-airbnb-base/rules/strict',
   ].map(require.resolve),
 
+  plugins: ['@babel'],
+
   parser: '@babel/eslint-parser',
 
   rules: {

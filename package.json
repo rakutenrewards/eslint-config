@@ -23,7 +23,6 @@
   },
   "peerDependencies": {
     "@babel/core": "^7.25.2",
-    "@babel/eslint-parser": "^7.25.1",
     "eslint": "^8.57.0",
     "eslint-plugin-import": "^2.29.1"
   },
@@ -31,19 +30,22 @@
     "@typescript-eslint/eslint-plugin": "^8.0.1",
     "@typescript-eslint/parser": "^8.0.1",
     "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-jsx-a11y": "^6.9.0",
     "eslint-plugin-react": "^7.35.0",
     "eslint-plugin-react-hooks": "^4.6.2",
     "typescript": "^5.5.4"
   },
   "dependencies": {
+    "@babel/eslint-parser": "^7.25.1",
+    "@babel/eslint-plugin": "^7.25.1",
     "eslint-config-airbnb-base": "^15.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
     "@babel/eslint-parser": "^7.25.1",
+    "@babel/eslint-plugin": "^7.25.1",
     "eslint": "^8.57.0",
-    "eslint-plugin-import": "^2.29.1",
     "jest": "^29.7.0"
   },
   "packageManager": "yarn@4.4.0"
