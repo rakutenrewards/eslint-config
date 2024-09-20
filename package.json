@@ -9,7 +9,8 @@
     "typescript.js",
     "constants.js",
     "LICENSE",
-    "README.md"
+    "README.md",
+    "CHANGELOG.md"
   ],
   "keywords": [
     "eslint",
