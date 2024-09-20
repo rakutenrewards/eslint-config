@@ -3,6 +3,15 @@
   "version": "3.0.0",
   "description": "Rakuten Reward's base JS ESLint config for consistent coding style.",
   "main": "index.js",
+  "files": [
+    "index.js",
+    "react.js",
+    "typescript.js",
+    "constants.js",
+    "LICENSE",
+    "README.md",
+    "CHANGELOG.md"
+  ],
   "keywords": [
     "eslint",
     "eslintconfig",
