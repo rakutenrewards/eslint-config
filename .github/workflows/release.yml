@@ -42,4 +42,4 @@ jobs:
 
       - name: Publish package
         if: ${{ steps.release.outputs.release_created }}
-        run: yarn npm publish --yes
+        run: yarn npm publish
