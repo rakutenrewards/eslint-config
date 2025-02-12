@@ -6,9 +6,12 @@ const { OFF, ERROR } = require('./constants');
 /** @type {import('eslint').Linter.LegacyConfig} */
 module.exports = {
   extends: [
-    'eslint-config-airbnb-base',
-    'eslint-config-airbnb-base/rules/strict',
-  ].map(require.resolve),
+    ...[
+      'eslint-config-airbnb-base',
+      'eslint-config-airbnb-base/rules/strict',
+    ].map(require.resolve),
+    'plugin:import/recommended',
+  ],
 
   plugins: ['@babel'],
 

@@ -1,7 +1,7 @@
 /**
  * This file contains the rules for TypeScript.
  */
-const { WARNING, OFF } = require('./constants');
+const { WARNING, OFF, ERROR } = require('./constants');
 
 /** @type {import('eslint').Linter.LegacyConfig} */
 module.exports = {
@@ -22,6 +22,8 @@ module.exports = {
     'plugin:import/typescript',
   ],
   rules: {
+    // this is disabled by default when using `plugin:import/typescript`
+    'import/named': ERROR,
     'import/extensions': [
       'error',
       'ignorePackages',
