@@ -1,17 +1,5 @@
 # Changelog
 
-## [3.1.0](https://github.com/rakutenrewards/eslint-config/compare/v3.0.0...v3.1.0) (2025-02-12)
-
-
-### Features
-
-* RCS-6721 - Implement recommended spec from ESLint Plugin Import ([#131](https://github.com/rakutenrewards/eslint-config/issues/131)) ([188fb9f](https://github.com/rakutenrewards/eslint-config/commit/188fb9f7c2055928273bdcc29fcb03015b17ea56))
-
-
-### Bug Fixes
-
-* RCS-6721 - Resolve errors in Yarn Lockfile ([#134](https://github.com/rakutenrewards/eslint-config/issues/134)) ([f401ce0](https://github.com/rakutenrewards/eslint-config/commit/f401ce0abb945dc3e7d83acd4df90c67a5b4c980))
-
 ## [3.0.0](https://github.com/rakutenrewards/eslint-config/compare/v2.3.1...v3.0.0) (2024-09-04)
 
 
