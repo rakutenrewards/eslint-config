@@ -1,5 +1,13 @@
 # Changelog
 
+## [3.3.0](https://github.com/rakutenrewards/eslint-config/compare/v3.2.0...v3.3.0) (2025-04-18)
+
+
+### Features
+
+* **deps:** bump eslint-plugin-react from 7.37.4 to 7.37.5 ([#169](https://github.com/rakutenrewards/eslint-config/issues/169)) ([c1aa8a7](https://github.com/rakutenrewards/eslint-config/commit/c1aa8a73a52df447480e7ea8fe1e09a7fb0cab48))
+* **deps:** bump typescript from 5.8.2 to 5.8.3 ([#173](https://github.com/rakutenrewards/eslint-config/issues/173)) ([d3883ed](https://github.com/rakutenrewards/eslint-config/commit/d3883ed845e1b40641caa09925ff85698b576f3e))
+
 ## [3.2.0](https://github.com/rakutenrewards/eslint-config/compare/v3.1.0...v3.2.0) (2025-03-21)
 
 
