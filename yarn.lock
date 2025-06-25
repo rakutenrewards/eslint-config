@@ -90,14 +90,14 @@ __metadata:
   linkType: hard
 
 "@babel/eslint-plugin@npm:^7.25.1":
-  version: 7.26.10
-  resolution: "@babel/eslint-plugin@npm:7.26.10"
+  version: 7.27.1
+  resolution: "@babel/eslint-plugin@npm:7.27.1"
   dependencies:
     eslint-rule-composer: "npm:^0.3.0"
   peerDependencies:
     "@babel/eslint-parser": ^7.11.0
     eslint: ^7.5.0 || ^8.0.0 || ^9.0.0
-  checksum: 10c0/ebc0c4b01df752d5c61a5c8898ff5d03034f2f0d1c4f6b93ae24b2de521ded5e0584506a9dd50ba466bbaa6441f141a745be4eccba1f76d15f515f9595edc7b1
+  checksum: 10c0/b313bb01071b807940ec1cceb74fba16b4fda9ea14c19d4b8636716ac0d4ddfa09324af4c14e895121c18991e57b09d1a22b524449c17911d44b0b8f71fb8779
   languageName: node
   linkType: hard
 
