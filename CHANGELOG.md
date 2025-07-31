@@ -1,5 +1,21 @@
 # Changelog
 
+## [3.3.0](https://github.com/rakutenrewards/eslint-config/compare/v3.2.0...v3.3.0) (2025-07-31)
+
+
+### Features
+
+* **deps:** bump @babel/eslint-parser from 7.26.10 to 7.28.0 ([#217](https://github.com/rakutenrewards/eslint-config/issues/217)) ([15c4e5a](https://github.com/rakutenrewards/eslint-config/commit/15c4e5a13da1dbbf7a5edfbebaf0a5915f0c25b6))
+* **deps:** bump @babel/eslint-plugin from 7.26.10 to 7.27.1 ([#187](https://github.com/rakutenrewards/eslint-config/issues/187)) ([38a3396](https://github.com/rakutenrewards/eslint-config/commit/38a33965913b3d55ca6c4d223cea73bf668e81c7))
+* **deps:** bump @typescript-eslint/eslint-plugin from 8.27.0 to 8.34.1 ([#207](https://github.com/rakutenrewards/eslint-config/issues/207)) ([f990d5b](https://github.com/rakutenrewards/eslint-config/commit/f990d5bc40fbd28498a0a4b48f1f5a6c9829a06a))
+* **deps:** bump @typescript-eslint/eslint-plugin from 8.34.1 to 8.38.0 ([#225](https://github.com/rakutenrewards/eslint-config/issues/225)) ([38a7a99](https://github.com/rakutenrewards/eslint-config/commit/38a7a9989dab2df7d330879547be69c125277baf))
+* **deps:** bump @typescript-eslint/parser from 8.27.0 to 8.34.1 ([#209](https://github.com/rakutenrewards/eslint-config/issues/209)) ([f23e424](https://github.com/rakutenrewards/eslint-config/commit/f23e4248a22d4e527148c6ded10f95da67d8a775))
+* **deps:** bump @typescript-eslint/parser from 8.35.0 to 8.38.0 ([#226](https://github.com/rakutenrewards/eslint-config/issues/226)) ([b0b7e87](https://github.com/rakutenrewards/eslint-config/commit/b0b7e87ea5a5d278272676fc805f18efc1cabcfa))
+* **deps:** bump brace-expansion from 1.1.11 to 1.1.12 ([#201](https://github.com/rakutenrewards/eslint-config/issues/201)) ([54a4ffa](https://github.com/rakutenrewards/eslint-config/commit/54a4ffa98abf966fb44e6a833f1afaa54fcf8630))
+* **deps:** bump eslint-plugin-import from 2.31.0 to 2.32.0 ([#206](https://github.com/rakutenrewards/eslint-config/issues/206)) ([777792c](https://github.com/rakutenrewards/eslint-config/commit/777792ca331ff39cecce4eaaae622c4cf5d57016))
+* **deps:** bump eslint-plugin-react from 7.37.4 to 7.37.5 ([#169](https://github.com/rakutenrewards/eslint-config/issues/169)) ([c1aa8a7](https://github.com/rakutenrewards/eslint-config/commit/c1aa8a73a52df447480e7ea8fe1e09a7fb0cab48))
+* **deps:** bump typescript from 5.8.2 to 5.8.3 ([#173](https://github.com/rakutenrewards/eslint-config/issues/173)) ([d3883ed](https://github.com/rakutenrewards/eslint-config/commit/d3883ed845e1b40641caa09925ff85698b576f3e))
+
 ## [3.2.0](https://github.com/rakutenrewards/eslint-config/compare/v3.1.0...v3.2.0) (2025-03-21)
 
 
