@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-ebates",
-  "version": "3.2.0",
+  "version": "3.3.0",
   "description": "Rakuten Reward's base JS ESLint config for consistent coding style.",
   "main": "index.js",
   "files": [
@@ -55,7 +55,7 @@
     "@babel/eslint-parser": "^7.25.1",
     "@babel/eslint-plugin": "^7.25.1",
     "eslint": "^8.57.0",
-    "jest": "^30.0.5"
+    "jest": "^29.7.0"
   },
   "packageManager": "yarn@4.4.0"
 }
