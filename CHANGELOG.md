@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.4.0](https://github.com/rakutenrewards/eslint-config/compare/v3.3.0...v3.4.0) (2025-08-04)
+
+
+### Features
+
+* **deps:** bump typescript from 5.8.3 to 5.9.2 ([#229](https://github.com/rakutenrewards/eslint-config/issues/229)) ([1fa203a](https://github.com/rakutenrewards/eslint-config/commit/1fa203a103be78fd153f5417c169f5609331c8c2))
+
 ## [3.3.0](https://github.com/rakutenrewards/eslint-config/compare/v3.2.0...v3.3.0) (2025-07-31)
 
 
