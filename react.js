@@ -7,7 +7,7 @@ import airbnbReactA11y from 'eslint-config-airbnb/rules/react-a11y';
 import reactHooksPlugin from 'eslint-plugin-react-hooks';
 import jsxA11yPlugin from 'eslint-plugin-jsx-a11y';
 
-/** @type {import('eslint').Linter.FlatConfig[]} */
+/** @type {import('eslint').Linter.FConfig[]} */
 export default [
   {
     files: ['**/*.jsx', '**/*.tsx'],
