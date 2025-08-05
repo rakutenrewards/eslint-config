@@ -6,7 +6,7 @@ import typescriptPlugin from '@typescript-eslint/eslint-plugin';
 import typescriptParser from '@typescript-eslint/parser';
 import importPlugin from 'eslint-plugin-import';
 
-/** @type {import('eslint').Linter.FConfig[]} */
+/** @type {import('eslint').Linter.Config[]} */
 export default [
   {
     files: ['**/*.ts', '**/*.tsx'],
