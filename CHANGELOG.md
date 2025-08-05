@@ -1,22 +1,5 @@
 # Changelog
 
-## [4.0.0](https://github.com/rakutenrewards/eslint-config/compare/v3.3.0...v4.0.0) (2025-01-XX)
-
-### ⚠ BREAKING CHANGES
-
-- Upgrade to ESLint v9 with Flat Config support ([#XXX](https://github.com/rakutenrewards/eslint-config/issues/XXX))
-- Convert all configuration files to ES modules
-- Change from CommonJS to ES module format
-- Update configuration structure to use Flat Config format
-
-### Features
-
-- **eslint:** upgrade to ESLint v9 ([#XXX](https://github.com/rakutenrewards/eslint-config/issues/XXX))
-- **config:** convert to Flat Config format for ESLint v9 ([#XXX](https://github.com/rakutenrewards/eslint-config/issues/XXX))
-- **modules:** convert all files to ES modules ([#XXX](https://github.com/rakutenrewards/eslint-config/issues/XXX))
-- **deps:** replace eslint-config-airbnb-base with @eslint/js for v9 compatibility ([#XXX](https://github.com/rakutenrewards/eslint-config/issues/XXX))
-- **docs:** update README with migration guide for v3.x to v4.x ([#XXX](https://github.com/rakutenrewards/eslint-config/issues/XXX))
-
 ## [3.3.0](https://github.com/rakutenrewards/eslint-config/compare/v3.2.0...v3.3.0) (2025-07-31)
 
 ### Features
