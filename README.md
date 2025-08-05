@@ -5,11 +5,15 @@
 This package provides ESLint [shareable configs](https://eslint.org/docs/developer-guide/shareable-configs) which allow us to
 maintain a consistent coding style across our Javascript repositories.
 
-Our base configuration, `ebates`, extends [eslint-config-airbnb-base](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb-base), both `base` and `strict` set of rules.
+Our base configuration, `ebates`, extends [@eslint/js](https://eslint.org/docs/latest/use/configure/configuration-files-new#using-predefined-configurations) recommended rules with additional custom rules for consistent coding style.
 We also provide configuration for other environments:
 
 - `ebates/react`
 - `ebates/typescript`
+
+## ESLint v9 Flat Config Support
+
+This package now supports ESLint v9 with the new Flat Config format. The configuration files are now ES modules and use the modern Flat Config structure.
 
 ## Installation
 
@@ -21,6 +25,21 @@ npx install-peerdeps --dev eslint-config-ebates
 ```
 
 _Note:_ `install-peerdeps` will automatically detect if you're using `yarn` or `npm`.
+
+### For ESLint v9 (Flat Config)
+
+Create an `eslint.config.js` file:
+
+```js
+import baseConfig from 'eslint-config-ebates';
+
+export default [
+  ...baseConfig,
+  // your additional configs...
+];
+```
+
+### For ESLint v8 (Legacy Config)
 
 In `.eslintrc.js`, simply add:
 
@@ -56,7 +75,20 @@ Run
 yarn add -D eslint-config-airbnb eslint-plugin-jsx-a11y eslint-plugin-react eslint-plugin-react-hooks
 ```
 
-Then update `.eslintrc.js`:
+#### For ESLint v9 (Flat Config)
+
+```js
+import baseConfig from 'eslint-config-ebates';
+import reactConfig from 'eslint-config-ebates/react';
+
+export default [
+  ...baseConfig,
+  ...reactConfig,
+  // your additional configs...
+];
+```
+
+#### For ESLint v8 (Legacy Config)
 
 ```js
 module.exports = {
@@ -79,7 +111,20 @@ Run
 yarn add -D @typescript-eslint/parser @typescript-eslint/eslint-plugin typescript
 ```
 
-Then update `.eslintrc.js`:
+#### For ESLint v9 (Flat Config)
+
+```js
+import baseConfig from 'eslint-config-ebates';
+import typescriptConfig from 'eslint-config-ebates/typescript';
+
+export default [
+  ...baseConfig,
+  ...typescriptConfig,
+  // your additional configs...
+];
+```
+
+#### For ESLint v8 (Legacy Config)
 
 ```js
 module.exports = {
@@ -87,3 +132,24 @@ module.exports = {
   // ...
 };
 ```
+
+## Migration from v3.x to v4.x
+
+If you're upgrading from version 3.x to 4.x, you'll need to:
+
+1. Update your ESLint version to v9
+2. Convert your configuration to use Flat Config format
+3. Update your package.json to include `"type": "module"` if using ES modules
+
+The main changes are:
+
+- Configuration files now export arrays instead of objects
+- Use of ES modules instead of CommonJS
+- New Flat Config structure with `files`, `languageOptions`, and `plugins` properties
+
+## Examples
+
+See the `example/` directory for complete configuration examples:
+
+- `example/eslint.config.js` - Flat Config format (ESLint v9)
+- `example/.eslintrc.js` - Legacy format (ESLint v8)

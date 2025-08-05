@@ -1,19 +1,28 @@
-const baseConfig = require('../index');
-const reactConfig = require('../react');
-const typescriptConfig = require('../typescript');
+import baseConfig from '../index.js';
+import reactConfig from '../react.js';
+import typescriptConfig from '../typescript.js';
 
-function isObject(obj) {
-  return typeof obj === 'object' && obj !== null;
+function isArray(arr) {
+  return Array.isArray(arr);
+}
+
+function hasRules(config) {
+  return config.some(
+    (configItem) => configItem.rules && typeof configItem.rules === 'object',
+  );
 }
 
 it('Validate base config', () => {
-  expect(isObject(baseConfig.rules)).toBe(true);
+  expect(isArray(baseConfig)).toBe(true);
+  expect(hasRules(baseConfig)).toBe(true);
 });
 
 it('Validate react config', () => {
-  expect(isObject(reactConfig.rules)).toBe(true);
+  expect(isArray(reactConfig)).toBe(true);
+  expect(hasRules(reactConfig)).toBe(true);
 });
 
 it('Validate typescript config', () => {
-  expect(isObject(typescriptConfig.rules)).toBe(true);
+  expect(isArray(typescriptConfig)).toBe(true);
+  expect(hasRules(typescriptConfig)).toBe(true);
 });

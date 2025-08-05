@@ -1,13 +1,15 @@
 {
   "name": "eslint-config-ebates",
-  "version": "3.3.0",
+  "version": "4.0.0",
   "description": "Rakuten Reward's base JS ESLint config for consistent coding style.",
   "main": "index.js",
+  "type": "module",
   "files": [
     "index.js",
     "react.js",
     "typescript.js",
     "constants.js",
+    "eslint.config.js",
     "LICENSE",
     "README.md",
     "CHANGELOG.md"
@@ -28,11 +30,11 @@
   "repository": "https://github.com/rakutenrewards/eslint-config",
   "scripts": {
     "lint": "eslint .",
-    "test": "jest ."
+    "test": "node --experimental-vm-modules node_modules/.bin/jest ."
   },
   "peerDependencies": {
     "@babel/core": "^7.25.2",
-    "eslint": "^8.57.0",
+    "eslint": "^9.0.0",
     "eslint-plugin-import": "^2.29.1"
   },
   "optionalDependencies": {
@@ -48,13 +50,13 @@
   "dependencies": {
     "@babel/eslint-parser": "^7.25.1",
     "@babel/eslint-plugin": "^7.25.1",
-    "eslint-config-airbnb-base": "^15.0.0"
+    "@eslint/js": "^9.32.0"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
     "@babel/eslint-parser": "^7.25.1",
     "@babel/eslint-plugin": "^7.25.1",
-    "eslint": "^8.57.0",
+    "eslint": "^9.0.0",
     "jest": "^29.7.0"
   },
   "packageManager": "yarn@4.4.0"
