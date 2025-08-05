@@ -62,17 +62,16 @@ npm info "eslint-config-ebates@latest" optionalDependencies
 ### React
 
 - Requirements:
-  - [eslint-config-airbnb](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb)
-  - [eslint-plugin-jsx-a11y](https://github.com/evcohen/eslint-plugin-jsx-a11y)
   - [eslint-plugin-react](https://github.com/yannickcr/eslint-plugin-react)
+  - [eslint-plugin-jsx-a11y](https://github.com/evcohen/eslint-plugin-jsx-a11y)
   - [eslint-plugin-react-hooks](https://github.com/facebook/react/tree/master/packages/eslint-plugin-react-hooks)
 
 Run
 
 ```bash
-# Install eslint-config-airbnb peer dependencies. Skip `eslint` as we've already installed it as
+# Install React plugin dependencies. Skip `eslint` as we've already installed it as
 # a peer dependency for our config earlier (in the Installation step).
-yarn add -D eslint-config-airbnb eslint-plugin-jsx-a11y eslint-plugin-react eslint-plugin-react-hooks
+yarn add -D eslint-plugin-jsx-a11y eslint-plugin-react eslint-plugin-react-hooks
 ```
 
 #### For ESLint v9 (Flat Config)

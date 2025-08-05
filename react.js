@@ -2,12 +2,11 @@
  * This file contains the rules for React.
  */
 import { OFF, WARNING, ERROR } from './constants.js';
-import airbnbReact from 'eslint-config-airbnb/rules/react';
-import airbnbReactA11y from 'eslint-config-airbnb/rules/react-a11y';
+import reactPlugin from 'eslint-plugin-react';
 import reactHooksPlugin from 'eslint-plugin-react-hooks';
 import jsxA11yPlugin from 'eslint-plugin-jsx-a11y';
 
-/** @type {import('eslint').Linter.FConfig[]} */
+/** @type {import('eslint').Linter.Config[]} */
 export default [
   {
     files: ['**/*.jsx', '**/*.tsx'],
@@ -19,13 +18,17 @@ export default [
       },
     },
     plugins: {
+      react: reactPlugin,
       'react-hooks': reactHooksPlugin,
       'jsx-a11y': jsxA11yPlugin,
     },
     rules: {
-      // Base React rules from airbnb
-      ...airbnbReact.rules,
-      ...airbnbReactA11y.rules,
+      // React plugin recommended rules
+      ...reactPlugin.configs.recommended.rules,
+      ...reactPlugin.configs['jsx-runtime'].rules,
+
+      // JSX A11y plugin recommended rules
+      ...jsxA11yPlugin.configs.recommended.rules,
 
       /* Base React rules */
       // Allow class methods that do not use `this`.
