@@ -2756,8 +2756,6 @@ __metadata:
       optional: true
     "@typescript-eslint/parser":
       optional: true
-    eslint-plugin-import:
-      optional: true
     eslint-plugin-jsx-a11y:
       optional: true
     eslint-plugin-react:
@@ -2765,6 +2763,9 @@ __metadata:
     eslint-plugin-react-hooks:
       optional: true
     typescript:
+      optional: true
+  peerDependenciesMeta:
+    eslint-plugin-import:
       optional: true
   languageName: unknown
   linkType: soft
