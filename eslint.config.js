@@ -1,4 +1,5 @@
 import baseConfig from './index.js';
+import { ERROR, OFF } from './constants.js';
 
 export default [
   ...baseConfig,
@@ -35,11 +36,11 @@ export default [
     },
     rules: {
       // Allow test files to have more relaxed rules
-      'no-console': 'off',
-      'no-unused-vars': 'off',
-      'comma-dangle': ['error', 'always-multiline'],
-      quotes: ['error', 'single'],
-      strict: ['error', 'never'],
+      'no-console': OFF,
+      'no-unused-vars': OFF,
+      'comma-dangle': [ERROR, 'always-multiline'],
+      quotes: [ERROR, 'single'],
+      strict: [ERROR, 'never'],
     },
   },
   {
@@ -65,9 +66,9 @@ export default [
       },
     },
     rules: {
-      'comma-dangle': ['error', 'always-multiline'],
-      quotes: ['error', 'single'],
-      strict: ['error', 'never'],
+      'comma-dangle': [ERROR, 'always-multiline'],
+      quotes: [ERROR, 'single'],
+      strict: [ERROR, 'never'],
     },
   },
 ];

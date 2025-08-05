@@ -67,9 +67,9 @@ describe('Base Config', () => {
     expect(configWithRules).toBeDefined();
 
     const rules = configWithRules.rules;
-    expect(rules['arrow-parens']).toEqual(['error', 'always']);
-    expect(rules['no-continue']).toBe('off');
-    expect(rules['no-underscore-dangle']).toBe('off');
+    expect(rules['arrow-parens']).toEqual([ERROR, 'always']);
+    expect(rules['no-continue']).toBe(OFF);
+    expect(rules['no-underscore-dangle']).toBe(OFF);
     expect(rules['max-len']).toBeDefined();
     expect(rules['no-use-before-define']).toBeDefined();
     expect(rules['prefer-destructuring']).toBeDefined();

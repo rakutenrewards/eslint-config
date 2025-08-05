@@ -1,4 +1,5 @@
 import projectConfig from '../eslint.config.js';
+import { OFF } from '../constants.js';
 
 describe('Project ESLint Config', () => {
   it('should be an array', () => {
@@ -24,8 +25,8 @@ describe('Project ESLint Config', () => {
       (config) =>
         config.files && config.files.some((file) => file.includes('test')),
     );
-    expect(testConfig.rules['no-console']).toBe('off');
-    expect(testConfig.rules['no-unused-vars']).toBe('off');
+    expect(testConfig.rules['no-console']).toBe(OFF);
+    expect(testConfig.rules['no-unused-vars']).toBe(OFF);
   });
 
   it('should have proper globals defined', () => {

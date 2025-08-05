@@ -31,7 +31,7 @@ export default [
       // this is disabled by default when using `plugin:import/typescript`
       'import/named': ERROR,
       'import/extensions': [
-        'error',
+        ERROR,
         'ignorePackages',
         {
           js: 'never',

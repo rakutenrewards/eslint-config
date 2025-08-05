@@ -3,6 +3,7 @@
  */
 import js from '@eslint/js';
 import importPlugin from 'eslint-plugin-import';
+import { ERROR, OFF } from './constants.js';
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
@@ -30,28 +31,28 @@ export default [
       ...importPlugin.configs.recommended.rules,
 
       // Custom rules
-      'arrow-parens': ['error', 'always'],
+      'arrow-parens': [ERROR, 'always'],
 
       // To allow for-in and for-of.
-      'no-restricted-syntax': ['error', 'LabeledStatement', 'WithStatement'],
+      'no-restricted-syntax': [ERROR, 'LabeledStatement', 'WithStatement'],
 
       // Allow to use `_` as unused variable e.g. when unpacking an array.
       'no-unused-vars': [
-        'error',
+        ERROR,
         {
           varsIgnorePattern: '_',
         },
       ],
 
       // Sometimes early exit of an iteration is more readable!
-      'no-continue': 'off',
+      'no-continue': OFF,
 
       // Allow to use `_` in functions and variable names
-      'no-underscore-dangle': 'off',
+      'no-underscore-dangle': OFF,
 
       // Set the max length of a line to 120 characters
       'max-len': [
-        'error',
+        ERROR,
         {
           code: 120,
           // sometimes response samples are documented in the comment which is too long
@@ -85,11 +86,11 @@ export default [
        * function pack() {
        * }
        */
-      'no-use-before-define': ['error', { functions: false }],
+      'no-use-before-define': [ERROR, { functions: false }],
 
       // Prefer destructuring unless the object has already been declared
       'prefer-destructuring': [
-        'error',
+        ERROR,
         {
           VariableDeclarator: {
             object: true,
