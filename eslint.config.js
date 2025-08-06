@@ -2,6 +2,9 @@ import baseConfig from './index.js';
 import { ERROR, OFF } from './constants.js';
 
 export default [
+  {
+    ignores: ['example/**'],
+  },
   ...baseConfig,
   {
     files: ['**/*.test.js', '**/*.spec.js', '**/*.config.js'],
@@ -69,6 +72,19 @@ export default [
       'comma-dangle': [ERROR, 'always-multiline'],
       quotes: [ERROR, 'single'],
       strict: [ERROR, 'never'],
+      'import/no-unresolved': [
+        ERROR,
+        {
+          ignore: [
+            '@typescript-eslint/eslint-plugin',
+            '@typescript-eslint/parser',
+            'eslint-plugin-jsx-a11y',
+            'eslint-plugin-react',
+            'eslint-plugin-react-hooks',
+            'typescript',
+          ],
+        },
+      ],
     },
   },
 ];
