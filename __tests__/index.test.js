@@ -66,7 +66,7 @@ describe('Base Config', () => {
     const configWithRules = baseConfig.find((config) => config.rules);
     expect(configWithRules).toBeDefined();
 
-    const rules = configWithRules.rules;
+    const { rules } = configWithRules;
     expect(rules['arrow-parens']).toEqual([ERROR, 'always']);
     expect(rules['no-continue']).toBe(OFF);
     expect(rules['no-underscore-dangle']).toBe(OFF);
@@ -121,7 +121,7 @@ describe('React Config', () => {
     const configWithRules = reactConfig.find((config) => config.rules);
     expect(configWithRules).toBeDefined();
 
-    const rules = configWithRules.rules;
+    const { rules } = configWithRules;
     expect(rules['class-methods-use-this']).toBe(OFF);
     expect(rules['react/prefer-stateless-function']).toBe(OFF);
     expect(rules['react/jsx-one-expression-per-line']).toBe(OFF);
@@ -172,7 +172,7 @@ describe('TypeScript Config', () => {
     const configWithRules = typescriptConfig.find((config) => config.rules);
     expect(configWithRules).toBeDefined();
 
-    const rules = configWithRules.rules;
+    const { rules } = configWithRules;
     expect(rules['import/named']).toBe(ERROR);
     expect(rules['import/extensions']).toBeDefined();
     expect(rules['react/jsx-filename-extension']).toEqual([

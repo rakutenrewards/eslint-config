@@ -32,7 +32,7 @@ describe('Project ESLint Config', () => {
   it('should have proper globals defined', () => {
     projectConfig.forEach((config) => {
       if (config.languageOptions?.globals) {
-        const globals = config.languageOptions.globals;
+        const { globals } = config.languageOptions;
         expect(globals.console).toBe('readonly');
         expect(globals.process).toBe('readonly');
         expect(globals.__dirname).toBe('readonly');
@@ -47,7 +47,7 @@ describe('Project ESLint Config', () => {
         config.files && config.files.some((file) => file.includes('test')),
     );
     if (testConfig.languageOptions?.globals) {
-      const globals = testConfig.languageOptions.globals;
+      const { globals } = testConfig.languageOptions;
       expect(globals.describe).toBe('readonly');
       expect(globals.it).toBe('readonly');
       expect(globals.test).toBe('readonly');

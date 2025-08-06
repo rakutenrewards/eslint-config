@@ -22,6 +22,7 @@ describe('Constants', () => {
 
   it('should be immutable', () => {
     expect(() => {
+      // eslint-disable-next-line no-import-assign
       OFF = 999;
     }).toThrow();
   });
