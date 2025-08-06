@@ -33,10 +33,10 @@ describe('Project ESLint Config', () => {
     projectConfig.forEach((config) => {
       if (config.languageOptions?.globals) {
         const { globals } = config.languageOptions;
-        expect(globals.console).toBe('readonly');
-        expect(globals.process).toBe('readonly');
-        expect(globals.__dirname).toBe('readonly');
-        expect(globals.__filename).toBe('readonly');
+        expect(globals.console).toBe(false);
+        expect(globals.process).toBe(false);
+        expect(globals.__dirname).toBe(false);
+        expect(globals.__filename).toBe(false);
       }
     });
   });
@@ -48,11 +48,11 @@ describe('Project ESLint Config', () => {
     );
     if (testConfig.languageOptions?.globals) {
       const { globals } = testConfig.languageOptions;
-      expect(globals.describe).toBe('readonly');
-      expect(globals.it).toBe('readonly');
-      expect(globals.test).toBe('readonly');
-      expect(globals.expect).toBe('readonly');
-      expect(globals.jest).toBe('readonly');
+      expect(globals.describe).toBe(false);
+      expect(globals.it).toBe(false);
+      expect(globals.test).toBe(false);
+      expect(globals.expect).toBe(false);
+      expect(globals.jest).toBe(false);
     }
   });
 
