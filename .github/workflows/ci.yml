@@ -20,13 +20,13 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v5
 
+      - name: Enable Corepack
+        run: corepack enable
+
       - name: Set up Node environment
         uses: actions/setup-node@v5
         with:
           node-version-file: '.nvmrc'
-
-      - name: Enable Corepack
-        run: corepack enable
 
       - name: Install Dependencies
         run: yarn install --immutable
