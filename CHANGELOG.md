@@ -1,5 +1,15 @@
 # Changelog
 
+## [3.4.0](https://github.com/rakutenrewards/eslint-config/compare/v3.3.0...v3.4.0) (2025-09-23)
+
+
+### Features
+
+* **deps:** bump @babel/eslint-parser from 7.28.0 to 7.28.4 ([#249](https://github.com/rakutenrewards/eslint-config/issues/249)) ([0a8c5ec](https://github.com/rakutenrewards/eslint-config/commit/0a8c5ec49cc9a4ca41123f410e5ddfd353c4d02b))
+* **deps:** bump @typescript-eslint/eslint-plugin from 8.38.0 to 8.44.0 ([#257](https://github.com/rakutenrewards/eslint-config/issues/257)) ([a25557f](https://github.com/rakutenrewards/eslint-config/commit/a25557f2c0d6e731bbc39c63fad57127c085a372))
+* **deps:** bump @typescript-eslint/parser from 8.38.0 to 8.44.0 ([#256](https://github.com/rakutenrewards/eslint-config/issues/256)) ([ea52372](https://github.com/rakutenrewards/eslint-config/commit/ea52372db2824123d17339ef10499806c0049528))
+* **deps:** bump typescript from 5.8.3 to 5.9.2 ([#229](https://github.com/rakutenrewards/eslint-config/issues/229)) ([1fa203a](https://github.com/rakutenrewards/eslint-config/commit/1fa203a103be78fd153f5417c169f5609331c8c2))
+
 ## [3.3.0](https://github.com/rakutenrewards/eslint-config/compare/v3.2.0...v3.3.0) (2025-07-31)
 
 
