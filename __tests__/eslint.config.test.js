@@ -1,5 +1,5 @@
-import projectConfig from '../eslint.config.js';
-import { OFF } from '../constants.js';
+const projectConfig = require('../eslint.config');
+const { OFF } = require('../constants');
 
 describe('Project ESLint Config', () => {
   it('should be an array', () => {

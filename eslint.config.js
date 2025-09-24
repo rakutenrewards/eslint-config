@@ -1,8 +1,8 @@
-import baseConfig from './index.js';
-import { ERROR, OFF } from './constants.js';
-import globals from 'globals';
+const baseConfig = require('./index');
+const { ERROR, OFF } = require('./constants');
+const globals = require('globals');
 
-export default [
+module.exports = [
   {
     ignores: ['example/**'],
   },

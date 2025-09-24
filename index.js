@@ -1,26 +1,26 @@
 /**
  * This file contains the base rules for modern Javascript.
  */
-import js from '@eslint/js';
-import importPlugin from 'eslint-plugin-import';
-import { ERROR, OFF } from './constants.js';
+const js = require('@eslint/js');
+const importPlugin = require('eslint-plugin-import');
+const { ERROR, OFF } = require('./constants');
 
 /** @type {import('eslint').Linter.Config[]} */
-export default [
+module.exports = [
   {
     ignores: ['**/node_modules/**', '**/dist/**', '**/build/**', '**/.git/**'],
   },
   {
     files: ['**/*.js', '**/*.mjs'],
     languageOptions: {
-      parser: await import('@babel/eslint-parser'),
+      parser: require('@babel/eslint-parser'),
       parserOptions: {
         ecmaVersion: 'latest',
         sourceType: 'module',
       },
     },
     plugins: {
-      '@babel': await import('@babel/eslint-plugin'),
+      '@babel': require('@babel/eslint-plugin'),
       import: importPlugin,
     },
     rules: {

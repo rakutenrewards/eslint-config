@@ -1,13 +1,13 @@
 /**
  * This file contains the rules for TypeScript.
  */
-import { WARNING, OFF, ERROR } from './constants.js';
-import typescriptPlugin from '@typescript-eslint/eslint-plugin';
-import typescriptParser from '@typescript-eslint/parser';
-import importPlugin from 'eslint-plugin-import';
+const { WARNING, OFF, ERROR } = require('./constants');
+const typescriptPlugin = require('@typescript-eslint/eslint-plugin');
+const typescriptParser = require('@typescript-eslint/parser');
+const importPlugin = require('eslint-plugin-import');
 
 /** @type {import('eslint').Linter.Config[]} */
-export default [
+module.exports = [
   {
     files: ['**/*.ts', '**/*.tsx'],
     languageOptions: {

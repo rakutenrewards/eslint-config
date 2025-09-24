@@ -3,7 +3,6 @@
   "version": "3.4.0",
   "description": "Rakuten Reward's base JS ESLint config for consistent coding style.",
   "main": "index.js",
-  "type": "module",
   "files": [
     "index.js",
     "react.js",
@@ -30,7 +29,7 @@
   "repository": "https://github.com/rakutenrewards/eslint-config",
   "scripts": {
     "lint": "eslint .",
-    "test": "node --experimental-vm-modules node_modules/.bin/jest ."
+    "test": "jest ."
   },
   "peerDependencies": {
     "@babel/core": "^7.28.0",

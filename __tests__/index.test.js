@@ -1,7 +1,7 @@
-import baseConfig from '../index.js';
-import reactConfig from '../react.js';
-import typescriptConfig from '../typescript.js';
-import { OFF, WARNING, ERROR } from '../constants.js';
+const baseConfig = require('../index');
+const reactConfig = require('../react');
+const typescriptConfig = require('../typescript');
+const { OFF, WARNING, ERROR } = require('../constants');
 
 function isArray(arr) {
   return Array.isArray(arr);
@@ -229,15 +229,15 @@ describe('Error Handling', () => {
   it('should handle missing optional dependencies gracefully', () => {
     // Test that the configs can be imported without throwing
     expect(() => {
-      import('../index.js');
+      require('../index');
     }).not.toThrow();
 
     expect(() => {
-      import('../react.js');
+      require('../react');
     }).not.toThrow();
 
     expect(() => {
-      import('../typescript.js');
+      require('../typescript');
     }).not.toThrow();
   });
 
