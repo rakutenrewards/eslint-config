@@ -3,7 +3,7 @@
  */
 const js = require('@eslint/js');
 const importPlugin = require('eslint-plugin-import');
-const { ERROR, OFF } = require('./constants');
+const { ERROR, OFF, WARNING } = require('./constants');
 
 /** @type {import('eslint').Linter.Config[]} */
 module.exports = [
@@ -61,6 +61,10 @@ module.exports = [
           ignoreStrings: true,
           // similar to the strings above
           ignoreTemplateLiterals: true,
+          // certain urls could be pretty long
+          ignoreUrls: true,
+          // regex could be pretty long
+          ignoreRegExpLiterals: true,
         },
       ],
 
@@ -95,6 +99,44 @@ module.exports = [
           VariableDeclarator: {
             object: true,
           },
+        },
+      ],
+
+      // Warn about console statements
+      'no-console': WARNING,
+
+      // Default parameters should come last
+      'default-param-last': ERROR,
+
+      // shouldn't need to provide file extension for js files
+      'import/extensions': [
+        ERROR,
+        'ignorePackages',
+        {
+          js: 'never',
+        },
+      ],
+
+      // disallow reassignment of function parameters
+      // disallow parameter object manipulation except for specific exclusions
+      // rule: https://eslint.org/docs/rules/no-param-reassign.html
+      'no-param-reassign': [
+        ERROR,
+        {
+          props: true,
+          ignorePropertyModificationsFor: [
+            'acc', // for reduce accumulators
+            'accumulator', // for reduce accumulators
+            'e', // for e.returnvalue
+            'ctx', // for Koa routing
+            'context', // for Koa routing
+            'req', // for Express requests
+            'request', // for Express requests
+            'res', // for Express responses
+            'response', // for Express responses
+            '$scope', // for Angular 1 scopes
+            'staticContext', // for ReactRouter context
+          ],
         },
       ],
     },
