@@ -9,7 +9,7 @@ const jsxA11yPlugin = require('eslint-plugin-jsx-a11y');
 /** @type {import('eslint').Linter.Config[]} */
 module.exports = [
   {
-    files: ['**/*.{js,jsx,ts,tsx}'],
+    files: ['**/*.jsx', '**/*.tsx'],
     languageOptions: {
       parserOptions: {
         ecmaFeatures: {
