@@ -58,6 +58,11 @@ module.exports = [
       /* React Hooks rules */
       'react-hooks/rules-of-hooks': ERROR,
       'react-hooks/exhaustive-deps': WARNING,
+
+      // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/no-danger.md
+      'react/no-danger': WARNING,
+      // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/no-danger-with-children.md
+      'react/no-danger-with-children': ERROR,
     },
   },
 ];
