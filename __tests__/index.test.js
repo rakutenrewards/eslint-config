@@ -127,7 +127,7 @@ describe('React Config', () => {
     expect(rules['react/jsx-one-expression-per-line']).toBe(OFF);
     expect(rules['react/jsx-filename-extension']).toEqual([
       WARNING,
-      { extensions: ['.js'] },
+      { extensions: ['.ts', '.tsx', '.js', '.jsx'] },
     ]);
     expect(rules['react-hooks/rules-of-hooks']).toBe(ERROR);
     expect(rules['react-hooks/exhaustive-deps']).toBe(WARNING);
@@ -175,11 +175,6 @@ describe('TypeScript Config', () => {
     const { rules } = configWithRules;
     expect(rules['import/named']).toBe(ERROR);
     expect(rules['import/extensions']).toBeDefined();
-    expect(rules['react/jsx-filename-extension']).toEqual([
-      WARNING,
-      { extensions: ['.ts', '.tsx', '.js', '.jsx'] },
-    ]);
-    expect(rules['react/function-component-definition']).toBe(OFF);
     expect(rules['@typescript-eslint/no-empty-object-type']).toBe(OFF);
   });
 });
