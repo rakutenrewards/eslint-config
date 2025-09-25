@@ -33,6 +33,8 @@ module.exports = [
       // Custom rules
       'arrow-parens': [ERROR, 'always'],
 
+      'no-restricted-exports': OFF,
+
       // To allow for-in and for-of.
       'no-restricted-syntax': [ERROR, 'LabeledStatement', 'WithStatement'],
 
@@ -108,12 +110,16 @@ module.exports = [
       // Default parameters should come last
       'default-param-last': ERROR,
 
+      // it reports error when we intentionally use named export
+      'import/prefer-default-export': OFF,
+
       // shouldn't need to provide file extension for js files
       'import/extensions': [
         ERROR,
         'ignorePackages',
         {
           js: 'never',
+          jsx: 'never',
         },
       ],
 

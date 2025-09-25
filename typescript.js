@@ -1,7 +1,7 @@
 /**
  * This file contains the rules for TypeScript.
  */
-const { WARNING, OFF, ERROR } = require('./constants');
+const { OFF, ERROR } = require('./constants');
 const typescriptPlugin = require('@typescript-eslint/eslint-plugin');
 const typescriptParser = require('@typescript-eslint/parser');
 const importPlugin = require('eslint-plugin-import');
@@ -40,13 +40,7 @@ module.exports = [
           tsx: 'never',
         },
       ],
-      // Allow TypeScript files to have JSX
-      'react/jsx-filename-extension': [
-        WARNING,
-        { extensions: ['.ts', '.tsx', '.js', '.jsx'] },
-      ],
-      // controls whether function components need to be function declarations or arrow functions
-      'react/function-component-definition': OFF,
+
       '@typescript-eslint/no-empty-object-type': OFF,
     },
   },

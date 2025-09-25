@@ -37,8 +37,15 @@ module.exports = [
       'react/prefer-stateless-function': OFF,
       // Warn when there's more than one expression per line in JSX.
       'react/jsx-one-expression-per-line': OFF,
-      // Allow .js files to have JSX
-      'react/jsx-filename-extension': [WARNING, { extensions: ['.js'] }],
+
+      // Allow TypeScript files to have JSX
+      'react/jsx-filename-extension': [
+        WARNING,
+        { extensions: ['.ts', '.tsx', '.js', '.jsx'] },
+      ],
+
+      // controls whether function components need to be function declarations or arrow functions
+      'react/function-component-definition': OFF,
 
       /* React Hooks rules */
       'react-hooks/rules-of-hooks': ERROR,
