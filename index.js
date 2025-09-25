@@ -110,6 +110,14 @@ module.exports = [
       // Default parameters should come last
       'default-param-last': ERROR,
 
+      // ensure absolute imports are above relative imports and that unassigned imports are ignored
+      // https://github.com/import-js/eslint-plugin-import/blob/master/docs/rules/order.md
+      // TODO: enforce a stricter convention in module import order?
+      'import/order': [
+        'error',
+        { groups: [['builtin', 'external', 'internal']] },
+      ],
+
       // it reports error when we intentionally use named export
       'import/prefer-default-export': OFF,
 

@@ -5,6 +5,7 @@ const { OFF, WARNING, ERROR } = require('./constants');
 const reactPlugin = require('eslint-plugin-react');
 const reactHooksPlugin = require('eslint-plugin-react-hooks');
 const jsxA11yPlugin = require('eslint-plugin-jsx-a11y');
+const importPlugin = require('eslint-plugin-import');
 
 /** @type {import('eslint').Linter.Config[]} */
 module.exports = [
@@ -30,6 +31,12 @@ module.exports = [
 
       // JSX A11y plugin recommended rules
       ...jsxA11yPlugin.flatConfigs.recommended.rules,
+
+      // Import plugin rules
+      ...importPlugin.flatConfigs.react.rules,
+
+      // Warn about console statements
+      'no-console': WARNING,
 
       /* Base React rules */
       // Allow class methods that do not use `this`.
