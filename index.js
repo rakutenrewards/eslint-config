@@ -11,7 +11,6 @@ module.exports = [
     ignores: ['**/node_modules/**', '**/dist/**', '**/build/**', '**/.git/**'],
   },
   {
-    files: ['**/*.js', '**/*.mjs'],
     languageOptions: {
       parser: require('@babel/eslint-parser'),
       parserOptions: {
