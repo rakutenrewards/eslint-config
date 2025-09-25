@@ -3,7 +3,7 @@
  */
 const js = require('@eslint/js');
 const importPlugin = require('eslint-plugin-import');
-// const { ERROR, OFF, WARNING } = require('./constants');
+const { WARNING } = require('./constants');
 
 /** @type {import('eslint').Linter.Config[]} */
 module.exports = [
@@ -28,6 +28,8 @@ module.exports = [
 
       // Import plugin rules
       ...importPlugin.flatConfigs.recommended.rules,
+
+      'no-console': WARNING,
     },
   },
 ];
