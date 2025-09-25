@@ -1,7 +1,7 @@
 /**
  * This file contains the rules for React.
  */
-// const { OFF, WARNING, ERROR } = require('./constants');
+const { WARNING, ERROR } = require('./constants');
 const reactPlugin = require('eslint-plugin-react');
 const reactHooksPlugin = require('eslint-plugin-react-hooks');
 const jsxA11yPlugin = require('eslint-plugin-jsx-a11y');
@@ -34,6 +34,11 @@ module.exports = [
 
       // Import plugin rules
       ...importPlugin.flatConfigs.react.rules,
+
+      // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/no-danger.md
+      'react/no-danger': WARNING,
+      // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/no-danger-with-children.md
+      'react/no-danger-with-children': ERROR,
     },
   },
 ];
