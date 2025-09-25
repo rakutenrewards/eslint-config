@@ -1,7 +1,7 @@
 /**
  * This file contains the rules for TypeScript.
  */
-const { OFF, ERROR, WARNING } = require('./constants');
+// const { OFF, ERROR, WARNING } = require('./constants');
 const typescriptPlugin = require('@typescript-eslint/eslint-plugin');
 const typescriptParser = require('@typescript-eslint/parser');
 const importPlugin = require('eslint-plugin-import');
@@ -27,24 +27,6 @@ module.exports = [
       ...typescriptPlugin.configs.recommended.rules,
       // enables ts/tsx file usage when importing modules
       ...importPlugin.flatConfigs.typescript.rules,
-
-      // Warn about console statements
-      'no-console': WARNING,
-
-      // this is disabled by default when using `plugin:import/typescript`
-      'import/named': ERROR,
-      'import/extensions': [
-        ERROR,
-        'ignorePackages',
-        {
-          js: 'never',
-          jsx: 'never',
-          ts: 'never',
-          tsx: 'never',
-        },
-      ],
-
-      '@typescript-eslint/no-empty-object-type': OFF,
     },
   },
 ];
