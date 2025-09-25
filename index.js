@@ -28,7 +28,7 @@ module.exports = [
       ...js.configs.recommended.rules,
 
       // Import plugin rules
-      ...importPlugin.configs.recommended.rules,
+      ...importPlugin.flatConfigs.recommended.rules,
 
       // Custom rules
       'arrow-parens': [ERROR, 'always'],

@@ -9,7 +9,7 @@ const jsxA11yPlugin = require('eslint-plugin-jsx-a11y');
 /** @type {import('eslint').Linter.Config[]} */
 module.exports = [
   {
-    files: ['**/*.jsx', '**/*.tsx'],
+    files: ['**/*.{js,jsx,ts,tsx}'],
     languageOptions: {
       parserOptions: {
         ecmaFeatures: {
@@ -24,11 +24,12 @@ module.exports = [
     },
     rules: {
       // React plugin recommended rules
-      ...reactPlugin.configs.recommended.rules,
-      ...reactPlugin.configs['jsx-runtime'].rules,
+      ...reactPlugin.configs.flat.recommended.rules,
+      ...reactPlugin.configs.flat['jsx-runtime'].rules,
+      ...reactHooksPlugin.configs['recommended-latest'].rules,
 
       // JSX A11y plugin recommended rules
-      ...jsxA11yPlugin.configs.recommended.rules,
+      ...jsxA11yPlugin.flatConfigs.recommended.rules,
 
       /* Base React rules */
       // Allow class methods that do not use `this`.
