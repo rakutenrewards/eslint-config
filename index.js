@@ -3,7 +3,7 @@
  */
 const js = require('@eslint/js');
 const importPlugin = require('eslint-plugin-import');
-const { WARNING } = require('./constants');
+const { WARNING, ERROR } = require('./constants');
 
 /** @type {import('eslint').Linter.Config[]} */
 module.exports = [
@@ -30,6 +30,24 @@ module.exports = [
       ...importPlugin.flatConfigs.recommended.rules,
 
       'no-console': WARNING,
+
+      // Set the max length of a line to 120 characters
+      'max-len': [
+        ERROR,
+        {
+          code: 120,
+          // sometimes response samples are documented in the comment which is too long
+          ignoreComments: true,
+          // certain url could be pretty long
+          ignoreStrings: true,
+          // similar to the strings above
+          ignoreTemplateLiterals: true,
+          // certain urls could be pretty long
+          ignoreUrls: true,
+          // regex could be pretty long
+          ignoreRegExpLiterals: true,
+        },
+      ],
     },
   },
 ];
