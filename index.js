@@ -83,6 +83,9 @@ module.exports = [
           ],
         },
       ],
+
+      // require camel case names
+      camelcase: [ERROR, { properties: 'never', ignoreDestructuring: false }],
     },
   },
 ];
