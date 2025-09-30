@@ -9,6 +9,11 @@ const importPlugin = require('eslint-plugin-import');
 
 /** @type {import('eslint').Linter.Config[]} */
 module.exports = [
+  reactPlugin.configs.recommended,
+  reactPlugin.configs['jsx-runtime'],
+  reactHooksPlugin.configs['recommended-latest'],
+  jsxA11yPlugin.flatConfigs.recommended,
+  importPlugin.flatConfigs.react,
   {
     files: ['**/*.jsx', '**/*.tsx'],
     languageOptions: {
@@ -18,23 +23,7 @@ module.exports = [
         },
       },
     },
-    plugins: {
-      react: reactPlugin,
-      'react-hooks': reactHooksPlugin,
-      'jsx-a11y': jsxA11yPlugin,
-    },
     rules: {
-      // React plugin recommended rules
-      ...reactPlugin.configs.flat.recommended.rules,
-      ...reactPlugin.configs.flat['jsx-runtime'].rules,
-      ...reactHooksPlugin.configs['recommended-latest'].rules,
-
-      // JSX A11y plugin recommended rules
-      ...jsxA11yPlugin.flatConfigs.recommended.rules,
-
-      // Import plugin rules
-      ...importPlugin.flatConfigs.react.rules,
-
       // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/no-danger.md
       'react/no-danger': WARNING,
       // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/no-danger-with-children.md

@@ -8,6 +8,8 @@ const importPlugin = require('eslint-plugin-import');
 
 /** @type {import('eslint').Linter.Config[]} */
 module.exports = [
+  typescriptPlugin.configs.recommended,
+  importPlugin.flatConfigs.typescript,
   {
     files: ['**/*.ts', '**/*.tsx'],
     languageOptions: {
@@ -17,16 +19,6 @@ module.exports = [
         sourceType: 'module',
       },
     },
-    plugins: {
-      // allows TS rule usage
-      '@typescript-eslint': typescriptPlugin,
-      import: importPlugin,
-    },
-    rules: {
-      // turns on rules from their TypeScript-specific plugin
-      ...typescriptPlugin.configs.recommended.rules,
-      // enables ts/tsx file usage when importing modules
-      ...importPlugin.flatConfigs.typescript.rules,
-    },
+    rules: {},
   },
 ];

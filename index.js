@@ -7,6 +7,8 @@ const { WARNING, ERROR } = require('./constants');
 
 /** @type {import('eslint').Linter.Config[]} */
 module.exports = [
+  js.configs.recommended,
+  importPlugin.flatConfigs.recommended,
   {
     ignores: ['**/node_modules/**', '**/dist/**', '**/build/**', '**/.git/**'],
   },
@@ -20,15 +22,8 @@ module.exports = [
     },
     plugins: {
       '@babel': require('@babel/eslint-plugin'),
-      import: importPlugin,
     },
     rules: {
-      // Base rules from @eslint/js
-      ...js.configs.recommended.rules,
-
-      // Import plugin rules
-      ...importPlugin.flatConfigs.recommended.rules,
-
       'no-console': WARNING,
 
       // Set the max length of a line to 120 characters
@@ -91,7 +86,7 @@ module.exports = [
       // https://github.com/import-js/eslint-plugin-import/blob/master/docs/rules/order.md
       // TODO: enforce a stricter convention in module import order?
       'import/order': [
-        'error',
+        ERROR,
         { groups: [['builtin', 'external', 'internal']] },
       ],
     },
