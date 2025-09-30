@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 const projectConfig = require('../eslint.config');
 const { OFF } = require('../constants');
 

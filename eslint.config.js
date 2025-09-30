@@ -1,6 +1,6 @@
+const globals = require('globals');
 const baseConfig = require('./index');
 const { ERROR, OFF } = require('./constants');
-const globals = require('globals');
 
 module.exports = [
   {

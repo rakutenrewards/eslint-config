@@ -1,11 +1,11 @@
 /**
  * This file contains the rules for React.
  */
-const { WARNING, ERROR } = require('./constants');
 const reactPlugin = require('eslint-plugin-react');
 const reactHooksPlugin = require('eslint-plugin-react-hooks');
 const jsxA11yPlugin = require('eslint-plugin-jsx-a11y');
 const importPlugin = require('eslint-plugin-import');
+const { WARNING, ERROR } = require('./constants');
 
 /** @type {import('eslint').Linter.Config[]} */
 module.exports = [
