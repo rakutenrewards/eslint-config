@@ -79,6 +79,9 @@ module.exports = [
         },
       ],
 
+      // https://eslint.org/docs/rules/default-param-last
+      'default-param-last': ERROR,
+
       // require camel case names
       camelcase: [ERROR, { properties: 'never', ignoreDestructuring: false }],
 
