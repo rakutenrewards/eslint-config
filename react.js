@@ -3,7 +3,7 @@
  */
 const { WARNING, ERROR } = require('./constants');
 const reactPlugin = require('eslint-plugin-react');
-const reactHooksPlugin = require('eslint-plugin-react-hooks');
+// const reactHooksPlugin = require('eslint-plugin-react-hooks');
 const jsxA11yPlugin = require('eslint-plugin-jsx-a11y');
 const importPlugin = require('eslint-plugin-import');
 
@@ -11,7 +11,7 @@ const importPlugin = require('eslint-plugin-import');
 module.exports = [
   reactPlugin.configs.flat.recommended,
   reactPlugin.configs.flat['jsx-runtime'],
-  reactHooksPlugin.configs['recommended-latest'],
+  // reactHooksPlugin.configs['recommended-latest'],
   jsxA11yPlugin.flatConfigs.recommended,
   importPlugin.flatConfigs.react,
   {
