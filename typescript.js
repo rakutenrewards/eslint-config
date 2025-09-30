@@ -1,10 +1,10 @@
 /**
  * This file contains the rules for TypeScript.
  */
-const { OFF } = require('./constants');
 
 const tseslint = require('typescript-eslint');
 const importPlugin = require('eslint-plugin-import');
+const { OFF } = require('./constants');
 
 /** @type {import('eslint').Linter.Config[]} */
 module.exports = [
