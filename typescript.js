@@ -16,8 +16,4 @@ module.exports = [
       '@typescript-eslint/no-require-imports': OFF,
     },
   },
-  {
-    files: ['**/*.ts', '**/*.tsx'],
-    rules: {},
-  },
 ];
