@@ -9,8 +9,8 @@ const importPlugin = require('eslint-plugin-import');
 
 /** @type {import('eslint').Linter.Config[]} */
 module.exports = [
-  reactPlugin.configs.recommended,
-  reactPlugin.configs['jsx-runtime'],
+  reactPlugin.configs.flat.recommended,
+  reactPlugin.configs.flat['jsx-runtime'],
   reactHooksPlugin.configs['recommended-latest'],
   jsxA11yPlugin.flatConfigs.recommended,
   importPlugin.flatConfigs.react,
