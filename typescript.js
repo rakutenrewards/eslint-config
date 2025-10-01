@@ -29,6 +29,12 @@ module.exports = [
           functions: false,
         },
       ],
+
+      // the recommended configs for typescript-eslint doesn't have this rule
+      'no-shadow': OFF, // replaced by ts-eslint rule below
+      '@typescript-eslint/no-shadow': ERROR,
+
+      '@typescript-eslint/explicit-module-boundary-types': OFF,
     },
   },
 ];
