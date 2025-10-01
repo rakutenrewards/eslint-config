@@ -15,6 +15,17 @@ module.exports = [
   jsxA11yPlugin.flatConfigs.recommended,
   importPlugin.flatConfigs.react,
   {
+    rules: {
+      'react/jsx-file-extension': [
+        ERROR,
+        {
+          allow: 'as-needed',
+          extensions: ['.jsx', '.tsx'],
+        },
+      ],
+    },
+  },
+  {
     files: ['**/*.jsx', '**/*.tsx'],
     languageOptions: {
       parserOptions: {
