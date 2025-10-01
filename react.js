@@ -15,17 +15,6 @@ module.exports = [
   jsxA11yPlugin.flatConfigs.recommended,
   importPlugin.flatConfigs.react,
   {
-    rules: {
-      'react/jsx-filename-extension': [
-        ERROR,
-        {
-          allow: 'as-needed',
-          extensions: ['.jsx', '.ts', '.tsx'],
-        },
-      ],
-    },
-  },
-  {
     files: ['**/*.jsx', '**/*.tsx'],
     languageOptions: {
       parserOptions: {
@@ -45,6 +34,8 @@ module.exports = [
   {
     files: ['**/*.ts', '**/*.tsx'],
     rules: {
+      'react/jsx-filename-extension': OFF,
+
       // https://github.com/yannickcr/eslint-plugin-react/issues/2396
       // `defaultProps` rule to be deprecated on function components.
       // we turn it off for ts, and may turn it off for all when it's deprecated.
