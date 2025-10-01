@@ -13,6 +13,7 @@ module.exports = [
   {
     files: ['**/*.js'],
     rules: {
+      // for some reason, this gets enabled by default, which is not ideal for JS files
       '@typescript-eslint/no-require-imports': OFF,
     },
   },
