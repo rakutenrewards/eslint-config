@@ -35,6 +35,8 @@ module.exports = [
       '@typescript-eslint/no-shadow': ERROR,
 
       '@typescript-eslint/explicit-module-boundary-types': OFF,
+
+      '@typescript-eslint/no-explicit-any': ERROR,
     },
   },
 ];
