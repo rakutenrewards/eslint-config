@@ -15,6 +15,14 @@ module.exports = [
   jsxA11yPlugin.flatConfigs.recommended,
   importPlugin.flatConfigs.react,
   {
+    settings: {
+      react: {
+        version: 'detect',
+        defaultVersion: '18.3',
+      },
+    },
+  },
+  {
     files: ['**/*.jsx', '**/*.tsx'],
     languageOptions: {
       parserOptions: {
