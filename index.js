@@ -24,6 +24,7 @@ module.exports = [
       '@babel': require('@babel/eslint-plugin'),
     },
     rules: {
+      'no-alert': ERROR,
       'no-console': WARNING,
 
       // Set the max length of a line to 120 characters
