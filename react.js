@@ -56,4 +56,10 @@ module.exports = [
       'react/prop-types': OFF,
     },
   },
+  {
+    files: '**/*.{test,spec}.{js,jsx,ts,tsx}',
+    rules: {
+      'react/display-name': OFF,
+    },
+  },
 ];
