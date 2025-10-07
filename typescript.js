@@ -37,6 +37,11 @@ module.exports = [
       '@typescript-eslint/explicit-module-boundary-types': OFF,
 
       '@typescript-eslint/no-explicit-any': ERROR,
+
+      '@typescript-eslint/no-empty-object-type': [
+        ERROR,
+        { allowInterfaces: 'with-single-extends' },
+      ],
     },
   },
 ];
