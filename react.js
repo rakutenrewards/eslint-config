@@ -40,6 +40,22 @@ module.exports = [
       // Prevent usage of Array index in keys
       // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/no-array-index-key.md
       'react/no-array-index-key': ERROR,
+
+      // Warn against unnecessary React imports when using JSX transform
+      // https://eslint.org/docs/latest/rules/no-restricted-imports
+      'no-restricted-imports': [
+        WARNING,
+        {
+          patterns: [
+            {
+              group: ['react'],
+              importNamePattern: '^(default|React)$',
+              message:
+                'Default React import is not needed with JSX transform. Import specific hooks/APIs instead (e.g., import { useState } from "react").',
+            },
+          ],
+        },
+      ],
     },
   },
   // TypeScript + React files (with JSX)
