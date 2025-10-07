@@ -73,7 +73,7 @@ module.exports = [
     },
   },
   {
-    files: '**/*.{test,spec}.{js,jsx,ts,tsx}',
+    files: ['**/*.{test,spec}.{js,jsx,ts,tsx}'],
     rules: {
       'react/display-name': OFF,
     },
