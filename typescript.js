@@ -4,7 +4,7 @@
 
 const tseslint = require('typescript-eslint');
 const importPlugin = require('eslint-plugin-import');
-const { OFF, ERROR } = require('./constants');
+const { OFF, ERROR, WARNING } = require('./constants');
 
 /** @type {import('eslint').Linter.Config[]} */
 module.exports = [
@@ -36,7 +36,19 @@ module.exports = [
 
       '@typescript-eslint/explicit-module-boundary-types': OFF,
 
-      '@typescript-eslint/no-explicit-any': ERROR,
+      /**
+       * allow the use of `any` type, but warn about it.
+       *
+       * TODO: turn this to ERROR in the future major version bump.
+       */
+      '@typescript-eslint/no-explicit-any': WARNING,
+      /**
+       * we no longer need to import React in files that use JSX,
+       * so we warn about it to avoid excessive import errors.
+       *
+       * TODO: turn this to ERROR in the future major version bump.
+       */
+      '@typescript-eslint/no-unused-vars': WARNING,
 
       '@typescript-eslint/no-empty-object-type': [
         ERROR,
