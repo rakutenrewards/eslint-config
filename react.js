@@ -36,6 +36,10 @@ module.exports = [
       'react/no-danger': WARNING,
       // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/no-danger-with-children.md
       'react/no-danger-with-children': ERROR,
+
+      // Prevent usage of Array index in keys
+      // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/no-array-index-key.md
+      'react/no-array-index-key': ERROR,
     },
   },
   // TypeScript + React files (with JSX)
