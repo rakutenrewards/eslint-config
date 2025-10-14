@@ -38,9 +38,9 @@ describe('React Config', () => {
     expect(hasFilesPattern(reactConfig)).toBe(true);
     // Check that at least one config targets JSX/TSX files
     const hasJsxTsxFiles = reactConfig.some((config) =>
-      config.files?.some((pattern) =>
-        pattern.includes('jsx') || pattern.includes('tsx')
-      )
+      config.files?.some(
+        (pattern) => pattern.includes('jsx') || pattern.includes('tsx'),
+      ),
     );
     expect(hasJsxTsxFiles).toBe(true);
   });
