@@ -106,6 +106,7 @@ export default [
 - React Hooks rules
 - Accessibility (a11y) rules
 - Prevents common React anti-patterns
+- Detects unnecessary useEffect usage and suggests better alternatives
 
 ### TypeScript Rules
 
