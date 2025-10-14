@@ -11,7 +11,7 @@ const { WARNING, ERROR, OFF } = require('./constants');
 module.exports = [
   reactPlugin.configs.flat.recommended,
   reactPlugin.configs.flat['jsx-runtime'],
-  reactHooksPlugin.configs['recommended-latest'],
+  reactHooksPlugin.configs.flat.recommended,
   jsxA11yPlugin.flatConfigs.recommended,
   importPlugin.flatConfigs.react,
   {
