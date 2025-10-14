@@ -4,6 +4,7 @@
 const reactPlugin = require('eslint-plugin-react');
 const reactHooksPlugin = require('eslint-plugin-react-hooks');
 const jsxA11yPlugin = require('eslint-plugin-jsx-a11y');
+const reactYouMightNotNeedAnEffect = require('eslint-plugin-react-you-might-not-need-an-effect');
 const importPlugin = require('eslint-plugin-import');
 const { WARNING, ERROR, OFF } = require('./constants');
 
@@ -13,6 +14,7 @@ module.exports = [
   reactPlugin.configs.flat['jsx-runtime'],
   reactHooksPlugin.configs.flat.recommended,
   jsxA11yPlugin.flatConfigs.recommended,
+  reactYouMightNotNeedAnEffect.configs.recommended,
   importPlugin.flatConfigs.react,
   {
     settings: {
