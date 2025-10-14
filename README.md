@@ -1,89 +1,132 @@
-[![Build Status](https://travis-ci.org/ebates-inc/eslint-config.svg?branch=master)](https://travis-ci.org/ebates-inc/eslint-config)
-
 # eslint-config-ebates
 
-This package provides ESLint [shareable configs](https://eslint.org/docs/developer-guide/shareable-configs) which allow us to
-maintain a consistent coding style across our Javascript repositories.
+Rakuten Rewards' shareable ESLint configuration for modern JavaScript, React, and TypeScript projects.
 
-Our base configuration, `ebates`, extends [eslint-config-airbnb-base](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb-base), both `base` and `strict` set of rules.
-We also provide configuration for other environments:
+## Features
 
-- `ebates/react`
-- `ebates/typescript`
+- **Base configuration**: Modern JavaScript with Babel parser support
+- **React configuration**: React, JSX, and accessibility rules
+- **TypeScript configuration**: TypeScript-specific linting rules
+- **ESLint v9 Flat Config**: Uses the modern flat config format
 
 ## Installation
 
-To install both the dependencies and peer-dependencies, make sure you have npm 5+
-and run
+Install the package and its required peer dependencies:
 
 ```bash
-npx install-peerdeps --dev eslint-config-ebates
+yarn add -D eslint-config-ebates eslint@^9.0.0 @babel/core@^7.28.0
 ```
 
-_Note:_ `install-peerdeps` will automatically detect if you're using `yarn` or `npm`.
+That's it! All ESLint plugins (including React, TypeScript, and import plugins) are bundled with the package.
 
-In `.eslintrc.js`, simply add:
+## Usage
+
+### Base Configuration
+
+Create an `eslint.config.js` file in your project root:
 
 ```js
-module.exports = {
-  extends: 'ebates',
-  // ...
-};
+import baseConfig from 'eslint-config-ebates';
+
+export default [
+  ...baseConfig,
+];
 ```
 
-## Other configurations
-
-Other configurations require dependencies listed as optional. First, install the main package as noted in the previous
-section. Then run the following command to check the supported version to install.
-
-```bash
-npm info "eslint-config-ebates@latest" optionalDependencies
-```
-
-### React
-
-- Requirements:
-  - [eslint-config-airbnb](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb)
-  - [eslint-plugin-jsx-a11y](https://github.com/evcohen/eslint-plugin-jsx-a11y)
-  - [eslint-plugin-react](https://github.com/yannickcr/eslint-plugin-react)
-  - [eslint-plugin-react-hooks](https://github.com/facebook/react/tree/master/packages/eslint-plugin-react-hooks)
-
-Run
-
-```bash
-# Install eslint-config-airbnb peer dependencies. Skip `eslint` as we've already installed it as
-# a peer dependency for our config earlier (in the Installation step).
-yarn add -D eslint-config-airbnb eslint-plugin-jsx-a11y eslint-plugin-react eslint-plugin-react-hooks
-```
-
-Then update `.eslintrc.js`:
+### With React
 
 ```js
-module.exports = {
-  extends: ['ebates', 'ebates/react'],
-  // ...
-};
+import baseConfig from 'eslint-config-ebates';
+import reactConfig from 'eslint-config-ebates/react';
+
+export default [
+  ...baseConfig,
+  ...reactConfig,
+];
 ```
 
-### TypeScript
-
-- Requirements:
-  - [@typescript-eslint/parser](https://github.com/typescript-eslint/typescript-eslint)
-  - [@typescript-eslint/eslint-plugin](https://github.com/typescript-eslint/typescript-eslint)
-
-Run
-
-```bash
-# Install @typescript-eslint peer dependencies. Skip `eslint` as we've already installed it as
-# a peer dependency for our config earlier (in the Installation step).
-yarn add -D @typescript-eslint/parser @typescript-eslint/eslint-plugin typescript
-```
-
-Then update `.eslintrc.js`:
+### With TypeScript
 
 ```js
-module.exports = {
-  extends: ['ebates', 'ebates/typescript'],
-  // ...
-};
+import baseConfig from 'eslint-config-ebates';
+import typescriptConfig from 'eslint-config-ebates/typescript';
+
+export default [
+  ...baseConfig,
+  ...typescriptConfig,
+];
 ```
+
+### Full Stack (Base + React + TypeScript)
+
+```js
+import baseConfig from 'eslint-config-ebates';
+import reactConfig from 'eslint-config-ebates/react';
+import typescriptConfig from 'eslint-config-ebates/typescript';
+
+export default [
+  ...baseConfig,
+  ...reactConfig,
+  ...typescriptConfig,
+];
+```
+
+### Custom Rules
+
+Add your own rules after the base configurations:
+
+```js
+import baseConfig from 'eslint-config-ebates';
+
+export default [
+  ...baseConfig,
+  {
+    files: ['**/*.js', '**/*.jsx'],
+    rules: {
+      'no-console': 'error',
+    },
+  },
+];
+```
+
+## What's Included
+
+### Base Rules
+
+- ESLint recommended rules
+- Babel parser for modern JavaScript
+- Import plugin for module validation
+- Code style rules (max line length, camelCase, etc.)
+- Best practices (no-param-reassign, no-alert, etc.)
+
+### React Rules
+
+- React recommended rules
+- JSX runtime configuration (no React import required)
+- React Hooks rules
+- Accessibility (a11y) rules
+- Prevents common React anti-patterns
+
+### TypeScript Rules
+
+- TypeScript recommended rules
+- TypeScript-specific parser and plugin
+- Proper handling of TypeScript syntax
+- Import resolution for TypeScript files
+
+## Examples
+
+See the [example/](./example) directory for complete configuration examples.
+
+## Requirements
+
+- Node.js `^20.15.0`
+- ESLint `^9.0.0`
+
+## License
+
+MIT
+
+## Contributing
+
+Issues and pull requests are welcome at [https://github.com/rakutenrewards/eslint-config](https://github.com/rakutenrewards/eslint-config)

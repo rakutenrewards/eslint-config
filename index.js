@@ -1,88 +1,98 @@
 /**
  * This file contains the base rules for modern Javascript.
  */
-const { OFF, ERROR } = require('./constants');
+const js = require('@eslint/js');
+const importPlugin = require('eslint-plugin-import');
+const { WARNING, ERROR } = require('./constants');
 
-/** @type {import('eslint').Linter.LegacyConfig} */
-module.exports = {
-  extends: [
-    ...[
-      'eslint-config-airbnb-base',
-      'eslint-config-airbnb-base/rules/strict',
-    ].map(require.resolve),
-    'plugin:import/recommended',
-  ],
-
-  plugins: ['@babel'],
-
-  parser: '@babel/eslint-parser',
-
-  rules: {
-    'arrow-parens': [ERROR, 'always'],
-
-    // To allow for-in and for-of.
-    'no-restricted-syntax': [ERROR, 'LabeledStatement', 'WithStatement'],
-
-    // Allow to use `_` as unused variable e.g. when unpacking an array.
-    'no-unused-vars': [
-      ERROR,
-      {
-        varsIgnorePattern: '_',
-      },
-    ],
-
-    // Sometimes early exit of an iteration is more readable!
-    'no-continue': OFF,
-
-    // Allow to use `_` in functions and variable names
-    'no-underscore-dangle': OFF,
-
-    // Set the max length of a line to 120 characters
-    'max-len': [
-      ERROR,
-      {
-        code: 120,
-        // sometimes response samples are documented in the comment which is too long
-        ignoreComments: true,
-        // certain url could be pretty long
-        ignoreStrings: true,
-        // similar to the strings above
-        ignoreTemplateLiterals: true,
-      },
-    ],
-
-    /**
-     * to allow helper functions to be defined below the core function to get an overview of the feature quickly
-     * @example
-     * export default function makeCake() {
-     *   prepareIngredients();
-     *   prepareOven();
-     *   bake();
-     *   pack();
-     * }
-     *
-     * function  prepareIngredients() {
-     * }
-     *
-     * function prepareOven() {
-     * }
-     *
-     * function bake() {
-     * }
-     *
-     * function pack() {
-     * }
-     */
-    'no-use-before-define': [ERROR, { functions: false }],
-
-    // Prefer destructuring unless the object has already been declared
-    'prefer-destructuring': [
-      ERROR,
-      {
-        VariableDeclarator: {
-          object: true,
-        },
-      },
-    ],
+/** @type {import('eslint').Linter.Config[]} */
+module.exports = [
+  js.configs.recommended,
+  importPlugin.flatConfigs.recommended,
+  {
+    ignores: ['**/node_modules/**', '**/dist/**', '**/build/**', '**/.git/**'],
   },
-};
+  {
+    languageOptions: {
+      parser: require('@babel/eslint-parser'),
+      parserOptions: {
+        ecmaVersion: 'latest',
+        sourceType: 'module',
+      },
+    },
+    plugins: {
+      '@babel': require('@babel/eslint-plugin'),
+    },
+    rules: {
+      'no-alert': ERROR,
+      'no-console': WARNING,
+
+      // Set the max length of a line to 120 characters
+      'max-len': [
+        ERROR,
+        {
+          code: 120,
+          // sometimes response samples are documented in the comment which is too long
+          ignoreComments: true,
+          // certain url could be pretty long
+          ignoreStrings: true,
+          // similar to the strings above
+          ignoreTemplateLiterals: true,
+          // certain urls could be pretty long
+          ignoreUrls: true,
+          // regex could be pretty long
+          ignoreRegExpLiterals: true,
+        },
+      ],
+
+      // disallow dangling underscores in identifiers
+      // https://eslint.org/docs/rules/no-underscore-dangle
+      'no-underscore-dangle': [
+        ERROR,
+        {
+          allow: [],
+          allowAfterThis: false,
+          allowAfterSuper: false,
+          enforceInMethodNames: true,
+        },
+      ],
+
+      // disallow reassignment of function parameters
+      // disallow parameter object manipulation except for specific exclusions
+      // rule: https://eslint.org/docs/rules/no-param-reassign.html
+      'no-param-reassign': [
+        ERROR,
+        {
+          props: true,
+          ignorePropertyModificationsFor: [
+            'acc', // for reduce accumulators
+            'accumulator', // for reduce accumulators
+            'e', // for e.returnvalue
+            'ctx', // for Koa routing
+            'context', // for Koa routing
+            'req', // for Express requests
+            'request', // for Express requests
+            'res', // for Express responses
+            'response', // for Express responses
+            '$scope', // for Angular 1 scopes
+            'staticContext', // for ReactRouter context
+          ],
+        },
+      ],
+
+      // https://eslint.org/docs/rules/default-param-last
+      'default-param-last': ERROR,
+
+      // require camel case names
+      camelcase: [ERROR, { properties: 'never', ignoreDestructuring: false }],
+
+      // ensure absolute imports are above relative imports and that unassigned imports are ignored
+      // https://github.com/import-js/eslint-plugin-import/blob/master/docs/rules/order.md
+      // TODO: enforce a stricter convention in module import order?
+      'import/order': [
+        ERROR,
+        { groups: [['builtin', 'external', 'internal']] },
+      ],
+    },
+  },
+];
