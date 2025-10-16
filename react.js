@@ -8,6 +8,13 @@ const reactYouMightNotNeedAnEffect = require('eslint-plugin-react-you-might-not-
 const importPlugin = require('eslint-plugin-import');
 const { WARNING, ERROR, OFF } = require('./constants');
 
+const reactHooksRules = Object.entries(
+  reactHooksPlugin.configs.flat.recommended.rules,
+).reduce((acc, [key]) => {
+  acc[key] = WARNING;
+  return acc;
+}, {});
+
 /** @type {import('eslint').Linter.Config[]} */
 module.exports = [
   reactPlugin.configs.flat.recommended,
@@ -42,6 +49,10 @@ module.exports = [
       // Prevent usage of Array index in keys
       // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/no-array-index-key.md
       'react/no-array-index-key': ERROR,
+
+      // setting these to WARNING as they are good practices, but may require
+      // significant refactoring in some cases.
+      ...reactHooksRules,
     },
   },
   // TypeScript + React files (with JSX)
