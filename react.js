@@ -15,6 +15,13 @@ const reactHooksRules = Object.entries(
   return acc;
 }, {});
 
+const reactYouMightNotNeedAnEffectRules = Object.entries(
+  reactYouMightNotNeedAnEffect.configs.recommended.rules,
+).reduce((acc, [key]) => {
+  acc[key] = WARNING;
+  return acc;
+}, {});
+
 /** @type {import('eslint').Linter.Config[]} */
 module.exports = [
   reactPlugin.configs.flat.recommended,
@@ -53,6 +60,7 @@ module.exports = [
       // setting these to WARNING as they are good practices, but may require
       // significant refactoring in some cases.
       ...reactHooksRules,
+      ...reactYouMightNotNeedAnEffectRules,
     },
   },
   // TypeScript + React files (with JSX)
