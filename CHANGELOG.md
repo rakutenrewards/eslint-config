@@ -1,5 +1,24 @@
 # Changelog
 
+## [4.0.0](https://github.com/rakutenrewards/eslint-config/compare/v3.4.0...v4.0.0) (2025-10-16)
+
+
+### ⚠ BREAKING CHANGES
+
+* Migrate to ESLint v9's Flat Config format ([#231](https://github.com/rakutenrewards/eslint-config/issues/231))
+
+### Features
+
+* APP-255 - Add `eslint-plugin-react-you-might-not-need-an-effect` to React config ([#269](https://github.com/rakutenrewards/eslint-config/issues/269)) ([e559f8d](https://github.com/rakutenrewards/eslint-config/commit/e559f8d9330bc999d46909dab43f6eb65cc934ca))
+* APP-255 - Convert React Hooks rules and YMNNAE rules to warnings ([#271](https://github.com/rakutenrewards/eslint-config/issues/271)) ([581ef80](https://github.com/rakutenrewards/eslint-config/commit/581ef80e74d61728b6bd2e91b4275cd135c324e5))
+* Migrate to ESLint v9's Flat Config format ([#231](https://github.com/rakutenrewards/eslint-config/issues/231)) ([c99a46b](https://github.com/rakutenrewards/eslint-config/commit/c99a46b2e60f207b8676793460bfd9efd4e9ea09))
+* Move `eslint-plugin-react-you-might-not-need-an-effect` to dependencies ([80e7ced](https://github.com/rakutenrewards/eslint-config/commit/80e7ced85fa63527464fd8b528472332889174c2))
+
+
+### Bug Fixes
+
+* APP-255 - Move `eslint-plugin-react-you-might-not-need-an-effect` to dependencies ([#270](https://github.com/rakutenrewards/eslint-config/issues/270)) ([80e7ced](https://github.com/rakutenrewards/eslint-config/commit/80e7ced85fa63527464fd8b528472332889174c2))
+
 ## [3.4.0](https://github.com/rakutenrewards/eslint-config/compare/v3.3.0...v3.4.0) (2025-09-23)
 
 
