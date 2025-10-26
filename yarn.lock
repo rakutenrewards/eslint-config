@@ -2416,7 +2416,7 @@ __metadata:
     eslint-plugin-jsx-a11y: "npm:^6.10.2"
     eslint-plugin-react: "npm:^7.37.5"
     eslint-plugin-react-hooks: "npm:^7.0.0"
-    eslint-plugin-react-you-might-not-need-an-effect: "npm:^0.5.6"
+    eslint-plugin-react-you-might-not-need-an-effect: "npm:^0.6.1"
     globals: "npm:^16.3.0"
     jest: "npm:^30.1.3"
     typescript: "npm:^5.9.3"
@@ -2519,15 +2519,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-react-you-might-not-need-an-effect@npm:^0.5.6":
-  version: 0.5.6
-  resolution: "eslint-plugin-react-you-might-not-need-an-effect@npm:0.5.6"
+"eslint-plugin-react-you-might-not-need-an-effect@npm:^0.6.1":
+  version: 0.6.1
+  resolution: "eslint-plugin-react-you-might-not-need-an-effect@npm:0.6.1"
   dependencies:
     eslint-utils: "npm:^3.0.0"
     globals: "npm:^16.2.0"
   peerDependencies:
     eslint: ">=8.40.0"
-  checksum: 10c0/8e78cbfcf6760c59ce5cd9b33ce73cfaaab9acc5cfdc05ce6f3d77e4ae29256c14e43efe2b83dd855d26812e80a3529ca768514c434166b856035baeb33ca598
+  checksum: 10c0/945945c36158346bfd28eedb3f374a201722b2d64ea9ca58887e931b878ddd28c6ac81cf55e0147c7d30db5e00912104db3c89cc0929cdbdb3e828891deb280a
   languageName: node
   linkType: hard
 
