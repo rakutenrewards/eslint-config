@@ -1,5 +1,18 @@
 # Changelog
 
+## [4.1.0](https://github.com/rakutenrewards/eslint-config/compare/v4.0.0...v4.1.0) (2025-11-12)
+
+
+### Features
+
+* **deps:** bump @babel/eslint-parser from 7.28.4 to 7.28.5 ([#277](https://github.com/rakutenrewards/eslint-config/issues/277)) ([8af05f8](https://github.com/rakutenrewards/eslint-config/commit/8af05f86258f951fbdbb431670091dad016aab34))
+* **deps:** bump @eslint/js from 9.36.0 to 9.39.1 ([#286](https://github.com/rakutenrewards/eslint-config/issues/286)) ([13270d6](https://github.com/rakutenrewards/eslint-config/commit/13270d62262a5f688802d9edad7387ebc83060b8))
+* **deps:** bump eslint-plugin-react-hooks from 7.0.0 to 7.0.1 ([#279](https://github.com/rakutenrewards/eslint-config/issues/279)) ([a58321f](https://github.com/rakutenrewards/eslint-config/commit/a58321f65959a6a01123fdaef11d8b4aed1b01cc))
+* **deps:** bump eslint-plugin-react-you-might-not-need-an-effect ([2211eb2](https://github.com/rakutenrewards/eslint-config/commit/2211eb28f8f404757d70c29469c121dbcea235a1))
+* **deps:** bump eslint-plugin-react-you-might-not-need-an-effect from 0.5.6 to 0.7.0 ([#282](https://github.com/rakutenrewards/eslint-config/issues/282)) ([2211eb2](https://github.com/rakutenrewards/eslint-config/commit/2211eb28f8f404757d70c29469c121dbcea235a1))
+* **deps:** bump globals from 16.4.0 to 16.5.0 ([#285](https://github.com/rakutenrewards/eslint-config/issues/285)) ([28443e3](https://github.com/rakutenrewards/eslint-config/commit/28443e3774f4b6168edea041bc96627e29accc7b))
+* **deps:** bump typescript-eslint from 8.45.0 to 8.46.3 ([#288](https://github.com/rakutenrewards/eslint-config/issues/288)) ([cb982d8](https://github.com/rakutenrewards/eslint-config/commit/cb982d85f893f4cd36c397ddaccba68fbf8a2b62))
+
 ## [4.0.0](https://github.com/rakutenrewards/eslint-config/compare/v3.4.0...v4.0.0) (2025-10-16)
 
 
