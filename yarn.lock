@@ -2445,7 +2445,7 @@ __metadata:
     eslint-plugin-jsx-a11y: "npm:^6.10.2"
     eslint-plugin-react: "npm:^7.37.5"
     eslint-plugin-react-hooks: "npm:^7.0.0"
-    eslint-plugin-react-you-might-not-need-an-effect: "npm:^0.7.0"
+    eslint-plugin-react-you-might-not-need-an-effect: "npm:^0.8.1"
     globals: "npm:^16.3.0"
     jest: "npm:^30.1.3"
     typescript: "npm:^5.9.3"
@@ -2548,15 +2548,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-react-you-might-not-need-an-effect@npm:^0.7.0":
-  version: 0.7.0
-  resolution: "eslint-plugin-react-you-might-not-need-an-effect@npm:0.7.0"
+"eslint-plugin-react-you-might-not-need-an-effect@npm:^0.8.1":
+  version: 0.8.1
+  resolution: "eslint-plugin-react-you-might-not-need-an-effect@npm:0.8.1"
   dependencies:
-    eslint-utils: "npm:^3.0.0"
     globals: "npm:^16.2.0"
   peerDependencies:
     eslint: ">=8.40.0"
-  checksum: 10c0/c770ed42cb65c7f2ef4ef428f0d1239af3bbab70d39835bb3593bd1299f27aeaef988841635a9d13b35a2ce5596e6db3df04c5269c04f91557ed7220ac7aff23
+  checksum: 10c0/b6cb24b7ce9db11535c4327e9befc0afa928001fa6e5dad8968d9b43d019f60ef18665b2cdd3cbc5391a1eb8d2a6100a138dee8b6e8c0a488dd01a047fc983d8
   languageName: node
   linkType: hard
 
@@ -2615,18 +2614,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-utils@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "eslint-utils@npm:3.0.0"
-  dependencies:
-    eslint-visitor-keys: "npm:^2.0.0"
-  peerDependencies:
-    eslint: ">=5"
-  checksum: 10c0/45aa2b63667a8d9b474c98c28af908d0a592bed1a4568f3145cd49fb5d9510f545327ec95561625290313fe126e6d7bdfe3fdbdb6f432689fab6b9497d3bfb52
-  languageName: node
-  linkType: hard
-
-"eslint-visitor-keys@npm:^2.0.0, eslint-visitor-keys@npm:^2.1.0":
+"eslint-visitor-keys@npm:^2.1.0":
   version: 2.1.0
   resolution: "eslint-visitor-keys@npm:2.1.0"
   checksum: 10c0/9f0e3a2db751d84067d15977ac4b4472efd6b303e369e6ff241a99feac04da758f46d5add022c33d06b53596038dbae4b4aceb27c7e68b8dfc1055b35e495787
