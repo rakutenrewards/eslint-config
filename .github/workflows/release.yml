@@ -6,6 +6,7 @@ on:
 permissions:
   contents: write
   pull-requests: write
+  id-token: write
 
 name: Release
 
@@ -36,9 +37,6 @@ jobs:
       - name: Install Dependencies
         if: ${{ steps.release.outputs.release_created }}
         run: yarn install --immutable
-
-      - name: Add NPM Auth Credentials
-        run: yarn config set npmAuthToken ${{ secrets.NPM_AUTH_TOKEN }}
 
       - name: Publish package
         if: ${{ steps.release.outputs.release_created }}
