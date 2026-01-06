@@ -1,5 +1,14 @@
 # Changelog
 
+## [4.3.0](https://github.com/rakutenrewards/eslint-config/compare/v4.2.0...v4.3.0) (2026-01-06)
+
+
+### Features
+
+* **deps:** Bump eslint-plugin-react-you-might-not-need-an-effect ([65a3753](https://github.com/rakutenrewards/eslint-config/commit/65a3753a420b553d5c54764867f85f88a7144fde))
+* **deps:** Bump eslint-plugin-react-you-might-not-need-an-effect from 0.8.1 to 0.8.3 ([#303](https://github.com/rakutenrewards/eslint-config/issues/303)) ([65a3753](https://github.com/rakutenrewards/eslint-config/commit/65a3753a420b553d5c54764867f85f88a7144fde))
+* **deps:** Bump typescript-eslint from 8.50.0 to 8.51.0 ([#304](https://github.com/rakutenrewards/eslint-config/issues/304)) ([fb1e8e7](https://github.com/rakutenrewards/eslint-config/commit/fb1e8e7e16f0e3c6271bdf894715369522f3fb46))
+
 ## [4.2.0](https://github.com/rakutenrewards/eslint-config/compare/v4.1.0...v4.2.0) (2025-12-23)
 
 
