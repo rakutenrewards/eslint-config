@@ -1,5 +1,16 @@
 # Changelog
 
+## [4.3.0](https://github.com/rakutenrewards/eslint-config/compare/v4.2.0...v4.3.0) (2026-02-17)
+
+
+### Features
+
+* **deps:** Bump @babel/eslint-parser from 7.28.5 to 7.28.6 ([#312](https://github.com/rakutenrewards/eslint-config/issues/312)) ([5a9d046](https://github.com/rakutenrewards/eslint-config/commit/5a9d0468f63c67b9af2c1144f519d119758685ba))
+* **deps:** Bump eslint-plugin-react-you-might-not-need-an-effect ([65a3753](https://github.com/rakutenrewards/eslint-config/commit/65a3753a420b553d5c54764867f85f88a7144fde))
+* **deps:** Bump eslint-plugin-react-you-might-not-need-an-effect from 0.8.1 to 0.8.3 ([#303](https://github.com/rakutenrewards/eslint-config/issues/303)) ([65a3753](https://github.com/rakutenrewards/eslint-config/commit/65a3753a420b553d5c54764867f85f88a7144fde))
+* **deps:** Bump typescript-eslint from 8.50.0 to 8.51.0 ([#304](https://github.com/rakutenrewards/eslint-config/issues/304)) ([fb1e8e7](https://github.com/rakutenrewards/eslint-config/commit/fb1e8e7e16f0e3c6271bdf894715369522f3fb46))
+* **deps:** Bump typescript-eslint from 8.51.0 to 8.55.0 ([#320](https://github.com/rakutenrewards/eslint-config/issues/320)) ([1a5459e](https://github.com/rakutenrewards/eslint-config/commit/1a5459e2270b90fec897378963cc2ac8d2519aed))
+
 ## [4.2.0](https://github.com/rakutenrewards/eslint-config/compare/v4.1.0...v4.2.0) (2025-12-23)
 
 
