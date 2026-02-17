@@ -41,3 +41,5 @@ jobs:
       - name: Publish package
         if: ${{ steps.release.outputs.release_created }}
         run: yarn npm publish
+        env:
+          YARN_NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
