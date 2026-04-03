@@ -10,13 +10,6 @@ module.exports = [
   {
     files: ['**/*.test.js', '**/*.spec.js', '**/*.config.js'],
     languageOptions: {
-      parserOptions: {
-        requireConfigFile: false,
-        babelOptions: {
-          babelrc: false,
-          configFile: false,
-        },
-      },
       globals: {
         ...globals.node,
         ...globals.jest,
@@ -34,13 +27,6 @@ module.exports = [
   {
     files: ['**/*.js'],
     languageOptions: {
-      parserOptions: {
-        requireConfigFile: false,
-        babelOptions: {
-          babelrc: false,
-          configFile: false,
-        },
-      },
       globals: {
         ...globals.node,
       },

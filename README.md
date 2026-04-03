@@ -4,17 +4,17 @@ Rakuten Rewards' shareable ESLint configuration for modern JavaScript, React, an
 
 ## Features
 
-- **Base configuration**: Modern JavaScript with Babel parser support
+- **Base configuration**: Modern JavaScript with ESLint's built-in espree parser
 - **React configuration**: React, JSX, and accessibility rules
 - **TypeScript configuration**: TypeScript-specific linting rules
-- **ESLint v9 Flat Config**: Uses the modern flat config format
+- **ESLint v10 Flat Config**: Uses the modern flat config format
 
 ## Installation
 
 Install the package and its required peer dependencies:
 
 ```bash
-yarn add -D eslint-config-ebates eslint@^9.0.0 @babel/core@^7.28.0
+yarn add -D eslint-config-ebates eslint@^10.0.0
 ```
 
 That's it! All ESLint plugins (including React, TypeScript, and import plugins) are bundled with the package.
@@ -94,7 +94,7 @@ export default [
 ### Base Rules
 
 - ESLint recommended rules
-- Babel parser for modern JavaScript
+- espree parser for modern JavaScript (ES2024+)
 - Import plugin for module validation
 - Code style rules (max line length, camelCase, etc.)
 - Best practices (no-param-reassign, no-alert, etc.)
@@ -121,8 +121,10 @@ See the [example/](./example) directory for complete configuration examples.
 
 ## Requirements
 
-- Node.js `^20.15.0`
-- ESLint `^9.0.0`
+- Node.js `^20.19.0 || ^22.13.0 || >=24`
+- ESLint `^10.0.0`
+
+> **Note:** Some bundled plugins (`eslint-plugin-react`, `eslint-plugin-react-hooks`, `eslint-plugin-import`, `eslint-plugin-jsx-a11y`) have not yet updated their `peerDependencies` to list ESLint v10 explicitly. They are compatible in practice — you may see peer-dependency warnings during installation that can be safely ignored.
 
 ## License
 

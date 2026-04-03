@@ -74,10 +74,13 @@ describe('Base Config', () => {
     expect(rules['import/order']).toBeDefined();
   });
 
-  it('should have Babel parser configured', () => {
-    const configWithParser = baseConfig.find(
-      (config) => config.languageOptions?.parser,
+  it('should have ecmaVersion latest configured', () => {
+    const configWithParserOptions = baseConfig.find(
+      (config) => config.languageOptions?.parserOptions?.ecmaVersion,
     );
-    expect(configWithParser).toBeDefined();
+    expect(configWithParserOptions).toBeDefined();
+    expect(
+      configWithParserOptions.languageOptions.parserOptions.ecmaVersion,
+    ).toBe('latest');
   });
 });

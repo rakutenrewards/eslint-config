@@ -14,14 +14,10 @@ module.exports = [
   },
   {
     languageOptions: {
-      parser: require('@babel/eslint-parser'),
       parserOptions: {
         ecmaVersion: 'latest',
         sourceType: 'module',
       },
-    },
-    plugins: {
-      '@babel': require('@babel/eslint-plugin'),
     },
     rules: {
       'no-alert': ERROR,
