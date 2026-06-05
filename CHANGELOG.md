@@ -1,5 +1,28 @@
 # Changelog
 
+## [4.4.0](https://github.com/rakutenrewards/eslint-config/compare/v4.3.0...v4.4.0) (2026-06-05)
+
+
+### Features
+
+* **deps:** Bump @babel/eslint-parser from 7.28.6 to 7.29.7 ([#351](https://github.com/rakutenrewards/eslint-config/issues/351)) ([d1ef490](https://github.com/rakutenrewards/eslint-config/commit/d1ef49029fefa75dbca912de041eae1098c81d34))
+* **deps:** Bump @babel/eslint-plugin from 7.27.1 to 7.29.7 ([#355](https://github.com/rakutenrewards/eslint-config/issues/355)) ([11e0f04](https://github.com/rakutenrewards/eslint-config/commit/11e0f04b0cfc5eef279168a6fdffdde6780bb7e1))
+* **deps:** Bump brace-expansion from 1.1.12 to 1.1.13 ([#340](https://github.com/rakutenrewards/eslint-config/issues/340)) ([4cbdfe1](https://github.com/rakutenrewards/eslint-config/commit/4cbdfe17c2ce0d319f9bbcbe36bd9518d5268486))
+* **deps:** Bump eslint-plugin-react-hooks from 7.0.1 to 7.1.1 ([#345](https://github.com/rakutenrewards/eslint-config/issues/345)) ([18f9923](https://github.com/rakutenrewards/eslint-config/commit/18f99235f23d29700bdf48fa95f8ac043f8576c3))
+* **deps:** Bump eslint-plugin-react-you-might-not-need-an-effect ([e77d657](https://github.com/rakutenrewards/eslint-config/commit/e77d6574b59172af80cda774f3e8ad72f9e1d387))
+* **deps:** Bump eslint-plugin-react-you-might-not-need-an-effect ([046454b](https://github.com/rakutenrewards/eslint-config/commit/046454b45013a500b40d5be9e79341aff351676f))
+* **deps:** Bump eslint-plugin-react-you-might-not-need-an-effect ([b6fbb29](https://github.com/rakutenrewards/eslint-config/commit/b6fbb29f50785dab67d3b708aad3c2b717711af8))
+* **deps:** Bump eslint-plugin-react-you-might-not-need-an-effect from 0.10.1 to 0.10.2 ([#349](https://github.com/rakutenrewards/eslint-config/issues/349)) ([046454b](https://github.com/rakutenrewards/eslint-config/commit/046454b45013a500b40d5be9e79341aff351676f))
+* **deps:** Bump eslint-plugin-react-you-might-not-need-an-effect from 0.10.2 to 0.11.1 ([#352](https://github.com/rakutenrewards/eslint-config/issues/352)) ([e77d657](https://github.com/rakutenrewards/eslint-config/commit/e77d6574b59172af80cda774f3e8ad72f9e1d387))
+* **deps:** Bump eslint-plugin-react-you-might-not-need-an-effect from 0.8.3 to 0.10.1 ([#333](https://github.com/rakutenrewards/eslint-config/issues/333)) ([b6fbb29](https://github.com/rakutenrewards/eslint-config/commit/b6fbb29f50785dab67d3b708aad3c2b717711af8))
+* **deps:** Bump flatted from 3.3.1 to 3.4.2 ([#336](https://github.com/rakutenrewards/eslint-config/issues/336)) ([89371e0](https://github.com/rakutenrewards/eslint-config/commit/89371e03a94638233eff9ea8244bfc4d0159fc2f))
+* **deps:** Bump globals from 16.5.0 to 17.4.0 ([#330](https://github.com/rakutenrewards/eslint-config/issues/330)) ([5ae8048](https://github.com/rakutenrewards/eslint-config/commit/5ae80484e772b65199103f32b3dcd97114bfddcb))
+* **deps:** Bump globals from 17.4.0 to 17.6.0 ([#348](https://github.com/rakutenrewards/eslint-config/issues/348)) ([28eecc9](https://github.com/rakutenrewards/eslint-config/commit/28eecc9122d159d4fc4cc166310c131da26c3cf8))
+* **deps:** Bump minimatch from 3.1.2 to 3.1.5 ([#328](https://github.com/rakutenrewards/eslint-config/issues/328)) ([0891bef](https://github.com/rakutenrewards/eslint-config/commit/0891befae554e8c143a95bf2d19a14191589faae))
+* **deps:** Bump picomatch from 2.3.1 to 2.3.2 ([#339](https://github.com/rakutenrewards/eslint-config/issues/339)) ([253b69b](https://github.com/rakutenrewards/eslint-config/commit/253b69ba98e013eedce71b35abc61c30d4d697f2))
+* **deps:** Bump typescript-eslint from 8.55.0 to 8.59.4 ([#337](https://github.com/rakutenrewards/eslint-config/issues/337)) ([b6ee5cb](https://github.com/rakutenrewards/eslint-config/commit/b6ee5cbf7a359ad4dd6184fcebf20ee4a4329387))
+* **deps:** Bump typescript-eslint from 8.59.4 to 8.60.0 ([#354](https://github.com/rakutenrewards/eslint-config/issues/354)) ([ceaced5](https://github.com/rakutenrewards/eslint-config/commit/ceaced50905994b9f472b22905afc39649aaba31))
+
 ## [4.3.0](https://github.com/rakutenrewards/eslint-config/compare/v4.2.0...v4.3.0) (2026-02-17)
 
 
