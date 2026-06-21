@@ -71,15 +71,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/eslint-plugin@npm:^7.27.1":
-  version: 7.29.7
-  resolution: "@babel/eslint-plugin@npm:7.29.7"
-  dependencies:
-    eslint-rule-composer: "npm:^0.3.0"
+"@babel/eslint-plugin@npm:^8.0.1":
+  version: 8.0.1
+  resolution: "@babel/eslint-plugin@npm:8.0.1"
   peerDependencies:
-    "@babel/eslint-parser": ^7.11.0
-    eslint: ^7.5.0 || ^8.0.0 || ^9.0.0
-  checksum: 10c0/e7f08daf7a1a52daf310399ae974b5e95dffd8ed329ee3faec2a9e586a210f98580c55e103a3676d97c874c0631a48147409cc20047d8a7bab4d5620aa89064c
+    "@babel/core": ^8.0.0
+    "@babel/eslint-parser": ^8.0.1
+    eslint: ^9.0.0 || ^10.0.0
+  checksum: 10c0/333a12e7c1cba8e8ada080d1827c6c2ef1a826d8629abb5f9cd3a09891b55ade689bba5b871b5aaf4d9a0f056d09a9c45f320cd857430a379954274c8270b3ac
   languageName: node
   linkType: hard
 
@@ -2475,7 +2474,7 @@ __metadata:
   dependencies:
     "@babel/core": "npm:^7.28.4"
     "@babel/eslint-parser": "npm:^7.28.0"
-    "@babel/eslint-plugin": "npm:^7.27.1"
+    "@babel/eslint-plugin": "npm:^8.0.1"
     "@eslint/js": "npm:^9.32.0"
     eslint: "npm:^9.36.0"
     eslint-plugin-import: "npm:^2.32.0"
@@ -2621,13 +2620,6 @@ __metadata:
   peerDependencies:
     eslint: ^3 || ^4 || ^5 || ^6 || ^7 || ^8 || ^9.7
   checksum: 10c0/c850bfd556291d4d9234f5ca38db1436924a1013627c8ab1853f77cac73ec19b020e861e6c7b783436a48b6ffcdfba4547598235a37ad4611b6739f65fd8ad57
-  languageName: node
-  linkType: hard
-
-"eslint-rule-composer@npm:^0.3.0":
-  version: 0.3.0
-  resolution: "eslint-rule-composer@npm:0.3.0"
-  checksum: 10c0/1f0c40d209e1503a955101a0dbba37e7fc67c8aaa47a5b9ae0b0fcbae7022c86e52b3df2b1b9ffd658e16cd80f31fff92e7222460a44d8251e61d49e0af79a07
   languageName: node
   linkType: hard
 
