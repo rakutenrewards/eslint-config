@@ -1,5 +1,17 @@
 # Changelog
 
+## [4.5.0](https://github.com/rakutenrewards/eslint-config/compare/v4.4.0...v4.5.0) (2026-07-30)
+
+
+### Features
+
+* **deps:** Bump brace-expansion from 1.1.13 to 1.1.16 ([#371](https://github.com/rakutenrewards/eslint-config/issues/371)) ([ce2a35f](https://github.com/rakutenrewards/eslint-config/commit/ce2a35ff9bae32a866111891b0ce9ebcdcbbea03))
+* **deps:** Bump eslint-plugin-react-you-might-not-need-an-effect ([1814677](https://github.com/rakutenrewards/eslint-config/commit/1814677a2380dac5d23ac3004546563b6cce813f))
+* **deps:** Bump eslint-plugin-react-you-might-not-need-an-effect from 0.11.1 to 1.0.1 ([#363](https://github.com/rakutenrewards/eslint-config/issues/363)) ([1814677](https://github.com/rakutenrewards/eslint-config/commit/1814677a2380dac5d23ac3004546563b6cce813f))
+* **deps:** Bump globals from 17.6.0 to 17.7.0 ([#368](https://github.com/rakutenrewards/eslint-config/issues/368)) ([692cce7](https://github.com/rakutenrewards/eslint-config/commit/692cce710c12d8a2df34fd59909e85bab9361825))
+* **deps:** Bump js-yaml from 3.14.2 to 3.15.0 ([#369](https://github.com/rakutenrewards/eslint-config/issues/369)) ([c9e83ff](https://github.com/rakutenrewards/eslint-config/commit/c9e83ff1a2217ce75a210198fa5502a86d0bb681))
+* **deps:** Bump typescript-eslint from 8.60.0 to 8.62.0 ([#367](https://github.com/rakutenrewards/eslint-config/issues/367)) ([e6a5047](https://github.com/rakutenrewards/eslint-config/commit/e6a5047e78fd4c2fd0f4f94ac34afc8ad41a8df7))
+
 ## [4.4.0](https://github.com/rakutenrewards/eslint-config/compare/v4.3.0...v4.4.0) (2026-06-05)
 
 
