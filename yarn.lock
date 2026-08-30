@@ -2586,13 +2586,13 @@ __metadata:
   linkType: hard
 
 "eslint-plugin-react-you-might-not-need-an-effect@npm:^1.0.1":
-  version: 1.0.1
-  resolution: "eslint-plugin-react-you-might-not-need-an-effect@npm:1.0.1"
+  version: 1.0.2
+  resolution: "eslint-plugin-react-you-might-not-need-an-effect@npm:1.0.2"
   dependencies:
     globals: "npm:^16.2.0"
   peerDependencies:
     eslint: ">=8.40.0"
-  checksum: 10c0/f63fa35818f860f5bfcdd4249bd5632ebf80aeddac6eb12876348e2dd72d7559b82ae213e0a768e9102ea282b9140d3e2f9fda6d8a4bc77f47bbb6414166a04e
+  checksum: 10c0/a198a03bdd05481a169af25dfddb10e7a5bf4bd0cb0b1ca844a90d66da532fc0b63553c37808ba30b4bae926ebd57a595423edf7971dbd988f033d1a03c304ec
   languageName: node
   linkType: hard
 
