@@ -5,6 +5,10 @@ on:
   pull_request:
     branches:
       - main
+  # catches a new ESLint major that breaks the config before anyone tries to upgrade
+  schedule:
+    - cron: '0 13 * * 1'
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -14,7 +18,57 @@ name: CI
 
 jobs:
   ci:
-    name: Lint & Test
+    name: Lint & Test (eslint ${{ matrix.eslint || 'locked' }}, node ${{ matrix.node }})
+    # the scheduled run only checks ESLint latest, in the `eslint-latest` job below
+    if: github.event_name != 'schedule'
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          # the ESLint version in yarn.lock, on each supported Node line (24 matches .nvmrc); lint runs once
+          - { node: '24', lint: true }
+          - { node: '22' }
+          - { node: '20' }
+          # the lowest ESLint allowed by the `eslint` peer dependency
+          - { node: '20', eslint: '9.0.0' }
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v7
+
+      - name: Enable Corepack
+        run: corepack enable
+
+      - name: Set up Node environment
+        uses: actions/setup-node@v7
+        with:
+          node-version: ${{ matrix.node }}
+
+      - name: Install Dependencies
+        run: yarn install --immutable
+
+      - name: Use ESLint ${{ matrix.eslint }}
+        if: matrix.eslint
+        run: yarn add --dev eslint@${{ matrix.eslint }}
+        env:
+          # changes package.json and yarn.lock on the runner only, to test another ESLint version
+          YARN_ENABLE_IMMUTABLE_INSTALLS: 'false'
+
+      - name: Show ESLint version
+        run: yarn eslint --version
+
+      - name: Run Tests
+        run: yarn test
+
+      - name: Run Lint
+        if: matrix.lint
+        run: yarn lint
+
+  # Weekly (and on demand): the newest ESLint release. It is expected to fail until the config supports a new major, and
+  # it is kept out of pull requests so that a known gap does not put a red check on every change.
+  eslint-latest:
+    name: Tests (eslint latest, node 24)
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
@@ -31,8 +85,14 @@ jobs:
       - name: Install Dependencies
         run: yarn install --immutable
 
+      - name: Use the latest ESLint
+        run: yarn add --dev eslint@latest
+        env:
+          # changes package.json and yarn.lock on the runner only, to test another ESLint version
+          YARN_ENABLE_IMMUTABLE_INSTALLS: 'false'
+
+      - name: Show ESLint version
+        run: yarn eslint --version
+
       - name: Run Tests
         run: yarn test
-
-      - name: Run Lint
-        run: yarn lint
