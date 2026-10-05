@@ -4,11 +4,12 @@ const { ERROR, OFF } = require('./constants');
 
 module.exports = [
   {
-    ignores: ['example/**'],
+    // fixtures intentionally contain lint violations
+    ignores: ['example/**', '__tests__/fixtures/**'],
   },
   ...baseConfig,
   {
-    files: ['**/*.test.js', '**/*.spec.js', '**/*.config.js'],
+    files: ['**/*.test.js', '**/*.spec.js', '**/*.config.js', '**/__tests__/**/*.js'],
     languageOptions: {
       parserOptions: {
         requireConfigFile: false,
