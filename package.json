@@ -4,14 +4,14 @@
   "description": "Rakuten Reward's base JS ESLint config for consistent coding style.",
   "main": "index.js",
   "files": [
-    "index.js",
-    "react.js",
-    "typescript.js",
-    "constants.js",
-    "eslint.config.js",
-    "LICENSE",
-    "README.md",
-    "CHANGELOG.md"
+    "/index.js",
+    "/react.js",
+    "/typescript.js",
+    "/constants.js",
+    "/eslint.config.js",
+    "/LICENSE",
+    "/README.md",
+    "/CHANGELOG.md"
   ],
   "keywords": [
     "eslint",

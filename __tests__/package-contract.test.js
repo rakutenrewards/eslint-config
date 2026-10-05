@@ -8,18 +8,11 @@ const { ROOT } = require('./helpers/lint');
 const ENTRY_POINTS = ['index.js', 'react.js', 'typescript.js', 'constants.js'];
 
 /**
- * Everything the tarball may contain. `example/eslint.config.js` is currently published because the `eslint.config.js`
- * pattern in `files` matches at any depth.
+ * Everything the tarball may contain. The patterns in package.json `files` are anchored to the package root (`/index.js`);
+ * unanchored patterns match at any depth and would publish same-named files from subdirectories, such as examples
+ * or test fixtures.
  */
-const ALLOWED_FILES = [
-  'package.json',
-  'README.md',
-  'LICENSE',
-  'CHANGELOG.md',
-  'eslint.config.js',
-  'example/eslint.config.js',
-  ...ENTRY_POINTS,
-];
+const ALLOWED_FILES = ['package.json', 'README.md', 'LICENSE', 'CHANGELOG.md', 'eslint.config.js', ...ENTRY_POINTS];
 
 describe('Published package', () => {
   let packageDir;
