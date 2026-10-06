@@ -3,7 +3,7 @@
  */
 
 const tseslint = require('typescript-eslint');
-const importPlugin = require('eslint-plugin-import');
+const importPlugin = require('./import-plugin');
 const { OFF, ERROR, WARNING } = require('./constants');
 
 /** @type {import('eslint').Linter.Config[]} */

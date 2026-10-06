@@ -12,7 +12,18 @@ const ENTRY_POINTS = ['index.js', 'react.js', 'typescript.js', 'constants.js'];
  * unanchored patterns match at any depth and would publish same-named files from subdirectories, such as examples
  * or test fixtures.
  */
-const ALLOWED_FILES = ['package.json', 'README.md', 'LICENSE', 'CHANGELOG.md', 'eslint.config.js', ...ENTRY_POINTS];
+const ALLOWED_FILES = [
+  'package.json',
+  'README.md',
+  'LICENSE',
+  'CHANGELOG.md',
+  'eslint.config.js',
+  // required by the entry points, so they must be published
+  'import-plugin.js',
+  'esm-plugin.js',
+  'react-plugin.js',
+  ...ENTRY_POINTS,
+];
 
 describe('Published package', () => {
   let packageDir;

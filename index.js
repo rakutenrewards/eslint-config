@@ -2,7 +2,7 @@
  * This file contains the base rules for modern Javascript.
  */
 const js = require('@eslint/js');
-const importPlugin = require('eslint-plugin-import');
+const importPlugin = require('./import-plugin');
 const { WARNING, ERROR } = require('./constants');
 
 /** @type {import('eslint').Linter.Config[]} */
@@ -14,14 +14,10 @@ module.exports = [
   },
   {
     languageOptions: {
-      parser: require('@babel/eslint-parser'),
       parserOptions: {
         ecmaVersion: 'latest',
         sourceType: 'module',
       },
-    },
-    plugins: {
-      '@babel': require('@babel/eslint-plugin'),
     },
     rules: {
       'no-alert': ERROR,

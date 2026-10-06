@@ -26,12 +26,15 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          # the ESLint version in yarn.lock, on each supported Node line (24 matches .nvmrc); lint runs once
+          # the ESLint version in yarn.lock on Node 24 (matches .nvmrc), with the Jest suite and lint
           - { node: '24', lint: true }
-          - { node: '22' }
-          - { node: '20' }
           # the lowest ESLint allowed by the `eslint` peer dependency
-          - { node: '20', eslint: '9.0.0' }
+          - { node: '24', eslint: '10.0.0' }
+          # the oldest Node releases allowed by `engines`. The Jest suite needs Node 24.9+ (see jest.config.js), so these run
+          # `yarn compat-check`, which lints the same fixtures in plain Node like a consumer's ESLint does
+          - { node: '22.13', compat: true }
+          - { node: '20.19', compat: true }
+          - { node: '20.19', eslint: '10.0.0', compat: true }
     steps:
       - name: Checkout Code
         uses: actions/checkout@v7
@@ -58,14 +61,18 @@ jobs:
         run: yarn eslint --version
 
       - name: Run Tests
+        if: '!matrix.compat'
         run: yarn test
+
+      - name: Run Compatibility Check
+        run: yarn compat-check
 
       - name: Run Lint
         if: matrix.lint
         run: yarn lint
 
-  # Weekly (and on demand): the newest ESLint release. It is expected to fail until the config supports a new major, and
-  # it is kept out of pull requests so that a known gap does not put a red check on every change.
+  # Weekly (and on demand): the newest ESLint release. It fails when a new ESLint release breaks the config, and it is kept
+  # out of pull requests so that a known gap does not put a red check on every change.
   eslint-latest:
     name: Tests (eslint latest, node 24)
     if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
