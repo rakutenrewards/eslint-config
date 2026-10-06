@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.5.1](https://github.com/rakutenrewards/eslint-config/compare/v4.5.0...v4.5.1) (2026-10-06)
+
+
+### Bug Fixes
+
+* Anchor `files` patterns and update transitive dependencies ([#396](https://github.com/rakutenrewards/eslint-config/issues/396)) ([4fe5025](https://github.com/rakutenrewards/eslint-config/commit/4fe50255c46e03239a9460bfa2f2223721742f66))
+
 ## [4.5.0](https://github.com/rakutenrewards/eslint-config/compare/v4.4.0...v4.5.0) (2026-10-05)
 
 
