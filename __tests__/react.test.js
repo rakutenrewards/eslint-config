@@ -58,8 +58,9 @@ describe('React Config', () => {
   it('should have React plugins', () => {
     // React config spreads plugin flat configs which include plugins internally
     expect(hasPlugins(reactConfig)).toBe(true);
-    const configWithPlugins = reactConfig.find((config) => config.plugins);
-    expect(configWithPlugins.plugins).toHaveProperty('react');
+    const configWithReact = reactConfig.find((config) => config.plugins?.react);
+    expect(configWithReact).toBeDefined();
+    expect(configWithReact.plugins).toHaveProperty('@eslint-react');
   });
 
   it('should have specific React rules configured', () => {
@@ -67,8 +68,7 @@ describe('React Config', () => {
     const configWithRules = reactConfig.find(
       (config) =>
         config.rules &&
-        (config.rules['react/no-danger'] ||
-          config.rules['react/jsx-filename-extension']),
+        config.rules['react/no-danger'],
     );
     expect(configWithRules).toBeDefined();
 

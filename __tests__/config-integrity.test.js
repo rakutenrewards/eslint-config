@@ -11,21 +11,6 @@ const SNIPPETS = {
 };
 
 /**
- * Without `typescript-eslint` layered on top, the base config parses JavaScript with `@babel/eslint-parser`, which:
- * - fails with "No Babel config file detected" unless the project has a Babel config, and
- * - ignores `ecmaFeatures.jsx`, so JSX only parses when the project's Babel config enables it.
- * Consumers have such a config (or use the TypeScript layer), so the combinations below provide the equivalent options.
- */
-const WITHOUT_BABEL_CONFIG = {
-  languageOptions: {
-    parserOptions: {
-      requireConfigFile: false,
-      babelOptions: { babelrc: false, configFile: false, parserOpts: { plugins: ['jsx'] } },
-    },
-  },
-};
-
-/**
  * Rules that are deprecated by ESLint but still enabled. Each must be replaced before the ESLint version that removes it;
  * this list exists so that *newly* enabling a deprecated rule fails the test.
  */
@@ -39,8 +24,8 @@ const KNOWN_DEPRECATED_RULES = [
  * in use: the README documents base/react/typescript, and the shared Next.js dev tools spread base/typescript/react.
  */
 const COMBINATIONS = [
-  ['base', [...baseConfig, WITHOUT_BABEL_CONFIG], ['case.js']],
-  ['base + react', [...baseConfig, ...reactConfig, WITHOUT_BABEL_CONFIG], ['case.js', 'case.jsx']],
+  ['base', [...baseConfig], ['case.js']],
+  ['base + react', [...baseConfig, ...reactConfig], ['case.js', 'case.jsx']],
   ['base + typescript', [...baseConfig, ...typescriptConfig], ['case.js', 'case.ts', 'case.tsx']],
   [
     'base + react + typescript',
@@ -54,7 +39,11 @@ const COMBINATIONS = [
   ],
 ];
 
-/** Rules that consumers commonly disable or override, so they must keep existing in the merged config. */
+/**
+ * Rules that consumers name in `eslint-disable` comments or turn on in their own configs, so they must keep existing in
+ * the merged config. Turning an unknown rule *off* is accepted silently, so rules that are only ever turned off (such as
+ * `react/require-default-props`) are not listed.
+ */
 const CONSUMER_REFERENCED_RULES = [
   '@typescript-eslint/ban-ts-comment',
   '@typescript-eslint/no-explicit-any',
@@ -80,12 +69,14 @@ const CONSUMER_REFERENCED_RULES = [
   'react-you-might-not-need-an-effect/no-adjust-state-on-prop-change',
   'react-you-might-not-need-an-effect/no-event-handler',
   'react-you-might-not-need-an-effect/no-initialize-state',
-  'react/jsx-filename-extension',
+  'react/display-name',
+  'react/jsx-key',
+  'react/jsx-uses-react',
   'react/no-array-index-key',
   'react/no-danger',
   'react/no-unknown-property',
   'react/prop-types',
-  'react/require-default-props',
+  'react/react-in-jsx-scope',
 ];
 
 describe('Config integrity', () => {
@@ -114,9 +105,9 @@ describe('Config integrity', () => {
   });
 
   describe('consumer overrides', () => {
-    it.each(CONSUMER_REFERENCED_RULES)('still defines %s so consumers can override it', async (ruleId) => {
-      // flat config throws for a rule it cannot find, even when the rule is being turned off
-      const eslint = createESLint([...baseConfig, ...reactConfig, ...typescriptConfig, { rules: { [ruleId]: 'off' } }]);
+    it.each(CONSUMER_REFERENCED_RULES)('still defines %s so consumers can configure it', async (ruleId) => {
+      // turning an unknown rule *off* is silently accepted, so enable it: flat config throws for a rule it cannot find
+      const eslint = createESLint([...baseConfig, ...reactConfig, ...typescriptConfig, { rules: { [ruleId]: 'error' } }]);
 
       await expect(lintFixture(eslint, SNIPPETS['case.tsx'], 'case.tsx')).resolves.toBeDefined();
     });

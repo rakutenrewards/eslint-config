@@ -40,13 +40,14 @@ const SEVERITIES = [
   ['no-use-before-define', 'case.ts', 'off'],
 
   // React
-  ['react/prop-types', 'case.jsx', 'error'],
+  ['react/prop-types', 'case.jsx', 'off'], // no equivalent in @eslint-react; kept as a no-op rule so old comments still resolve
   ['react/prop-types', 'case.tsx', 'off'],
   ['react/require-default-props', 'case.tsx', 'off'],
   ['react/jsx-filename-extension', 'case.ts', 'off'],
-  ['react/display-name', 'case.tsx', 'error'],
+  ['react/display-name', 'case.tsx', 'warn'],
   ['react/display-name', 'case.test.tsx', 'off'],
   ['react/no-danger', 'case.tsx', 'warn'],
+  ['react/no-children-prop', 'case.tsx', 'warn'],
   ['react/no-danger-with-children', 'case.tsx', 'error'],
   ['react/no-array-index-key', 'case.tsx', 'error'],
   ['react/react-in-jsx-scope', 'case.tsx', 'off'],
