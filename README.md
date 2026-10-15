@@ -127,7 +127,9 @@ configs need no changes.
 - Rename `import/*` **settings** to `import-x/*` (`import/resolver` to `import-x/resolver`, `import/core-modules` to
   `import-x/core-modules`, `import/internal-regex` to `import-x/internal-regex`, and so on). Rule ids are unchanged, but
   `eslint-plugin-import-x` only reads `import-x/*` settings and silently ignores `import/*` ones, which shows up as false
-  `import/no-unresolved` errors.
+  `import/no-unresolved` errors. Forgetting `import/core-modules` can also show up as a wall of `import/export` errors in
+  barrel files that `export *` from a package listed there and then override some of its names, because the plugin then
+  reads that package's exports instead of skipping it.
 - Rename `settings.react` to `settings['react-x']` if you set a React version yourself.
 
 **What changed, and what stays working**
