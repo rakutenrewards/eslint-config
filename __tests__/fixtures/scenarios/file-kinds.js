@@ -36,10 +36,10 @@ module.exports = [
     messages: [],
   },
   {
-    name: 'an untyped component in a .jsx file needs prop-types',
+    name: 'an untyped component in a .jsx file is no longer checked for prop-types',
     file: 'untyped-component.jsx',
     code: 'export const Card = ({ title }) => <h2>{title}</h2>;\n',
-    messages: ['react/prop-types:2'],
+    messages: [],
   },
   {
     name: 'ambient module declarations in a .d.ts file',
@@ -56,7 +56,13 @@ module.exports = [
       'export const Input = forwardRef<HTMLInputElement>((props, ref) => <input ref={ref} {...props} />);',
       '',
     ].join('\n'),
-    messages: ['react/display-name:2'],
+    messages: ['react/display-name:1'],
+  },
+  {
+    name: 'an unused React import is reported, since the automatic JSX runtime does not need it',
+    file: 'react-import.tsx',
+    code: "import React from 'react';\n\nexport const Title = () => <h1>Title</h1>;\n",
+    messages: ['@typescript-eslint/no-unused-vars:1'],
   },
   {
     name: 'an anonymous forwardRef component is allowed in a test file',

@@ -156,6 +156,35 @@ module.exports = [
     messages: [],
   },
   {
+    // the react-hooks rules are warnings in every kind of file, not only .jsx and .tsx (they used to be errors in .js and .ts)
+    name: 'a custom hook in a .ts file that writes a ref during render only warns',
+    file: 'stable-value.ts',
+    code: [
+      "import { useMemo, useRef } from 'react';",
+      '',
+      'export function useStableValue<T>(value: T): T {',
+      '  const ref = useRef<T>(value);',
+      '  const version = useRef(0);',
+      '',
+      '  if (ref.current !== value) {',
+      '    ref.current = value;',
+      '    version.current += 1;',
+      '  }',
+      '',
+      '  return useMemo(() => ref.current, [version.current]);',
+      '}',
+      '',
+    ].join('\n'),
+    messages: [
+      'react-hooks/exhaustive-deps:1',
+      'react-hooks/refs:1',
+      'react-hooks/refs:1',
+      'react-hooks/refs:1',
+      'react-hooks/refs:1',
+      'react-hooks/refs:1',
+    ],
+  },
+  {
     name: 'an exhaustive-deps problem is a warning',
     file: 'deps.tsx',
     code: [
