@@ -54,6 +54,12 @@ const SEVERITIES = [
 
   // hooks and effects are warnings because fixing them can need significant refactoring
   ['react-hooks/rules-of-hooks', 'case.tsx', 'warn'],
+  ['react-hooks/rules-of-hooks', 'case.ts', 'warn'],
+  ['react-hooks/rules-of-hooks', 'case.js', 'warn'],
+  ['react-hooks/refs', 'case.ts', 'warn'],
+  ['react-hooks/refs', 'case.test.ts', 'warn'],
+  ['react-hooks/set-state-in-effect', 'case.ts', 'warn'],
+  ['react-hooks/immutability', 'case.js', 'warn'],
   ['react-hooks/exhaustive-deps', 'case.tsx', 'warn'],
   ['react-hooks/set-state-in-effect', 'case.tsx', 'warn'],
   ['react-you-might-not-need-an-effect/no-derived-state', 'case.tsx', 'warn'],
@@ -67,5 +73,19 @@ describe('Severity contract', () => {
     const { rules } = await eslint.calculateConfigForFile(filePathFor(file));
 
     expect({ ruleId, file, severity: toLabel(rules[ruleId]) }).toEqual({ ruleId, file, severity: expected });
+  });
+
+  // Hooks and effects are meant to be warnings in every file, not only in .jsx and .tsx. This covers rules that a plugin
+  // adds later, which the list above cannot.
+  describe.each(['case.js', 'case.jsx', 'case.ts', 'case.tsx', 'case.test.ts', 'case.test.tsx'])('in %s', (file) => {
+    it('has no react-hooks or effect rule enabled as an error', async () => {
+      const { rules } = await eslint.calculateConfigForFile(filePathFor(file));
+      const errors = Object.entries(rules)
+        .filter(([ruleId]) => ruleId.startsWith('react-hooks/') || ruleId.startsWith('react-you-might-not-need-an-effect/'))
+        .filter(([, setting]) => toLabel(setting) === 'error')
+        .map(([ruleId]) => ruleId);
+
+      expect(errors).toEqual([]);
+    });
   });
 });

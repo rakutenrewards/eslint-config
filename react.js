@@ -27,6 +27,11 @@ const reactYouMightNotNeedAnEffectRules = Object.entries(
 /** @type {import('eslint').Linter.Config[]} */
 module.exports = [
   reactHooksPlugin.configs.flat.recommended,
+  {
+    // The preset above enables these as errors for every file. They are good practices that may need significant
+    // refactoring, so they are warnings, in `.js` and `.ts` files (hooks are not only written in JSX files) as well.
+    rules: reactHooksRules,
+  },
   jsxA11yPlugin.flatConfigs.recommended,
   reactYouMightNotNeedAnEffect.configs.recommended,
   importPlugin.flatConfigs.react,
@@ -94,7 +99,6 @@ module.exports = [
 
       // setting these to WARNING as they are good practices, but may require
       // significant refactoring in some cases.
-      ...reactHooksRules,
       ...reactYouMightNotNeedAnEffectRules,
     },
   },

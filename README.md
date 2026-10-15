@@ -145,6 +145,9 @@ configs need no changes.
   `no-deprecated`, `no-is-mounted`, `no-string-refs`, `no-unescaped-entities`, `react-in-jsx-scope` and
   `require-render-return`. `react/no-deprecated` is covered by `@eslint-react/dom-no-render`, `dom-no-hydrate` and
   `no-component-will-*`.
+- The `eslint-plugin-react-hooks` rules (`react-hooks/refs`, `rules-of-hooks`, `set-state-in-effect`, `immutability`, ...) are
+  warnings in `.js` and `.ts` files as well. In 4.x the downgrade only covered `.jsx` and `.tsx`, so the same findings were
+  errors in plain `.js` and `.ts` files, such as a custom hook in `useSomething.ts`.
 - `eslint-plugin-jsx-a11y` has not released a version that lists ESLint 10 as a peer, so your package manager may warn about
   it. It works with ESLint 10.
 
