@@ -1,5 +1,21 @@
 # Changelog
 
+## [5.0.0](https://github.com/rakutenrewards/eslint-config/compare/v4.5.0...v5.0.0) (2026-10-19)
+
+
+### ⚠ BREAKING CHANGES
+
+* requires ESLint 10 and Node 20.19, 22.13 or 24+. The `@babel/core` peer dependency is removed, and `eslint-plugin-import` and `eslint-plugin-react` are replaced by `eslint-plugin-import-x` and `@eslint-react/eslint-plugin`, which keep their own names, so rule ids, `eslint-disable` comments, config overrides and `settings` keys must be renamed. `import/*` becomes `import-x/*` (including the `import/resolver` and `import/core-modules` settings; unrenamed settings are ignored silently). `react/*` becomes `@eslint-react/*` (for example `react/jsx-key` becomes `@eslint-react/no-missing-key`), and `settings.react` becomes `settings['react-x']`. `react/prop-types`, `react/jsx-no-duplicate-props`, `react/jsx-no-undef`, `react/jsx-uses-react`, `react/jsx-uses-vars`, `react/no-deprecated`, `react/no-is-mounted`, `react/no-string-refs`, `react/no-unescaped-entities`, `react/react-in-jsx-scope` and `react/require-render-return` have no replacement and must be removed. A rule or comment that names an unknown rule is an error. ESLint 10's new recommended rules and the stricter import and React rules can report new problems. See "Migrating from 4.x" in the README for the full mapping and a rename snippet.
+
+### Features
+
+* Migrate to ESLint 10, replacing the Babel parser and the react and import plugins ([#399](https://github.com/rakutenrewards/eslint-config/issues/399)) ([884cb26](https://github.com/rakutenrewards/eslint-config/commit/884cb26af7d0bf2ace0aa272785cea40cd7d53e3))
+
+
+### Bug Fixes
+
+* Anchor `files` patterns and update transitive dependencies ([#396](https://github.com/rakutenrewards/eslint-config/issues/396)) ([4fe5025](https://github.com/rakutenrewards/eslint-config/commit/4fe50255c46e03239a9460bfa2f2223721742f66))
+
 ## [4.5.0](https://github.com/rakutenrewards/eslint-config/compare/v4.4.0...v4.5.0) (2026-10-05)
 
 
