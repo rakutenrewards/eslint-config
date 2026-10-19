@@ -11,13 +11,6 @@ module.exports = [
   {
     files: ['**/*.test.js', '**/*.spec.js', '**/*.config.js', '**/__tests__/**/*.js'],
     languageOptions: {
-      parserOptions: {
-        requireConfigFile: false,
-        babelOptions: {
-          babelrc: false,
-          configFile: false,
-        },
-      },
       globals: {
         ...globals.node,
         ...globals.jest,
@@ -35,13 +28,6 @@ module.exports = [
   {
     files: ['**/*.js'],
     languageOptions: {
-      parserOptions: {
-        requireConfigFile: false,
-        babelOptions: {
-          babelrc: false,
-          configFile: false,
-        },
-      },
       globals: {
         ...globals.node,
       },
@@ -50,7 +36,7 @@ module.exports = [
       'comma-dangle': [ERROR, 'always-multiline'],
       quotes: [ERROR, 'single'],
       strict: [ERROR, 'never'],
-      'import/no-unresolved': [
+      'import-x/no-unresolved': [
         ERROR,
         {
           ignore: [

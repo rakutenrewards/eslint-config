@@ -12,7 +12,7 @@ module.exports = {
   ...require('./rules/typescript-eslint'),
   ...require('./rules/import'),
   ...require('./rules/jsx-a11y'),
-  ...require('./rules/react-plugin'),
+  ...require('./rules/react'),
   ...require('./rules/react-hooks'),
   ...require('./rules/react-effect'),
 };

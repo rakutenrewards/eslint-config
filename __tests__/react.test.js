@@ -58,8 +58,8 @@ describe('React Config', () => {
   it('should have React plugins', () => {
     // React config spreads plugin flat configs which include plugins internally
     expect(hasPlugins(reactConfig)).toBe(true);
-    const configWithPlugins = reactConfig.find((config) => config.plugins);
-    expect(configWithPlugins.plugins).toHaveProperty('react');
+    const configWithReact = reactConfig.find((config) => config.plugins?.['@eslint-react']);
+    expect(configWithReact).toBeDefined();
   });
 
   it('should have specific React rules configured', () => {
@@ -67,14 +67,13 @@ describe('React Config', () => {
     const configWithRules = reactConfig.find(
       (config) =>
         config.rules &&
-        (config.rules['react/no-danger'] ||
-          config.rules['react/jsx-filename-extension']),
+        config.rules['@eslint-react/dom-no-dangerously-set-innerhtml'],
     );
     expect(configWithRules).toBeDefined();
 
     const { rules } = configWithRules;
-    expect(rules['react/no-danger']).toBe(WARNING);
-    expect(rules['react/no-danger-with-children']).toBe(ERROR);
-    expect(rules['react/no-array-index-key']).toBe(ERROR);
+    expect(rules['@eslint-react/dom-no-dangerously-set-innerhtml']).toBe(WARNING);
+    expect(rules['@eslint-react/dom-no-dangerously-set-innerhtml-with-children']).toBe(ERROR);
+    expect(rules['@eslint-react/no-array-index-key']).toBe(ERROR);
   });
 });

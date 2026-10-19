@@ -23,8 +23,8 @@ const SEVERITIES = [
   ['camelcase', 'case.ts', 'error'],
   ['max-len', 'case.js', 'error'],
   ['no-param-reassign', 'case.js', 'error'],
-  ['import/order', 'case.ts', 'error'],
-  ['import/no-unresolved', 'case.ts', 'error'],
+  ['import-x/order', 'case.ts', 'error'],
+  ['import-x/no-unresolved', 'case.ts', 'error'],
 
   // TypeScript
   ['@typescript-eslint/no-explicit-any', 'case.ts', 'warn'],
@@ -40,19 +40,21 @@ const SEVERITIES = [
   ['no-use-before-define', 'case.ts', 'off'],
 
   // React
-  ['react/prop-types', 'case.jsx', 'error'],
-  ['react/prop-types', 'case.tsx', 'off'],
-  ['react/require-default-props', 'case.tsx', 'off'],
-  ['react/jsx-filename-extension', 'case.ts', 'off'],
-  ['react/display-name', 'case.tsx', 'error'],
-  ['react/display-name', 'case.test.tsx', 'off'],
-  ['react/no-danger', 'case.tsx', 'warn'],
-  ['react/no-danger-with-children', 'case.tsx', 'error'],
-  ['react/no-array-index-key', 'case.tsx', 'error'],
-  ['react/react-in-jsx-scope', 'case.tsx', 'off'],
+  ['@eslint-react/no-missing-component-display-name', 'case.tsx', 'warn'],
+  ['@eslint-react/no-missing-component-display-name', 'case.test.tsx', 'off'],
+  ['@eslint-react/dom-no-dangerously-set-innerhtml', 'case.tsx', 'warn'],
+  ['@eslint-react/jsx-no-children-prop', 'case.tsx', 'warn'],
+  ['@eslint-react/dom-no-dangerously-set-innerhtml-with-children', 'case.tsx', 'error'],
+  ['@eslint-react/no-array-index-key', 'case.tsx', 'error'],
 
   // hooks and effects are warnings because fixing them can need significant refactoring
   ['react-hooks/rules-of-hooks', 'case.tsx', 'warn'],
+  ['react-hooks/rules-of-hooks', 'case.ts', 'warn'],
+  ['react-hooks/rules-of-hooks', 'case.js', 'warn'],
+  ['react-hooks/refs', 'case.ts', 'warn'],
+  ['react-hooks/refs', 'case.test.ts', 'warn'],
+  ['react-hooks/set-state-in-effect', 'case.ts', 'warn'],
+  ['react-hooks/immutability', 'case.js', 'warn'],
   ['react-hooks/exhaustive-deps', 'case.tsx', 'warn'],
   ['react-hooks/set-state-in-effect', 'case.tsx', 'warn'],
   ['react-you-might-not-need-an-effect/no-derived-state', 'case.tsx', 'warn'],
@@ -66,5 +68,19 @@ describe('Severity contract', () => {
     const { rules } = await eslint.calculateConfigForFile(filePathFor(file));
 
     expect({ ruleId, file, severity: toLabel(rules[ruleId]) }).toEqual({ ruleId, file, severity: expected });
+  });
+
+  // Hooks and effects are meant to be warnings in every file, not only in .jsx and .tsx. This covers rules that a plugin
+  // adds later, which the list above cannot.
+  describe.each(['case.js', 'case.jsx', 'case.ts', 'case.tsx', 'case.test.ts', 'case.test.tsx'])('in %s', (file) => {
+    it('has no react-hooks or effect rule enabled as an error', async () => {
+      const { rules } = await eslint.calculateConfigForFile(filePathFor(file));
+      const errors = Object.entries(rules)
+        .filter(([ruleId]) => ruleId.startsWith('react-hooks/') || ruleId.startsWith('react-you-might-not-need-an-effect/'))
+        .filter(([, setting]) => toLabel(setting) === 'error')
+        .map(([ruleId]) => ruleId);
+
+      expect(errors).toEqual([]);
+    });
   });
 });

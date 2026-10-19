@@ -2,7 +2,7 @@
  * This file contains the base rules for modern Javascript.
  */
 const js = require('@eslint/js');
-const importPlugin = require('eslint-plugin-import');
+const importPlugin = require('eslint-plugin-import-x');
 const { WARNING, ERROR } = require('./constants');
 
 /** @type {import('eslint').Linter.Config[]} */
@@ -14,14 +14,10 @@ module.exports = [
   },
   {
     languageOptions: {
-      parser: require('@babel/eslint-parser'),
       parserOptions: {
         ecmaVersion: 'latest',
         sourceType: 'module',
       },
-    },
-    plugins: {
-      '@babel': require('@babel/eslint-plugin'),
     },
     rules: {
       'no-alert': ERROR,
@@ -89,7 +85,7 @@ module.exports = [
       // ensure absolute imports are above relative imports and that unassigned imports are ignored
       // https://github.com/import-js/eslint-plugin-import/blob/master/docs/rules/order.md
       // TODO: enforce a stricter convention in module import order?
-      'import/order': [
+      'import-x/order': [
         ERROR,
         { groups: [['builtin', 'external', 'internal']] },
       ],

@@ -3,13 +3,24 @@
  */
 
 const tseslint = require('typescript-eslint');
-const importPlugin = require('eslint-plugin-import');
+const importPlugin = require('eslint-plugin-import-x');
 const { OFF, ERROR, WARNING } = require('./constants');
 
 /** @type {import('eslint').Linter.Config[]} */
 module.exports = [
   ...tseslint.configs.recommended,
-  importPlugin.flatConfigs.typescript,
+  {
+    ...importPlugin.flatConfigs.typescript,
+    settings: {
+      ...importPlugin.flatConfigs.typescript.settings,
+      // `eslint-plugin-import-x` defaults to the `typescript` resolver, which would require every consumer to install
+      // `eslint-import-resolver-typescript`; the `node` resolver is what `eslint-plugin-import` used. Consumers that want
+      // the typescript resolver set `import-x/resolver` themselves.
+      'import-x/resolver': {
+        node: { extensions: importPlugin.flatConfigs.typescript.settings['import-x/extensions'] },
+      },
+    },
+  },
   {
     files: ['**/*.js'],
     rules: {

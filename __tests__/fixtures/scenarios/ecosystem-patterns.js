@@ -77,8 +77,8 @@ module.exports = [
       "export const Widget = lazy(() => import('remote/Widget'));",
       '',
     ].join('\n'),
-    // consumers list their remotes in `import/core-modules` (see the shared Next.js dev tools config)
-    messages: ['import/no-unresolved:2'],
+    // consumers list their remotes in `import-x/core-modules` (see the shared Next.js dev tools config)
+    messages: ['import-x/no-unresolved:2'],
   },
   {
     name: 'a TypeScript enum with string values',
@@ -141,19 +141,48 @@ module.exports = [
     name: 'rendering trusted HTML only warns',
     file: 'html.tsx',
     code: 'export const Html = ({ html }: { html: string }) => <div dangerouslySetInnerHTML={{ __html: html }} />;\n',
-    messages: ['react/no-danger:1'],
+    messages: ['@eslint-react/dom-no-dangerously-set-innerhtml:1'],
   },
   {
     name: 'an index used as a list key is an error',
     file: 'index-key.tsx',
     code: 'export const List = ({ items }: { items: string[] }) => (\n  <ul>\n    {items.map((item, index) => (\n      <li key={index}>{item}</li>\n    ))}\n  </ul>\n);\n',
-    messages: ['react/no-array-index-key:2'],
+    messages: ['@eslint-react/no-array-index-key:2'],
   },
   {
     name: 'a disable comment silences a rule we enable',
     file: 'disabled.ts',
     code: '// eslint-disable-next-line @typescript-eslint/no-explicit-any\nexport const legacy: any = window;\n',
     messages: [],
+  },
+  {
+    // the react-hooks rules are warnings in every kind of file, not only .jsx and .tsx (they used to be errors in .js and .ts)
+    name: 'a custom hook in a .ts file that writes a ref during render only warns',
+    file: 'stable-value.ts',
+    code: [
+      "import { useMemo, useRef } from 'react';",
+      '',
+      'export function useStableValue<T>(value: T): T {',
+      '  const ref = useRef<T>(value);',
+      '  const version = useRef(0);',
+      '',
+      '  if (ref.current !== value) {',
+      '    ref.current = value;',
+      '    version.current += 1;',
+      '  }',
+      '',
+      '  return useMemo(() => ref.current, [version.current]);',
+      '}',
+      '',
+    ].join('\n'),
+    messages: [
+      'react-hooks/exhaustive-deps:1',
+      'react-hooks/refs:1',
+      'react-hooks/refs:1',
+      'react-hooks/refs:1',
+      'react-hooks/refs:1',
+      'react-hooks/refs:1',
+    ],
   },
   {
     name: 'an exhaustive-deps problem is a warning',
