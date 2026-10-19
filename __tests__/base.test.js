@@ -61,7 +61,7 @@ describe('Base Config', () => {
         config.rules &&
         (config.rules['no-alert'] ||
           config.rules['max-len'] ||
-          config.rules['import/order']),
+          config.rules['import-x/order']),
     );
     expect(configWithRules).toBeDefined();
 
@@ -71,7 +71,7 @@ describe('Base Config', () => {
     expect(rules['max-len']).toBeDefined();
     expect(rules['no-underscore-dangle']).toBeDefined();
     expect(rules['no-param-reassign']).toBeDefined();
-    expect(rules['import/order']).toBeDefined();
+    expect(rules['import-x/order']).toBeDefined();
   });
 
   it('should have ecmaVersion latest configured', () => {

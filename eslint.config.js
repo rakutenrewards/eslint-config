@@ -36,7 +36,7 @@ module.exports = [
       'comma-dangle': [ERROR, 'always-multiline'],
       quotes: [ERROR, 'single'],
       strict: [ERROR, 'never'],
-      'import/no-unresolved': [
+      'import-x/no-unresolved': [
         ERROR,
         {
           ignore: [

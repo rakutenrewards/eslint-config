@@ -23,8 +23,8 @@ const SEVERITIES = [
   ['camelcase', 'case.ts', 'error'],
   ['max-len', 'case.js', 'error'],
   ['no-param-reassign', 'case.js', 'error'],
-  ['import/order', 'case.ts', 'error'],
-  ['import/no-unresolved', 'case.ts', 'error'],
+  ['import-x/order', 'case.ts', 'error'],
+  ['import-x/no-unresolved', 'case.ts', 'error'],
 
   // TypeScript
   ['@typescript-eslint/no-explicit-any', 'case.ts', 'warn'],
@@ -40,17 +40,12 @@ const SEVERITIES = [
   ['no-use-before-define', 'case.ts', 'off'],
 
   // React
-  ['react/prop-types', 'case.jsx', 'off'], // no equivalent in @eslint-react; kept as a no-op rule so old comments still resolve
-  ['react/prop-types', 'case.tsx', 'off'],
-  ['react/require-default-props', 'case.tsx', 'off'],
-  ['react/jsx-filename-extension', 'case.ts', 'off'],
-  ['react/display-name', 'case.tsx', 'warn'],
-  ['react/display-name', 'case.test.tsx', 'off'],
-  ['react/no-danger', 'case.tsx', 'warn'],
-  ['react/no-children-prop', 'case.tsx', 'warn'],
-  ['react/no-danger-with-children', 'case.tsx', 'error'],
-  ['react/no-array-index-key', 'case.tsx', 'error'],
-  ['react/react-in-jsx-scope', 'case.tsx', 'off'],
+  ['@eslint-react/no-missing-component-display-name', 'case.tsx', 'warn'],
+  ['@eslint-react/no-missing-component-display-name', 'case.test.tsx', 'off'],
+  ['@eslint-react/dom-no-dangerously-set-innerhtml', 'case.tsx', 'warn'],
+  ['@eslint-react/jsx-no-children-prop', 'case.tsx', 'warn'],
+  ['@eslint-react/dom-no-dangerously-set-innerhtml-with-children', 'case.tsx', 'error'],
+  ['@eslint-react/no-array-index-key', 'case.tsx', 'error'],
 
   // hooks and effects are warnings because fixing them can need significant refactoring
   ['react-hooks/rules-of-hooks', 'case.tsx', 'warn'],

@@ -95,13 +95,13 @@ export default [
 
 - ESLint recommended rules
 - Modern JavaScript (ES2025 and JSX) parsed by `espree`
-- Import rules from [`eslint-plugin-import-x`](https://github.com/un-ts/eslint-plugin-import-x), registered as `import`
+- Import rules from [`eslint-plugin-import-x`](https://github.com/un-ts/eslint-plugin-import-x), (rules are `import-x/...`)
 - Code style rules (max line length, camelCase, etc.)
 - Best practices (no-param-reassign, no-alert, etc.)
 
 ### React Rules
 
-- React rules from [`@eslint-react`](https://eslint-react.xyz), available under their `eslint-plugin-react` ids (`react/no-danger`, `react/jsx-key`, ...) and as `@eslint-react/...`
+- React rules from [`@eslint-react`](https://eslint-react.xyz) (rules are `@eslint-react/...`)
 - JSX runtime configuration (no React import required)
 - React Hooks rules
 - Accessibility (a11y) rules
@@ -117,39 +117,65 @@ export default [
 
 ## Migrating from 4.x
 
-Version 5 moves to ESLint 10 and replaces three dependencies that do not support it. Rule ids are kept, so most code and
-configs need no changes.
+Version 5 moves to ESLint 10 and replaces three dependencies that do not support it. The two replacement plugins keep
+their own names, so rule ids, `eslint-disable` comments and `settings` keys all change.
 
 **Required**
 - Upgrade to ESLint `^10.0.0` and Node.js `^20.19.0 || ^22.13.0 || >=24`.
 - Remove the `@babel/core` peer dependency from your install command; the Babel parser and plugin are gone, and JavaScript
   is parsed by `espree`. Remove any Babel-specific `parserOptions` (`requireConfigFile`, `babelOptions`).
-- Rename `import/*` **settings** to `import-x/*` (`import/resolver` to `import-x/resolver`, `import/core-modules` to
-  `import-x/core-modules`, `import/internal-regex` to `import-x/internal-regex`, and so on). Rule ids are unchanged, but
-  `eslint-plugin-import-x` only reads `import-x/*` settings and silently ignores `import/*` ones, which shows up as false
-  `import/no-unresolved` errors. Forgetting `import/core-modules` can also show up as a wall of `import/export` errors in
-  barrel files that `export *` from a package listed there and then override some of its names, because the plugin then
-  reads that package's exports instead of skipping it.
-- Rename `settings.react` to `settings['react-x']` if you set a React version yourself.
+- `eslint-plugin-import` is replaced by [`eslint-plugin-import-x`](https://github.com/un-ts/eslint-plugin-import-x).
+  Rename `import/` to `import-x/` in rule ids (`import/order` to `import-x/order`), in `eslint-disable` comments and in
+  `settings` (`import/resolver` to `import-x/resolver`, `import/core-modules` to `import-x/core-modules`, ...). A comment or
+  config that names a rule the plugin does not define is an error. Settings are different: `import/*` ones are ignored
+  without any message, which shows up as false `import-x/no-unresolved` errors, and as a wall of `import-x/export` errors
+  in barrel files that `export *` from a package listed in `core-modules` and then override some of its names.
+- `eslint-plugin-react` is replaced by [`@eslint-react`](https://eslint-react.xyz), which is published as an ES module only;
+  this package loads it for you. Rename the rule ids in comments and configs as in the table below, and rename
+  `settings.react` to `settings['react-x']` if you set a React version yourself.
 
-**What changed, and what stays working**
-- `eslint-plugin-import` is replaced by `eslint-plugin-import-x`, registered under the name `import`. Rules such as
-  `import/order` and `import/no-extraneous-dependencies`, and `eslint-disable import/...` comments, keep working.
-  Expect some new messages from `import/export`, `import/default` and `import/no-named-as-default-member`, and fewer false
-  `import/no-unresolved` reports for packages with `exports` maps.
-- `eslint-plugin-react` is replaced by `@eslint-react/eslint-plugin`, which is published as an ES module only; this package
-  loads it for you. The `react/...` ids that were in use keep working (`react/no-danger`, `react/jsx-key`,
-  `react/no-array-index-key`, ...) and `@eslint-react/...` rules can be enabled too.
-- These `react/...` rules no longer report anything, but still exist as deprecated no-ops so that existing comments and
-  overrides do not error: `prop-types`, `jsx-no-duplicate-props`, `jsx-no-undef`, `jsx-uses-react`, `jsx-uses-vars`,
-  `no-deprecated`, `no-is-mounted`, `no-string-refs`, `no-unescaped-entities`, `react-in-jsx-scope` and
-  `require-render-return`. `react/no-deprecated` is covered by `@eslint-react/dom-no-render`, `dom-no-hydrate` and
-  `no-component-will-*`.
+| `eslint-plugin-react` | `@eslint-react/eslint-plugin` |
+|---|---|
+| `react/display-name` | `@eslint-react/no-missing-component-display-name` |
+| `react/jsx-key` | `@eslint-react/no-missing-key` |
+| `react/jsx-no-comment-textnodes` | `@eslint-react/jsx-no-comment-textnodes` |
+| `react/jsx-no-target-blank` | `@eslint-react/dom-no-unsafe-target-blank` |
+| `react/no-array-index-key` | `@eslint-react/no-array-index-key` |
+| `react/no-children-prop` | `@eslint-react/jsx-no-children-prop` |
+| `react/no-danger` | `@eslint-react/dom-no-dangerously-set-innerhtml` |
+| `react/no-danger-with-children` | `@eslint-react/dom-no-dangerously-set-innerhtml-with-children` |
+| `react/no-direct-mutation-state` | `@eslint-react/no-direct-mutation-state` |
+| `react/no-find-dom-node` | `@eslint-react/dom-no-find-dom-node` |
+| `react/no-render-return-value` | `@eslint-react/dom-no-render-return-value` |
+| `react/no-unknown-property` | `@eslint-react/dom-no-unknown-property` |
+| `react/no-deprecated` | `@eslint-react/dom-no-render`, `dom-no-hydrate`, `no-component-will-*` |
+
+These have no replacement and should be deleted, together with any comment or override that names them: `react/prop-types`
+(use TypeScript types), `react/jsx-uses-react` and `react/react-in-jsx-scope` (the automatic JSX runtime does not need React in
+scope), `react/jsx-no-duplicate-props`, `react/jsx-no-undef` and `react/jsx-uses-vars` (TypeScript and ESLint core cover them),
+`react/no-is-mounted`, `react/no-string-refs`, `react/no-unescaped-entities` and `react/require-render-return`. Turning one
+of these *off* is still accepted; turning it on, or naming it in a disable comment, is an error.
+
+**What else changed**
 - The `eslint-plugin-react-hooks` rules (`react-hooks/refs`, `rules-of-hooks`, `set-state-in-effect`, `immutability`, ...) are
   warnings in `.js` and `.ts` files as well. In 4.x the downgrade only covered `.jsx` and `.tsx`, so the same findings were
   errors in plain `.js` and `.ts` files, such as a custom hook in `useSomething.ts`.
+- `@eslint-react/no-missing-component-display-name` and `@eslint-react/jsx-no-children-prop` are warnings: they match more
+  than the `eslint-plugin-react` rules did (for example wrappers such as Chakra's `forwardRef`).
+- Expect some new messages from `import-x/export`, `import-x/default` and `import-x/no-named-as-default-member`, and fewer
+  false `import-x/no-unresolved` reports for packages with `exports` maps.
 - `eslint-plugin-jsx-a11y` has not released a version that lists ESLint 10 as a peer, so your package manager may warn about
   it. It works with ESLint 10.
+
+**Renaming the import rule ids in your code**
+
+The `import-x` rename is mechanical, for example (review the diff; this touches every `import/` rule id in the files it
+matches):
+
+```sh
+git grep -lE 'import/[a-z]' -- '*.js' '*.jsx' '*.ts' '*.tsx' '*.mjs' '*.cjs' \
+  | xargs sed -i.bak -E 's#(^|[^A-Za-z0-9_/.-])import/([a-z])#\1import-x/\2#g' && find . -name '*.bak' -not -path './node_modules/*' -delete
+```
 
 **Contributing**
 

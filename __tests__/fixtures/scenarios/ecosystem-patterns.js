@@ -77,8 +77,8 @@ module.exports = [
       "export const Widget = lazy(() => import('remote/Widget'));",
       '',
     ].join('\n'),
-    // consumers list their remotes in `import/core-modules` (see the shared Next.js dev tools config)
-    messages: ['import/no-unresolved:2'],
+    // consumers list their remotes in `import-x/core-modules` (see the shared Next.js dev tools config)
+    messages: ['import-x/no-unresolved:2'],
   },
   {
     name: 'a TypeScript enum with string values',
@@ -141,13 +141,13 @@ module.exports = [
     name: 'rendering trusted HTML only warns',
     file: 'html.tsx',
     code: 'export const Html = ({ html }: { html: string }) => <div dangerouslySetInnerHTML={{ __html: html }} />;\n',
-    messages: ['react/no-danger:1'],
+    messages: ['@eslint-react/dom-no-dangerously-set-innerhtml:1'],
   },
   {
     name: 'an index used as a list key is an error',
     file: 'index-key.tsx',
     code: 'export const List = ({ items }: { items: string[] }) => (\n  <ul>\n    {items.map((item, index) => (\n      <li key={index}>{item}</li>\n    ))}\n  </ul>\n);\n',
-    messages: ['react/no-array-index-key:2'],
+    messages: ['@eslint-react/no-array-index-key:2'],
   },
   {
     name: 'a disable comment silences a rule we enable',

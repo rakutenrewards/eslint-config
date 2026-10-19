@@ -19,9 +19,7 @@ const ALLOWED_FILES = [
   'CHANGELOG.md',
   'eslint.config.js',
   // required by the entry points, so they must be published
-  'import-plugin.js',
   'esm-plugin.js',
-  'react-plugin.js',
   ...ENTRY_POINTS,
 ];
 

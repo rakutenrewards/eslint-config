@@ -4,11 +4,12 @@
 const reactHooksPlugin = require('eslint-plugin-react-hooks');
 const jsxA11yPlugin = require('eslint-plugin-jsx-a11y');
 const reactYouMightNotNeedAnEffect = require('eslint-plugin-react-you-might-not-need-an-effect');
-const importPlugin = require('./import-plugin');
+const importPlugin = require('eslint-plugin-import-x');
+const { requireEsmPlugin } = require('./esm-plugin');
 const { WARNING, ERROR, OFF } = require('./constants');
 
-// `react/...` rule ids are provided on top of `@eslint-react`, see `react-plugin.js`
-const { eslintReact, reactPlugin } = require('./react-plugin');
+// `@eslint-react/eslint-plugin` is published as an ES module only, see `esm-plugin.js`
+const eslintReact = requireEsmPlugin('@eslint-react/eslint-plugin');
 
 const reactHooksRules = Object.entries(
   reactHooksPlugin.configs.flat.recommended.rules,
@@ -37,9 +38,6 @@ module.exports = [
   importPlugin.flatConfigs.react,
   {
     plugins: {
-      // the `eslint-plugin-react` rule ids that consumers already use, implemented by `@eslint-react`
-      react: reactPlugin,
-      // the plugin itself, for the rules that have no `react/...` id
       '@eslint-react': eslintReact,
     },
     languageOptions: {
@@ -60,15 +58,15 @@ module.exports = [
       // @eslint-react matches more than eslint-plugin-react did (for example wrappers such as Chakra's `forwardRef` and
       // spread props that contain `children`), which would add errors to repositories that are clean today. Raise these
       // to ERROR once the existing findings have been triaged.
-      'react/display-name': WARNING,
-      'react/jsx-key': ERROR,
-      'react/jsx-no-comment-textnodes': ERROR,
-      'react/jsx-no-target-blank': ERROR,
-      'react/no-children-prop': WARNING,
-      'react/no-direct-mutation-state': ERROR,
-      'react/no-find-dom-node': ERROR,
-      'react/no-render-return-value': ERROR,
-      'react/no-unknown-property': ERROR,
+      '@eslint-react/no-missing-component-display-name': WARNING,
+      '@eslint-react/no-missing-key': ERROR,
+      '@eslint-react/jsx-no-comment-textnodes': ERROR,
+      '@eslint-react/dom-no-unsafe-target-blank': ERROR,
+      '@eslint-react/jsx-no-children-prop': WARNING,
+      '@eslint-react/no-direct-mutation-state': ERROR,
+      '@eslint-react/dom-no-find-dom-node': ERROR,
+      '@eslint-react/dom-no-render-return-value': ERROR,
+      '@eslint-react/dom-no-unknown-property': ERROR,
 
       // deprecated APIs, which `react/no-deprecated` used to cover
       '@eslint-react/dom-no-render': ERROR,
@@ -89,13 +87,13 @@ module.exports = [
     },
     rules: {
       // https://eslint-react.xyz/docs/rules/dom-no-dangerously-set-innerhtml
-      'react/no-danger': WARNING,
+      '@eslint-react/dom-no-dangerously-set-innerhtml': WARNING,
       // https://eslint-react.xyz/docs/rules/dom-no-dangerously-set-innerhtml-with-children
-      'react/no-danger-with-children': ERROR,
+      '@eslint-react/dom-no-dangerously-set-innerhtml-with-children': ERROR,
 
       // Prevent usage of Array index in keys
       // https://eslint-react.xyz/docs/rules/no-array-index-key
-      'react/no-array-index-key': ERROR,
+      '@eslint-react/no-array-index-key': ERROR,
 
       // setting these to WARNING as they are good practices, but may require
       // significant refactoring in some cases.
@@ -105,7 +103,7 @@ module.exports = [
   {
     files: ['**/*.{test,spec}.{js,jsx,ts,tsx}'],
     rules: {
-      'react/display-name': OFF,
+      '@eslint-react/no-missing-component-display-name': OFF,
     },
   },
 ];

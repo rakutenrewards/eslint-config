@@ -56,7 +56,7 @@ module.exports = [
       'export const Input = forwardRef<HTMLInputElement>((props, ref) => <input ref={ref} {...props} />);',
       '',
     ].join('\n'),
-    messages: ['react/display-name:1'],
+    messages: ['@eslint-react/no-missing-component-display-name:1'],
   },
   {
     name: 'an unused React import is reported, since the automatic JSX runtime does not need it',
